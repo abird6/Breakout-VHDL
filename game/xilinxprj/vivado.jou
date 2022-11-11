@@ -1,0 +1,18 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Nov 10 13:45:42 2022
+# Process ID: 23536
+# Current directory: C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/xilinxprj
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12924 C:\Users\antho\OneDrive\Documents\NUI Galway\4th Year\EE452 - System on Chip Design II\Breakout-VHDL\game\xilinxprj\game.xpr
+# Log file: C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/xilinxprj/vivado.log
+# Journal file: C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/xilinxprj\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/xilinxprj/game.xpr}
+update_compile_order -fileset sources_1
+launch_simulation
+launch_simulation
+open_wave_config {C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/testbench/gameAndReg32x32_TB_behav.wcfg}
+source gameAndReg32x32_TB.tcl

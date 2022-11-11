@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Nov  8 13:29:25 2022
+# Process ID: 16780
+# Current directory: C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.runs/synth_1
+# Command line: vivado.exe -log gameAndReg32x32.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source gameAndReg32x32.tcl
+# Log file: C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.runs/synth_1/gameAndReg32x32.vds
+# Journal file: C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source gameAndReg32x32.tcl -notrace

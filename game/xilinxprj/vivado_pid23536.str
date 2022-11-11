@@ -1,0 +1,1164 @@
+/*
+
+Xilinx Vivado v2019.1 (64-bit) [Major: 2019, Minor: 1]
+SW Build: 2552052 on Fri May 24 14:49:42 MDT 2019
+IP Build: 2548770 on Fri May 24 18:01:18 MDT 2019
+
+Process ID (PID): 23536
+License: Customer
+
+Current time: 	Thu Nov 10 13:46:17 GMT 2022
+Time zone: 	Greenwich Mean Time (Europe/London)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 2
+Available disk space: 27 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2019.1/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2019.1/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	antho
+User home directory: C:/Users/antho
+User working directory: C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/xilinxprj
+User country: 	IE
+User language: 	en
+User locale: 	en_IE
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2019.1
+RDI_DATADIR: C:/Xilinx/Vivado/2019.1/data
+RDI_BINDIR: C:/Xilinx/Vivado/2019.1/bin
+
+Vivado preferences file location: C:/Users/antho/AppData/Roaming/Xilinx/Vivado/2019.1/vivado.xml
+Vivado preferences directory: C:/Users/antho/AppData/Roaming/Xilinx/Vivado/2019.1/
+Vivado layouts directory: C:/Users/antho/AppData/Roaming/Xilinx/Vivado/2019.1/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2019.1/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/xilinxprj/vivado.log
+Vivado journal file location: 	C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/xilinxprj/vivado.jou
+Engine tmp dir: 	C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/xilinxprj/.Xil/Vivado-23536-LAPTOP-3DVKI1TU
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2019.1
+XILINX_SDK: C:/Xilinx/SDK/2019.1
+XILINX_VIVADO: C:/Xilinx/Vivado/2019.1
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2019.1
+
+
+GUI allocated memory:	154 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 599 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// by (cl):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\antho\OneDrive\Documents\NUI Galway\4th Year\EE452 - System on Chip Design II\Breakout-VHDL\game\xilinxprj\game.xpr. Version: Vivado v2019.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project {C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/xilinxprj/game.xpr} 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/xilinxprj' 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project {C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/xilinxprj/game.xpr} 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/xilinxprj' INFO: [Project 1-313] Project file moved from 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// HMemoryUtils.trashcanNow. Engine heap size: 621 MB. GUI used memory: 48 MB. Current time: 11/10/22, 1:46:19 PM GMT
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'. 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 57 MB (+57241kb) [00:00:23]
+// [Engine Memory]: 632 MB (+511412kb) [00:00:23]
+// [GUI Memory]: 72 MB (+13238kb) [00:00:23]
+// [GUI Memory]: 98 MB (+22916kb) [00:00:24]
+// [GUI Memory]: 106 MB (+3272kb) [00:00:24]
+// WARNING: HEventQueue.dispatchEvent() is taking  4468 ms.
+// Tcl Message: open_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:10 . Memory (MB): peak = 696.496 ; gain = 76.207 
+// [Engine Memory]: 669 MB (+5405kb) [00:00:27]
+// Project name: game; location: C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/xilinxprj; part: xc7z020clg400-1
+dismissDialog("Open Project"); // by (cl)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0); // B (F, cl)
+// Tcl Message: update_compile_order -fileset sources_1 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0); // B (F, cl)
+// PAPropertyPanels.initPanels (gameAndReg32x32.vhd) elapsed time: 0.3s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, gameAndReg32x32(struct) (gameAndReg32x32.vhd)]", 2, true); // B (F, cl) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files]", 1); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, game.vhd]", 2, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, game.vhd]", 2, false, false, false, false, false, true); // B (F, cl) - Double Click
+// Elapsed time: 17 seconds
+selectCodeEditor("game.vhd", 262, 634); // cl (w, cl)
+selectCodeEditor("game.vhd", 222, 637); // cl (w, cl)
+// Elapsed time: 75 seconds
+selectCodeEditor("game.vhd", 182, 653); // cl (w, cl)
+// Elapsed time: 36 seconds
+selectCodeEditor("game.vhd", 181, 122); // cl (w, cl)
+selectCodeEditor("game.vhd", 211, 120); // cl (w, cl)
+selectCodeEditor("game.vhd", 228, 126); // cl (w, cl)
+selectCodeEditor("game.vhd", 264, 122); // cl (w, cl)
+selectCodeEditor("game.vhd", 217, 130); // cl (w, cl)
+// [GUI Memory]: 123 MB (+12048kb) [00:03:09]
+selectCodeEditor("game.vhd", 237, 244); // cl (w, cl)
+selectCodeEditor("game.vhd", 207, 344); // cl (w, cl)
+// Elapsed time: 12 seconds
+selectCodeEditor("game.vhd", 263, 552); // cl (w, cl)
+// Elapsed time: 14 seconds
+selectCodeEditor("game.vhd", 214, 703); // cl (w, cl)
+// Elapsed time: 83 seconds
+selectCodeEditor("game.vhd", 541, 601); // cl (w, cl)
+// Elapsed time: 127 seconds
+selectCodeEditor("game.vhd", 398, 603); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'c'); // cl (w, cl)
+selectCodeEditor("game.vhd", 522, 706); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+selectCodeEditor("game.vhd", 380, 718); // cl (w, cl)
+selectCodeEditor("game.vhd", 618, 707); // cl (w, cl)
+// Elapsed time: 22 seconds
+selectCodeEditor("game.vhd", 303, 658); // cl (w, cl)
+// Elapsed time: 36 seconds
+selectCodeEditor("game.vhd", 615, 636); // cl (w, cl)
+// Elapsed time: 36 seconds
+selectCodeEditor("game.vhd", 376, 163); // cl (w, cl)
+selectCodeEditor("game.vhd", 376, 163, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("game.vhd", 379, 173); // cl (w, cl)
+selectCodeEditor("game.vhd", 376, 174); // cl (w, cl)
+selectCodeEditor("game.vhd", 363, 193); // cl (w, cl)
+selectCodeEditor("game.vhd", 371, 320); // cl (w, cl)
+// Elapsed time: 14 seconds
+selectCodeEditor("game.vhd", 555, 332); // cl (w, cl)
+// Elapsed time: 18 seconds
+selectCodeEditor("game.vhd", 378, 414); // cl (w, cl)
+selectCodeEditor("game.vhd", 368, 480); // cl (w, cl)
+selectCodeEditor("game.vhd", 382, 480); // cl (w, cl)
+selectCodeEditor("game.vhd", 372, 500); // cl (w, cl)
+selectCodeEditor("game.vhd", 359, 588); // cl (w, cl)
+selectCodeEditor("game.vhd", 322, 588); // cl (w, cl)
+// Elapsed time: 37 seconds
+selectCodeEditor("game.vhd", 413, 587); // cl (w, cl)
+selectCodeEditor("game.vhd", 413, 587, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("game.vhd", 413, 587); // cl (w, cl)
+selectCodeEditor("game.vhd", 419, 587); // cl (w, cl)
+// Elapsed time: 20 seconds
+selectCodeEditor("game.vhd", 413, 585); // cl (w, cl)
+selectCodeEditor("game.vhd", 412, 586); // cl (w, cl)
+selectCodeEditor("game.vhd", 412, 586, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("game.vhd", 433, 608); // cl (w, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 70 MB. Current time: 11/10/22, 2:16:19 PM GMT
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 64 MB. Current time: 11/10/22, 2:46:19 PM GMT
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 64 MB. Current time: 11/10/22, 3:16:20 PM GMT
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 64 MB. Current time: 11/10/22, 3:46:20 PM GMT
+// Elapsed time: 8153 seconds
+selectCodeEditor("game.vhd", 210, 623); // cl (w, cl)
+selectCodeEditor("game.vhd", 306, 347); // cl (w, cl)
+selectCodeEditor("game.vhd", 289, 347); // cl (w, cl)
+selectCodeEditor("game.vhd", 299, 350); // cl (w, cl)
+selectCodeEditor("game.vhd", 299, 350, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("game.vhd", 368, 330); // cl (w, cl)
+selectCodeEditor("game.vhd", 232, 719); // cl (w, cl)
+selectCodeEditor("game.vhd", 392, 676); // cl (w, cl)
+selectCodeEditor("game.vhd", 394, 808); // cl (w, cl)
+// Elapsed time: 31 seconds
+selectCodeEditor("game.vhd", 190, 745); // cl (w, cl)
+selectCodeEditor("game.vhd", 297, 692); // cl (w, cl)
+selectCodeEditor("game.vhd", 252, 717); // cl (w, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 64 MB. Current time: 11/10/22, 4:16:21 PM GMT
+// Elapsed time: 133 seconds
+selectCodeEditor("game.vhd", 188, 551); // cl (w, cl)
+// Elapsed time: 12 seconds
+selectCodeEditor("game.vhd", 356, 519); // cl (w, cl)
+selectCodeEditor("game.vhd", 190, 652); // cl (w, cl)
+selectCodeEditor("game.vhd", 190, 652, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("game.vhd", 169, 666); // cl (w, cl)
+// Elapsed time: 45 seconds
+selectCodeEditor("game.vhd", 209, 671); // cl (w, cl)
+selectCodeEditor("game.vhd", 253, 702); // cl (w, cl)
+// Elapsed time: 63 seconds
+selectCodeEditor("game.vhd", 158, 685); // cl (w, cl)
+// Elapsed time: 235 seconds
+selectCodeEditor("game.vhd", 273, 500); // cl (w, cl)
+// Elapsed time: 27 seconds
+selectCodeEditor("game.vhd", 285, 501); // cl (w, cl)
+selectCodeEditor("game.vhd", 315, 541); // cl (w, cl)
+selectCodeEditor("game.vhd", 307, 454); // cl (w, cl)
+selectCodeEditor("game.vhd", 260, 466); // cl (w, cl)
+// Elapsed time: 27 seconds
+selectCodeEditor("game.vhd", 286, 461); // cl (w, cl)
+selectCodeEditor("game.vhd", 214, 466); // cl (w, cl)
+selectCodeEditor("game.vhd", 217, 505); // cl (w, cl)
+selectCodeEditor("game.vhd", 262, 478); // cl (w, cl)
+// Elapsed time: 62 seconds
+selectCodeEditor("game.vhd", 354, 436); // cl (w, cl)
+typeControlKey(null, null, 'z');
+selectCodeEditor("game.vhd", 289, 444); // cl (w, cl)
+// Elapsed time: 20 seconds
+selectCodeEditor("game.vhd", 311, 518); // cl (w, cl)
+// Elapsed time: 18 seconds
+selectCodeEditor("game.vhd", 330, 549); // cl (w, cl)
+// Elapsed time: 14 seconds
+selectCodeEditor("game.vhd", 215, 450); // cl (w, cl)
+selectCodeEditor("game.vhd", 351, 453); // cl (w, cl)
+selectCodeEditor("game.vhd", 220, 467); // cl (w, cl)
+selectCodeEditor("game.vhd", 232, 486); // cl (w, cl)
+selectCodeEditor("game.vhd", 276, 416); // cl (w, cl)
+selectCodeEditor("game.vhd", 272, 415); // cl (w, cl)
+selectCodeEditor("game.vhd", 277, 377); // cl (w, cl)
+selectCodeEditor("game.vhd", 369, 376); // cl (w, cl)
+selectCodeEditor("game.vhd", 242, 399); // cl (w, cl)
+// Elapsed time: 23 seconds
+selectCodeEditor("game.vhd", 258, 432); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'c'); // cl (w, cl)
+selectCodeEditor("game.vhd", 257, 464); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+selectCodeEditor("game.vhd", 366, 445); // cl (w, cl)
+// Elapsed time: 23 seconds
+selectCodeEditor("game.vhd", 549, 403); // cl (w, cl)
+// Elapsed time: 12 seconds
+selectCodeEditor("game.vhd", 226, 573); // cl (w, cl)
+selectCodeEditor("game.vhd", 176, 618); // cl (w, cl)
+// Elapsed time: 138 seconds
+selectCodeEditor("game.vhd", 212, 717); // cl (w, cl)
+// Elapsed time: 144 seconds
+selectCodeEditor("game.vhd", 190, 756); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'c'); // cl (w, cl)
+selectCodeEditor("game.vhd", 261, 804); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+selectCodeEditor("game.vhd", 214, 826); // cl (w, cl)
+// Elapsed time: 101 seconds
+selectCodeEditor("game.vhd", 411, 735); // cl (w, cl)
+selectCodeEditor("game.vhd", 183, 743); // cl (w, cl)
+// Elapsed time: 11 seconds
+selectCodeEditor("game.vhd", 301, 736); // cl (w, cl)
+selectCodeEditor("game.vhd", 301, 736, false, false, false, false, true); // cl (w, cl) - Double Click
+// Elapsed time: 31 seconds
+selectCodeEditor("game.vhd", 182, 613); // cl (w, cl)
+// Elapsed time: 17 seconds
+selectCodeEditor("game.vhd", 664, 737); // cl (w, cl)
+// Elapsed time: 37 seconds
+selectCodeEditor("game.vhd", 711, 742); // cl (w, cl)
+selectCodeEditor("game.vhd", 698, 739); // cl (w, cl)
+selectCodeEditor("game.vhd", 385, 763); // cl (w, cl)
+// Elapsed time: 121 seconds
+selectCodeEditor("game.vhd", 696, 738); // cl (w, cl)
+// Elapsed time: 15 seconds
+selectCodeEditor("game.vhd", 536, 757); // cl (w, cl)
+// Elapsed time: 98 seconds
+selectCodeEditor("game.vhd", 242, 766); // cl (w, cl)
+// Elapsed time: 21 seconds
+selectCodeEditor("game.vhd", 337, 754); // cl (w, cl)
+selectCodeEditor("game.vhd", 485, 587); // cl (w, cl)
+// Elapsed time: 163 seconds
+selectCodeEditor("game.vhd", 189, 522); // cl (w, cl)
+// Elapsed time: 91 seconds
+selectCodeEditor("game.vhd", 371, 519); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'c'); // cl (w, cl)
+selectCodeEditor("game.vhd", 425, 517); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+selectCodeEditor("game.vhd", 618, 520); // cl (w, cl)
+selectCodeEditor("game.vhd", 631, 521); // cl (w, cl)
+// Elapsed time: 13 seconds
+selectCodeEditor("game.vhd", 621, 519); // cl (w, cl)
+selectCodeEditor("game.vhd", 202, 518); // cl (w, cl)
+selectCodeEditor("game.vhd", 687, 522); // cl (w, cl)
+selectCodeEditor("game.vhd", 564, 466); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'c'); // cl (w, cl)
+selectCodeEditor("game.vhd", 703, 518); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+selectCodeEditor("game.vhd", 918, 522); // cl (w, cl)
+// Elapsed time: 19 seconds
+selectCodeEditor("game.vhd", 1070, 511); // cl (w, cl)
+selectCodeEditor("game.vhd", 230, 538); // cl (w, cl)
+selectCodeEditor("game.vhd", 347, 497); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'c'); // cl (w, cl)
+selectCodeEditor("game.vhd", 231, 536); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 64 MB. Current time: 11/10/22, 4:46:21 PM GMT
+// Elapsed time: 41 seconds
+selectCodeEditor("game.vhd", 267, 553); // cl (w, cl)
+selectCodeEditor("game.vhd", 296, 553); // cl (w, cl)
+selectCodeEditor("game.vhd", 346, 559); // cl (w, cl)
+selectCodeEditor("game.vhd", 285, 551); // cl (w, cl)
+selectCodeEditor("game.vhd", 314, 552); // cl (w, cl)
+// Elapsed time: 29 seconds
+selectCodeEditor("game.vhd", 315, 551); // cl (w, cl)
+// Elapsed time: 63 seconds
+selectCodeEditor("game.vhd", 216, 569); // cl (w, cl)
+selectCodeEditor("game.vhd", 202, 518); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'c'); // cl (w, cl)
+selectCodeEditor("game.vhd", 359, 572); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+selectCodeEditor("game.vhd", 1047, 567); // cl (w, cl)
+// Elapsed time: 21 seconds
+selectCodeEditor("game.vhd", 190, 656); // cl (w, cl)
+selectCodeEditor("game.vhd", 414, 649); // cl (w, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 64 MB. Current time: 11/10/22, 5:16:21 PM GMT
+// Elapsed time: 2184 seconds
+selectCodeEditor("game.vhd", 380, 757); // cl (w, cl)
+// Elapsed time: 16 seconds
+selectCodeEditor("game.vhd", 348, 755); // cl (w, cl)
+selectCodeEditor("game.vhd", 242, 818); // cl (w, cl)
+selectCodeEditor("game.vhd", 261, 824); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+selectCodeEditor("game.vhd", 366, 724); // cl (w, cl)
+selectCodeEditor("game.vhd", 269, 793); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+selectCodeEditor("game.vhd", 270, 719); // cl (w, cl)
+// Elapsed time: 152 seconds
+selectCodeEditor("game.vhd", 901, 313); // cl (w, cl)
+selectCodeEditor("game.vhd", 966, 306); // cl (w, cl)
+// Elapsed time: 22 seconds
+selectCodeEditor("game.vhd", 349, 245); // cl (w, cl)
+// Elapsed time: 64 seconds
+selectCodeEditor("game.vhd", 211, 467); // cl (w, cl)
+selectCodeEditor("game.vhd", 228, 474); // cl (w, cl)
+selectCodeEditor("game.vhd", 210, 463); // cl (w, cl)
+// Elapsed time: 11 seconds
+selectCodeEditor("game.vhd", 348, 210); // cl (w, cl)
+selectCodeEditor("game.vhd", 161, 213); // cl (w, cl)
+selectCodeEditor("game.vhd", 180, 229); // cl (w, cl)
+selectCodeEditor("game.vhd", 181, 462); // cl (w, cl)
+selectCodeEditor("game.vhd", 181, 504); // cl (w, cl)
+selectCodeEditor("game.vhd", 179, 531); // cl (w, cl)
+selectCodeEditor("game.vhd", 183, 614); // cl (w, cl)
+selectCodeEditor("game.vhd", 178, 651); // cl (w, cl)
+selectCodeEditor("game.vhd", 165, 182); // cl (w, cl)
+// Elapsed time: 29 seconds
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+// Elapsed time: 12 seconds
+selectCodeEditor("game.vhd", 239, 441); // cl (w, cl)
+selectCodeEditor("game.vhd", 239, 449); // cl (w, cl)
+selectCodeEditor("game.vhd", 158, 336); // cl (w, cl)
+selectCodeEditor("game.vhd", 217, 449); // cl (w, cl)
+selectCodeEditor("game.vhd", 171, 297); // cl (w, cl)
+// Elapsed time: 342 seconds
+selectCodeEditor("game.vhd", 141, 549); // cl (w, cl)
+// Elapsed time: 42 seconds
+selectCodeEditor("game.vhd", 338, 461); // cl (w, cl)
+selectCodeEditor("game.vhd", 342, 311); // cl (w, cl)
+// Elapsed time: 102 seconds
+selectCodeEditor("game.vhd", 669, 433); // cl (w, cl)
+// Elapsed time: 19 seconds
+selectCodeEditor("game.vhd", 183, 435); // cl (w, cl)
+// Elapsed time: 12 seconds
+selectCodeEditor("game.vhd", 163, 489); // cl (w, cl)
+selectCodeEditor("game.vhd", 645, 488); // cl (w, cl)
+selectCodeEditor("game.vhd", 670, 481); // cl (w, cl)
+// Elapsed time: 23 seconds
+selectCodeEditor("game.vhd", 188, 504); // cl (w, cl)
+// Elapsed time: 10 seconds
+selectCodeEditor("game.vhd", 237, 501); // cl (w, cl)
+// Elapsed time: 12 seconds
+selectCodeEditor("game.vhd", 330, 521); // cl (w, cl)
+// Elapsed time: 25 seconds
+selectCodeEditor("game.vhd", 220, 570); // cl (w, cl)
+// Elapsed time: 54 seconds
+selectCodeEditor("game.vhd", 329, 417); // cl (w, cl)
+selectCodeEditor("game.vhd", 187, 420); // cl (w, cl)
+// Elapsed time: 42 seconds
+selectCodeEditor("game.vhd", 393, 417); // cl (w, cl)
+selectCodeEditor("game.vhd", 120, 421); // cl (w, cl)
+// Elapsed time: 64 seconds
+selectCodeEditor("game.vhd", 188, 448); // cl (w, cl)
+// Elapsed time: 24 seconds
+selectCodeEditor("game.vhd", 334, 518); // cl (w, cl)
+// Elapsed time: 12 seconds
+selectCodeEditor("game.vhd", 249, 483); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'c'); // cl (w, cl)
+selectCodeEditor("game.vhd", 272, 532); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+// Elapsed time: 58 seconds
+selectCodeEditor("game.vhd", 391, 583); // cl (w, cl)
+selectCodeEditor("game.vhd", 587, 537); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'c'); // cl (w, cl)
+selectCodeEditor("game.vhd", 385, 590); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+selectCodeEditor("game.vhd", 435, 603); // cl (w, cl)
+selectCodeEditor("game.vhd", 505, 562); // cl (w, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 64 MB. Current time: 11/10/22, 5:46:21 PM GMT
+// Elapsed time: 38 seconds
+selectCodeEditor("game.vhd", 397, 590); // cl (w, cl)
+selectCodeEditor("game.vhd", 190, 587); // cl (w, cl)
+// Elapsed time: 11 seconds
+selectCodeEditor("game.vhd", 360, 585); // cl (w, cl)
+selectCodeEditor("game.vhd", 406, 585); // cl (w, cl)
+// Elapsed time: 38 seconds
+selectCodeEditor("game.vhd", 208, 562); // cl (w, cl)
+// Elapsed time: 149 seconds
+selectCodeEditor("game.vhd", 205, 641); // cl (w, cl)
+selectCodeEditor("game.vhd", 219, 644); // cl (w, cl)
+selectCodeEditor("game.vhd", 217, 640); // cl (w, cl)
+selectCodeEditor("game.vhd", 216, 635); // cl (w, cl)
+// Elapsed time: 150 seconds
+selectCodeEditor("game.vhd", 210, 612); // cl (w, cl)
+// Elapsed time: 111 seconds
+selectCodeEditor("game.vhd", 159, 297); // cl (w, cl)
+selectCodeEditor("game.vhd", 210, 267); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+selectCodeEditor("game.vhd", 318, 328); // cl (w, cl)
+// Elapsed time: 130 seconds
+selectCodeEditor("game.vhd", 179, 729); // cl (w, cl)
+// Elapsed time: 14 seconds
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// Elapsed time: 15 seconds
+selectCodeEditor("game.vhd", 24, 665); // cl (w, cl)
+// Elapsed time: 22 seconds
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+// Elapsed time: 10 seconds
+selectCodeEditor("game.vhd", 1007, 316); // cl (w, cl)
+// Elapsed time: 17 seconds
+selectCodeEditor("game.vhd", 192, 591); // cl (w, cl)
+// Elapsed time: 67 seconds
+selectCodeEditor("game.vhd", 228, 621); // cl (w, cl)
+selectCodeEditor("game.vhd", 281, 561); // cl (w, cl)
+selectCodeEditor("game.vhd", 389, 215); // cl (w, cl)
+selectCodeEditor("game.vhd", 159, 351); // cl (w, cl)
+selectCodeEditor("game.vhd", 176, 774); // cl (w, cl)
+selectCodeEditor("game.vhd", 91, 785); // cl (w, cl)
+selectCodeEditor("game.vhd", 245, 795); // cl (w, cl)
+// Elapsed time: 66 seconds
+selectCodeEditor("game.vhd", 187, 561); // cl (w, cl)
+// Elapsed time: 12 seconds
+selectCodeEditor("game.vhd", 144, 696); // cl (w, cl)
+// Elapsed time: 52 seconds
+selectCodeEditor("game.vhd", 394, 677); // cl (w, cl)
+// Elapsed time: 25 seconds
+selectCodeEditor("game.vhd", 243, 466); // cl (w, cl)
+selectCodeEditor("game.vhd", 124, 705); // cl (w, cl)
+// Find in Files: addNotify
+// Elapsed time: 14 seconds
+selectButton(PAResourceEtoH.FindAndReplaceAllDialog_CLOSE, "Close"); // z (s)
+// 'f' command handler elapsed time: 12 seconds
+selectCodeEditor("game.vhd", 111, 715); // cl (w, cl)
+selectCodeEditor("game.vhd", 106, 703); // cl (w, cl)
+selectCodeEditor("game.vhd", 192, 701); // cl (w, cl)
+selectCodeEditor("game.vhd", 192, 701, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("game.vhd", 194, 701); // cl (w, cl)
+selectCodeEditor("game.vhd", 202, 703); // cl (w, cl)
+selectCodeEditor("game.vhd", 201, 703); // cl (w, cl)
+selectCodeEditor("game.vhd", 201, 703, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("game.vhd", 201, 704); // cl (w, cl)
+selectCodeEditor("game.vhd", 73, 739); // cl (w, cl)
+selectCodeEditor("game.vhd", 72, 739); // cl (w, cl)
+selectCodeEditor("game.vhd", 78, 739); // cl (w, cl)
+selectCodeEditor("game.vhd", 76, 755); // cl (w, cl)
+selectCodeEditor("game.vhd", 150, 739); // cl (w, cl)
+selectCodeEditor("game.vhd", 148, 754); // cl (w, cl)
+selectCodeEditor("game.vhd", 144, 741); // cl (w, cl)
+selectCodeEditor("game.vhd", 207, 738); // cl (w, cl)
+// Elapsed time: 13 seconds
+selectCodeEditor("game.vhd", 210, 638); // cl (w, cl)
+selectCodeEditor("game.vhd", 223, 654); // cl (w, cl)
+selectCodeEditor("game.vhd", 349, 638); // cl (w, cl)
+selectCodeEditor("game.vhd", 348, 651); // cl (w, cl)
+selectCodeEditor("game.vhd", 221, 724); // cl (w, cl)
+selectCodeEditor("game.vhd", 221, 737); // cl (w, cl)
+selectCodeEditor("game.vhd", 348, 737); // cl (w, cl)
+selectCodeEditor("game.vhd", 349, 723); // cl (w, cl)
+selectCodeEditor("game.vhd", 270, 712); // cl (w, cl)
+selectCodeEditor("game.vhd", 209, 694); // cl (w, cl)
+selectCodeEditor("game.vhd", 238, 704); // cl (w, cl)
+selectCodeEditor("game.vhd", 159, 738); // cl (w, cl)
+// Elapsed time: 120 seconds
+selectCodeEditor("game.vhd", 183, 579); // cl (w, cl)
+// Elapsed time: 200 seconds
+selectCodeEditor("game.vhd", 220, 591); // cl (w, cl)
+// Elapsed time: 99 seconds
+selectCodeEditor("game.vhd", 281, 587); // cl (w, cl)
+selectCodeEditor("game.vhd", 291, 634); // cl (w, cl)
+// Elapsed time: 10 seconds
+selectCodeEditor("game.vhd", 319, 599); // cl (w, cl)
+selectCodeEditor("game.vhd", 292, 636); // cl (w, cl)
+selectCodeEditor("game.vhd", 304, 602); // cl (w, cl)
+selectCodeEditor("game.vhd", 179, 684); // cl (w, cl)
+// Elapsed time: 133 seconds
+selectCodeEditor("game.vhd", 16, 417); // cl (w, cl)
+selectCodeEditor("game.vhd", 196, 434); // cl (w, cl)
+// Elapsed time: 15 seconds
+selectCodeEditor("game.vhd", 95, 568); // cl (w, cl)
+selectCodeEditor("game.vhd", 203, 581); // cl (w, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 66 MB. Current time: 11/10/22, 6:16:22 PM GMT
+// Elapsed time: 175 seconds
+selectCodeEditor("game.vhd", 91, 328); // cl (w, cl)
+selectCodeEditor("game.vhd", 277, 603); // cl (w, cl)
+// Elapsed time: 247 seconds
+selectCodeEditor("game.vhd", 206, 589); // cl (w, cl)
+// Elapsed time: 297 seconds
+selectCodeEditor("game.vhd", 229, 584); // cl (w, cl)
+selectCodeEditor("game.vhd", 372, 584); // cl (w, cl)
+selectCodeEditor("game.vhd", 397, 584); // cl (w, cl)
+selectCodeEditor("game.vhd", 296, 603); // cl (w, cl)
+// Elapsed time: 20 seconds
+selectCodeEditor("game.vhd", 256, 627); // cl (w, cl)
+selectCodeEditor("game.vhd", 51, 725); // cl (w, cl)
+// Elapsed time: 20 seconds
+selectCodeEditor("game.vhd", 966, 141); // cl (w, cl)
+selectCodeEditor("game.vhd", 668, 537); // cl (w, cl)
+selectCodeEditor("game.vhd", 105, 533); // cl (w, cl)
+selectCodeEditor("game.vhd", 41, 599); // cl (w, cl)
+// Elapsed time: 23 seconds
+selectCodeEditor("game.vhd", 154, 381); // cl (w, cl)
+selectCodeEditor("game.vhd", 142, 444); // cl (w, cl)
+selectCodeEditor("game.vhd", 152, 431); // cl (w, cl)
+selectCodeEditor("game.vhd", 157, 388); // cl (w, cl)
+// Elapsed time: 234 seconds
+selectCodeEditor("game.vhd", 215, 586); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'c'); // cl (w, cl)
+selectCodeEditor("game.vhd", 201, 620); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+selectCodeEditor("game.vhd", 259, 527); // cl (w, cl)
+// Elapsed time: 92 seconds
+selectCodeEditor("game.vhd", 330, 534); // cl (w, cl)
+selectCodeEditor("game.vhd", 492, 529); // cl (w, cl)
+selectCodeEditor("game.vhd", 309, 536); // cl (w, cl)
+selectCodeEditor("game.vhd", 469, 483); // cl (w, cl)
+// Elapsed time: 12 seconds
+selectCodeEditor("game.vhd", 321, 484); // cl (w, cl)
+selectCodeEditor("game.vhd", 290, 483); // cl (w, cl)
+selectCodeEditor("game.vhd", 329, 483); // cl (w, cl)
+selectCodeEditor("game.vhd", 490, 480); // cl (w, cl)
+selectCodeEditor("game.vhd", 504, 483); // cl (w, cl)
+selectCodeEditor("game.vhd", 232, 499); // cl (w, cl)
+// Elapsed time: 24 seconds
+selectCodeEditor("game.vhd", 402, 498); // cl (w, cl)
+selectCodeEditor("game.vhd", 302, 517); // cl (w, cl)
+// Elapsed time: 63 seconds
+selectCodeEditor("game.vhd", 132, 366); // cl (w, cl)
+// Elapsed time: 40 seconds
+selectCodeEditor("game.vhd", 468, 602); // cl (w, cl)
+selectCodeEditor("game.vhd", 257, 257); // cl (w, cl)
+// Elapsed time: 12 seconds
+selectCodeEditor("game.vhd", 217, 275); // cl (w, cl)
+// Elapsed time: 10 seconds
+selectCodeEditor("game.vhd", 271, 263); // cl (w, cl)
+selectCodeEditor("game.vhd", 184, 446); // cl (w, cl)
+selectCodeEditor("game.vhd", 175, 278); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+selectCodeEditor("game.vhd", 165, 282); // cl (w, cl)
+selectCodeEditor("game.vhd", 183, 414); // cl (w, cl)
+selectCodeEditor("game.vhd", 175, 279); // cl (w, cl)
+selectCodeEditor("game.vhd", 273, 425); // cl (w, cl)
+selectCodeEditor("game.vhd", 336, 262); // cl (w, cl)
+selectCodeEditor("game.vhd", 139, 247); // cl (w, cl)
+selectCodeEditor("game.vhd", 37, 275); // cl (w, cl)
+selectCodeEditor("game.vhd", 24, 266); // cl (w, cl)
+selectCodeEditor("game.vhd", 123, 324); // cl (w, cl)
+// Elapsed time: 55 seconds
+selectCodeEditor("game.vhd", 245, 418); // cl (w, cl)
+// Elapsed time: 35 seconds
+selectCodeEditor("game.vhd", 235, 443); // cl (w, cl)
+// Elapsed time: 57 seconds
+selectCodeEditor("game.vhd", 218, 469); // cl (w, cl)
+// Elapsed time: 110 seconds
+selectCodeEditor("game.vhd", 284, 483); // cl (w, cl)
+selectCodeEditor("game.vhd", 372, 480); // cl (w, cl)
+// Elapsed time: 12 seconds
+selectCodeEditor("game.vhd", 378, 423); // cl (w, cl)
+selectCodeEditor("game.vhd", 253, 519); // cl (w, cl)
+selectCodeEditor("game.vhd", 253, 536); // cl (w, cl)
+// Elapsed time: 11 seconds
+selectCodeEditor("game.vhd", 283, 559); // cl (w, cl)
+selectCodeEditor("game.vhd", 280, 566); // cl (w, cl)
+// Elapsed time: 32 seconds
+selectCodeEditor("game.vhd", 249, 535); // cl (w, cl)
+selectCodeEditor("game.vhd", 227, 516); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+selectCodeEditor("game.vhd", 221, 500); // cl (w, cl)
+selectCodeEditor("game.vhd", 235, 457); // cl (w, cl)
+selectCodeEditor("game.vhd", 238, 464); // cl (w, cl)
+// Elapsed time: 20 seconds
+selectCodeEditor("game.vhd", 439, 328); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'c'); // cl (w, cl)
+selectCodeEditor("game.vhd", 229, 466); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+selectCodeEditor("game.vhd", 215, 463); // cl (w, cl)
+// Elapsed time: 12 seconds
+selectCodeEditor("game.vhd", 357, 485); // cl (w, cl)
+selectCodeEditor("game.vhd", 353, 481); // cl (w, cl)
+selectCodeEditor("game.vhd", 359, 487); // cl (w, cl)
+selectCodeEditor("game.vhd", 289, 507); // cl (w, cl)
+selectCodeEditor("game.vhd", 196, 585); // cl (w, cl)
+selectCodeEditor("game.vhd", 245, 616); // cl (w, cl)
+selectCodeEditor("game.vhd", 159, 591); // cl (w, cl)
+selectCodeEditor("game.vhd", 219, 539); // cl (w, cl)
+selectCodeEditor("game.vhd", 265, 514); // cl (w, cl)
+selectCodeEditor("game.vhd", 219, 536); // cl (w, cl)
+// Elapsed time: 22 seconds
+selectCodeEditor("game.vhd", 157, 605); // cl (w, cl)
+selectCodeEditor("game.vhd", 183, 605); // cl (w, cl)
+selectCodeEditor("game.vhd", 229, 589); // cl (w, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 66 MB. Current time: 11/10/22, 6:46:22 PM GMT
+// Elapsed time: 16 seconds
+selectCodeEditor("game.vhd", 205, 502); // cl (w, cl)
+// Elapsed time: 22 seconds
+selectCodeEditor("game.vhd", 214, 586); // cl (w, cl)
+selectCodeEditor("game.vhd", 269, 501); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+selectCodeEditor("game.vhd", 302, 466); // cl (w, cl)
+// Elapsed time: 21 seconds
+selectCodeEditor("game.vhd", 189, 671); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'c'); // cl (w, cl)
+selectCodeEditor("game.vhd", 168, 290); // cl (w, cl)
+selectCodeEditor("game.vhd", 167, 274); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+selectCodeEditor("game.vhd", 251, 281); // cl (w, cl)
+selectCodeEditor("game.vhd", 291, 313); // cl (w, cl)
+selectCodeEditor("game.vhd", 453, 313); // cl (w, cl)
+selectCodeEditor("game.vhd", 299, 330); // cl (w, cl)
+selectCodeEditor("game.vhd", 374, 331); // cl (w, cl)
+selectCodeEditor("game.vhd", 334, 349); // cl (w, cl)
+selectCodeEditor("game.vhd", 279, 433); // cl (w, cl)
+selectCodeEditor("game.vhd", 290, 469); // cl (w, cl)
+selectCodeEditor("game.vhd", 297, 478); // cl (w, cl)
+// Elapsed time: 43 seconds
+selectCodeEditor("game.vhd", 86, 538); // cl (w, cl)
+// Elapsed time: 200 seconds
+selectCodeEditor("game.vhd", 356, 351); // cl (w, cl)
+selectCodeEditor("game.vhd", 129, 349); // cl (w, cl)
+selectCodeEditor("game.vhd", 467, 348); // cl (w, cl)
+// Elapsed time: 66 seconds
+selectCodeEditor("game.vhd", 147, 178); // cl (w, cl)
+selectCodeEditor("game.vhd", 147, 211); // cl (w, cl)
+selectCodeEditor("game.vhd", 165, 235); // cl (w, cl)
+selectCodeEditor("game.vhd", 153, 247); // cl (w, cl)
+selectCodeEditor("game.vhd", 196, 205); // cl (w, cl)
+// Elapsed time: 45 seconds
+selectCodeEditor("game.vhd", 121, 234); // cl (w, cl)
+selectCodeEditor("game.vhd", 414, 230); // cl (w, cl)
+// Elapsed time: 84 seconds
+selectCodeEditor("game.vhd", 129, 487); // cl (w, cl)
+// Elapsed time: 45 seconds
+selectCodeEditor("game.vhd", 188, 620); // cl (w, cl)
+selectCodeEditor("game.vhd", 234, 243); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+selectCodeEditor("game.vhd", 189, 584); // cl (w, cl)
+selectCodeEditor("game.vhd", 370, 488); // cl (w, cl)
+// Elapsed time: 66 seconds
+selectCodeEditor("game.vhd", 328, 73); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'c'); // cl (w, cl)
+selectCodeEditor("game.vhd", 135, 410); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+selectCodeEditor("game.vhd", 195, 807); // cl (w, cl)
+selectCodeEditor("game.vhd", 171, 423); // cl (w, cl)
+selectCodeEditor("game.vhd", 171, 430); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+selectCodeEditor("game.vhd", 193, 773); // cl (w, cl)
+selectCodeEditor("game.vhd", 198, 454); // cl (w, cl)
+selectCodeEditor("game.vhd", 263, 571); // cl (w, cl)
+// Elapsed time: 11 seconds
+selectCodeEditor("game.vhd", 195, 450); // cl (w, cl)
+selectCodeEditor("game.vhd", 166, 453); // cl (w, cl)
+selectCodeEditor("game.vhd", 340, 555); // cl (w, cl)
+selectCodeEditor("game.vhd", 365, 533); // cl (w, cl)
+selectCodeEditor("game.vhd", 216, 367); // cl (w, cl)
+// Elapsed time: 143 seconds
+selectCodeEditor("game.vhd", 208, 449); // cl (w, cl)
+selectCodeEditor("game.vhd", 356, 447); // cl (w, cl)
+// Elapsed time: 63 seconds
+selectCodeEditor("game.vhd", 209, 224); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'c'); // cl (w, cl)
+selectCodeEditor("game.vhd", 296, 336); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+selectCodeEditor("game.vhd", 128, 327); // cl (w, cl)
+selectCodeEditor("game.vhd", 524, 329); // cl (w, cl)
+selectCodeEditor("game.vhd", 585, 328); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 4344 ms. Increasing delay to 13032 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  10796090 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2988 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 44 MB. Current time: 11/10/22, 10:03:34 PM GMT
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 25 ms. Decreasing delay to 2025 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  51481056 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  5609 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 44 MB. Current time: 11/11/22, 12:21:54 PM GMT
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 3431 ms. Increasing delay to 10293 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 2438 ms. Increasing delay to 3000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 124 ms. Decreasing delay to 2124 ms.
+// Elapsed time: 62577 seconds
+selectCodeEditor("game.vhd", 172, 671); // cl (w, cl)
+selectCodeEditor("game.vhd", 67, 657); // cl (w, cl)
+selectCodeEditor("game.vhd", 166, 672); // cl (w, cl)
+// Elapsed time: 81 seconds
+selectCodeEditor("game.vhd", 69, 435); // cl (w, cl)
+// Elapsed time: 66 seconds
+selectCodeEditor("game.vhd", 224, 518); // cl (w, cl)
+// Elapsed time: 36 seconds
+selectCodeEditor("game.vhd", 310, 252); // cl (w, cl)
+selectCodeEditor("game.vhd", 498, 212); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'c'); // cl (w, cl)
+selectCodeEditor("game.vhd", 100, 568); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+selectCodeEditor("game.vhd", 239, 625); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+// Elapsed time: 114 seconds
+selectCodeEditor("game.vhd", 289, 156); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 379 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 3); // B (F, cl)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 4); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, gameAndReg32x32_TB(Behavioral) (gameAndReg32x32_TB.vhd)]", 5, true); // B (F, cl) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, gameAndReg32x32_TB(Behavioral) (gameAndReg32x32_TB.vhd)]", 5, true, false, false, false, false, true); // B (F, cl) - Double Click - Node
+// Elapsed time: 13 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (O, cl)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ah (an, cl)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// e (cl):  Run Simulation : addNotify
+// TclEventType: LAUNCH_SIM
+// Tcl Message: launch_simulation 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/xilinxprj/game.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [SIM-utils-54] Inspecting design source files for 'gameAndReg32x32_TB' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design 
+// Tcl Message: INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/xilinxprj/game.sim/sim_1/behav/xsim' 
+// Tcl Message: "xvhdl --incr --relax -prj gameAndReg32x32_TB_vhdl.prj" 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '3' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/xilinxprj/game.sim/sim_1/behav/xsim' 
+// Tcl Message: "xelab -wto 27a44575197744788964bd24ef8376a1 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot gameAndReg32x32_TB_behav xil_defaultlib.gameAndReg32x32_TB -log elaborate.log" 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: Vivado Simulator 2019.1 Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved. Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 27a44575197744788964bd24ef8376a1 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot gameAndReg32x32_TB_behav xil_defaultlib.gameAndReg32x32_TB -log elaborate.log  Using 2 slave threads. Starting static elaboration ERROR: [VRFC 10-2335] case statement does not cover all choices. 'others' clause is needed [C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/game.vhd:256] ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit gameandreg32x32_tb in library work failed. 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds INFO: [USF-XSim-99] Step results log file:'C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/xilinxprj/game.sim/sim_1/behav/xsim/elaborate.log' 
+// Tcl Message: ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/xilinxprj/game.sim/sim_1/behav/xsim/elaborate.log' file for more information. 
+// Tcl Message: ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation. 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 761.336 ; gain = 0.000 
+// Tcl Message: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors. 
+// CommandFailedException: ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.  
+// HOptionPane Error: 'ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.  (Run Simulation)'
+// 'd' command handler elapsed time: 13 seconds
+// Elapsed time: 13 seconds
+selectButton("OptionPane.button", "OK"); // JButton (A, G)
+// a (cl): Critical Messages: addNotify
+// Elapsed time: 14 seconds
+selectButton(PAResourceAtoD.CmdMsgDialog_OPEN_MESSAGES_VIEW, "Open Messages View"); // a (a)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Critical Messages"); // a (cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Simulation, sim_1, [VRFC 10-2335] case statement does not cover all choices. 'others' clause is needed [C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/game.vhd:256]. ]", 6, false); // ah (O, cl)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\antho\OneDrive\Documents\NUI Galway\4th Year\EE452 - System on Chip Design II\Breakout-VHDL\game\game.vhd;-;;-;16;-;line;-;256;-;;-;16;-;"); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Simulation, sim_1, [VRFC 10-2335] case statement does not cover all choices. 'others' clause is needed [C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/game.vhd:256]. ]", 6, false, false, false, false, false, true); // ah (O, cl) - Double Click
+// Elapsed time: 21 seconds
+selectCodeEditor("game.vhd", 202, 498); // cl (w, cl)
+selectCodeEditor("game.vhd", 108, 520); // cl (w, cl)
+selectCodeEditor("game.vhd", 159, 517); // cl (w, cl)
+// Elapsed time: 66 seconds
+selectCodeEditor("game.vhd", 150, 302); // cl (w, cl)
+// Elapsed time: 35 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation]", 9, true); // u (O, cl) - Node
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation]", 9, true); // u (O, cl) - Node
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (O, cl)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ah (an, cl)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// al (cl): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a (al)
+// by (cl):  Save Constraints : addNotify
+// TclEventType: DG_GRAPH_STALE
+// e (cl):  Run Simulation : addNotify
+dismissDialog("Save Project"); // al (cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: LAUNCH_SIM
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: launch_simulation 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/xilinxprj/game.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [SIM-utils-54] Inspecting design source files for 'gameAndReg32x32_TB' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/xilinxprj/game.sim/sim_1/behav/xsim' 
+// Tcl Message: "xvhdl --incr --relax -prj gameAndReg32x32_TB_vhdl.prj" 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/game.vhd" into library xil_defaultlib INFO: [VRFC 10-3107] analyzing entity 'game' 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '2' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/xilinxprj/game.sim/sim_1/behav/xsim' 
+// Tcl Message: "xelab -wto 27a44575197744788964bd24ef8376a1 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot gameAndReg32x32_TB_behav xil_defaultlib.gameAndReg32x32_TB -log elaborate.log" 
+// Tcl Message: Built simulation snapshot gameAndReg32x32_TB_behav 
+// TclEventType: LAUNCH_SIM
+// TclEventType: LOAD_FEATURE
+// Tcl Message: ERROR: [Common 17-165] Too many positional options when parsing '-notrace', please type 'webtalk -help' for usage info.  
+// Tcl Message: run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 761.336 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '9' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/xilinxprj/game.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "gameAndReg32x32_TB_behav -key {Behavioral:sim_1:Functional:gameAndReg32x32_TB} -tclbatch {gameAndReg32x32_TB.tcl} -view {{C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/testbench/gameAndReg32x32_TB_behav.wcfg}} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2019.1 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// WARNING: HEventQueue.dispatchEvent() is taking  2235 ms.
+// Tcl Message: Time resolution is 1 ps 
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// Elapsed time: 17 seconds
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Waveform: addNotify
+// Tcl Message: open_wave_config {C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/testbench/gameAndReg32x32_TB_behav.wcfg} 
+// Waveform: addNotify
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 74 MB. Current time: 11/11/22, 12:40:43 PM GMT
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// Tcl Message: source gameAndReg32x32_TB.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } # run 2500ns 
+// Tcl Message: Note: %N : Simulation Start. Time: 0 ps  Iteration: 0  Process: /gameAndReg32x32_TB/stim  File: C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/testbench/gameAndReg32x32_TB.vhd 
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: xsim: Time (s): cpu = 00:00:14 ; elapsed = 00:00:07 . Memory (MB): peak = 761.336 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'gameAndReg32x32_TB_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 2500ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 761.336 ; gain = 0.000 
+// 'd' command handler elapsed time: 22 seconds
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+dismissDialog("Run Simulation"); // e (cl)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// [GUI Memory]: 133 MB (+3725kb) [22:54:47]
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 75 MB. Current time: 11/11/22, 12:40:47 PM GMT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 75 MB. Current time: 11/11/22, 12:40:47 PM GMT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 74 MB. Current time: 11/11/22, 12:40:48 PM GMT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 75 MB. Current time: 11/11/22, 12:40:49 PM GMT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 75 MB. Current time: 11/11/22, 12:40:54 PM GMT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 83 MB. Current time: 11/11/22, 12:40:57 PM GMT
+// Elapsed time: 18 seconds
+expandTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, game, reg32x32(15:0)(31:0)]", 18); // a (r, cl)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+expandTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, game, reg32x32(15:0)(31:0), [3][31:0]]", 31); // a (r, cl)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+collapseTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, game, reg32x32(15:0)(31:0), [3][31:0]]", 31); // a (r, cl)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 76 MB. Current time: 11/11/22, 12:41:14 PM GMT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 75 MB. Current time: 11/11/22, 12:41:26 PM GMT
+// Elapsed time: 14 seconds
+selectMenu("Waveform Style"); // ae (an, cl)
+selectMenu("Signal Color"); // ae (an, cl)
+selectMenu("Radix"); // ae (an, cl)
+selectMenu("Radix"); // ae (an, cl)
+selectMenu("Signal Color"); // ae (an, cl)
+selectMenu("Waveform Style"); // ae (an, cl)
+selectMenu("Waveform Style"); // ae (an, cl)
+selectMenu("Signal Color"); // ae (an, cl)
+selectMenu("Radix"); // ae (an, cl)
+selectMenu("Radix"); // ae (an, cl)
+selectMenu("Signal Color"); // ae (an, cl)
+selectMenu("Waveform Style"); // ae (an, cl)
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, game, reg32x32(15:0)(31:0), [1][31:0]]", 33, true); // a (r, cl) - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 75 MB. Current time: 11/11/22, 12:41:35 PM GMT
+expandTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, game, ballData]", 31); // a (r, cl)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 75 MB. Current time: 11/11/22, 12:41:42 PM GMT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 75 MB. Current time: 11/11/22, 12:41:47 PM GMT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 75 MB. Current time: 11/11/22, 12:41:47 PM GMT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 75 MB. Current time: 11/11/22, 12:41:48 PM GMT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 81 MB. Current time: 11/11/22, 12:41:48 PM GMT
+// Elapsed time: 19 seconds
+expandTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, game, reg32x32(15:0)(31:0), [15][31:0]]", 11); // a (r, cl)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+collapseTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, game, reg32x32(15:0)(31:0), [15][31:0]]", 11); // a (r, cl)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 75 MB. Current time: 11/11/22, 12:42:00 PM GMT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_CLOSE_WCFG
+closeView(RDIResource.RDIViews_WAVEFORM_VIEWER, "gameAndReg32x32_TB_behav.wcfg"); // w
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+// Elapsed time: 31 seconds
+selectCodeEditor("game.vhd", 184, 726); // cl (w, cl)
+// Elapsed time: 28 seconds
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("game.vhd", 186, 875); // cl (w, cl)
+typeControlKey(null, null, 'z');
+selectCodeEditor("game.vhd", 408, 808); // cl (w, cl)
+selectCodeEditor("game.vhd", 267, 766); // cl (w, cl)
+selectCodeEditor("game.vhd", 405, 795); // cl (w, cl)
+selectCodeEditor("game.vhd", 413, 809); // cl (w, cl)
+selectCodeEditor("game.vhd", 180, 796); // cl (w, cl)
+// Elapsed time: 11 seconds
+selectCodeEditor("game.vhd", 92, 656); // cl (w, cl)
+selectCodeEditor("game.vhd", 119, 322); // cl (w, cl)
+selectCodeEditor("game.vhd", 105, 323); // cl (w, cl)
+selectCodeEditor("game.vhd", 321, 553); // cl (w, cl)
+// Elapsed time: 21 seconds
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+selectCodeEditor("game.vhd", 162, 564); // cl (w, cl)
+// Elapsed time: 13 seconds
+selectCodeEditor("game.vhd", 122, 648); // cl (w, cl)
+selectCodeEditor("game.vhd", 217, 648); // cl (w, cl)
+// Elapsed time: 126 seconds
+selectCodeEditor("game.vhd", 111, 467); // cl (w, cl)
+// Elapsed time: 189 seconds
+selectCodeEditor("game.vhd", 396, 192); // cl (w, cl)
+selectCodeEditor("game.vhd", 554, 184); // cl (w, cl)
+// Elapsed time: 55 seconds
+selectCodeEditor("game.vhd", 267, 735); // cl (w, cl)
+selectCodeEditor("game.vhd", 265, 701); // cl (w, cl)
+// Elapsed time: 61 seconds
+selectCodeEditor("game.vhd", 330, 482); // cl (w, cl)
+selectCodeEditor("game.vhd", 146, 484); // cl (w, cl)
+selectCodeEditor("game.vhd", 103, 409); // cl (w, cl)
+// Elapsed time: 35 seconds
+selectCodeEditor("game.vhd", 306, 588); // cl (w, cl)
+selectCodeEditor("game.vhd", 168, 307); // cl (w, cl)
+// Elapsed time: 11 seconds
+selectCodeEditor("game.vhd", 199, 627); // cl (w, cl)
+// Elapsed time: 31 seconds
+selectCodeEditor("game.vhd", 360, 466); // cl (w, cl)
+selectCodeEditor("game.vhd", 320, 513); // cl (w, cl)
+selectCodeEditor("game.vhd", 336, 570); // cl (w, cl)
+// Elapsed time: 12 seconds
+selectCodeEditor("game.vhd", 477, 533); // cl (w, cl)
+// Elapsed time: 55 seconds
+selectCodeEditor("game.vhd", 205, 771); // cl (w, cl)
+selectCodeEditor("game.vhd", 294, 599); // cl (w, cl)
+selectCodeEditor("game.vhd", 283, 756); // cl (w, cl)
+// Elapsed time: 11 seconds
+selectCodeEditor("game.vhd", 221, 482); // cl (w, cl)
+selectCodeEditor("game.vhd", 131, 418); // cl (w, cl)
+selectCodeEditor("game.vhd", 281, 440); // cl (w, cl)
+// Elapsed time: 716 seconds
+selectCodeEditor("game.vhd", 198, 366); // cl (w, cl)
+// Elapsed time: 75 seconds
+selectCodeEditor("game.vhd", 143, 568); // cl (w, cl)
+selectCodeEditor("game.vhd", 144, 570); // cl (w, cl)
+// Elapsed time: 83 seconds
+selectCodeEditor("game.vhd", 264, 262); // cl (w, cl)
+selectCodeEditor("game.vhd", 379, 236); // cl (w, cl)
+selectCodeEditor("game.vhd", 229, 248); // cl (w, cl)
+selectCodeEditor("game.vhd", 332, 246); // cl (w, cl)
+selectCodeEditor("game.vhd", 274, 263); // cl (w, cl)
+// Elapsed time: 27 seconds
+selectCodeEditor("game.vhd", 205, 482); // cl (w, cl)
+selectCodeEditor("game.vhd", 278, 513); // cl (w, cl)
+selectCodeEditor("game.vhd", 199, 493); // cl (w, cl)
+selectCodeEditor("game.vhd", 336, 524); // cl (w, cl)
+selectCodeEditor("game.vhd", 196, 518); // cl (w, cl)
+selectCodeEditor("game.vhd", 241, 535); // cl (w, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 69 MB. Current time: 11/11/22, 1:12:04 PM GMT
+// Elapsed time: 607 seconds
+selectCodeEditor("game.vhd", 164, 537); // cl (w, cl)
+// Elapsed time: 28 seconds
+selectCodeEditor("game.vhd", 204, 309); // cl (w, cl)
+selectCodeEditor("game.vhd", 344, 650); // cl (w, cl)
+selectCodeEditor("game.vhd", 310, 657); // cl (w, cl)
+selectCodeEditor("game.vhd", 316, 657); // cl (w, cl)
+selectCodeEditor("game.vhd", 316, 657, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("game.vhd", 322, 656); // cl (w, cl)
+selectCodeEditor("game.vhd", 322, 656, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("game.vhd", 263, 723); // cl (w, cl)
+// Elapsed time: 53 seconds
+selectCodeEditor("game.vhd", 179, 604); // cl (w, cl)
+// Elapsed time: 58 seconds
+selectCodeEditor("game.vhd", 597, 669); // cl (w, cl)
+selectCodeEditor("game.vhd", 313, 643); // cl (w, cl)
+selectCodeEditor("game.vhd", 635, 669); // cl (w, cl)
+// Elapsed time: 11 seconds
+selectCodeEditor("game.vhd", 375, 601); // cl (w, cl)
+// Elapsed time: 14 seconds
+selectCodeEditor("game.vhd", 508, 623); // cl (w, cl)
+// Elapsed time: 36 seconds
+selectCodeEditor("game.vhd", 248, 687); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'c'); // cl (w, cl)
+selectCodeEditor("game.vhd", 283, 690); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+selectCodeEditor("game.vhd", 381, 701); // cl (w, cl)
+selectCodeEditor("game.vhd", 520, 727); // cl (w, cl)
+// Elapsed time: 11 seconds
+selectCodeEditor("game.vhd", 518, 622); // cl (w, cl)
+// Elapsed time: 12 seconds
+selectCodeEditor("game.vhd", 546, 618); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'c'); // cl (w, cl)
+selectCodeEditor("game.vhd", 537, 672); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'c'); // cl (w, cl)
+selectCodeEditor("game.vhd", 517, 719); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+// Elapsed time: 10 seconds
+selectCodeEditor("game.vhd", 264, 689); // cl (w, cl)
+selectCodeEditor("game.vhd", 283, 686); // cl (w, cl)
+selectCodeEditor("game.vhd", 283, 686); // cl (w, cl)
+// Elapsed time: 23 seconds
+selectCodeEditor("game.vhd", 281, 632); // cl (w, cl)
+selectCodeEditor("game.vhd", 262, 639); // cl (w, cl)
+// Elapsed time: 11 seconds
+selectCodeEditor("game.vhd", 478, 583); // cl (w, cl)
+// Elapsed time: 170 seconds
+selectCodeEditor("game.vhd", 218, 306); // cl (w, cl)
+selectCodeEditor("game.vhd", 263, 297); // cl (w, cl)
+selectCodeEditor("game.vhd", 82, 603); // cl (w, cl)
+selectCodeEditor("game.vhd", 200, 611); // cl (w, cl)
+selectCodeEditor("game.vhd", 138, 430); // cl (w, cl)
+selectCodeEditor("game.vhd", 236, 617); // cl (w, cl)
+selectCodeEditor("game.vhd", 222, 722); // cl (w, cl)
+selectCodeEditor("game.vhd", 366, 646); // cl (w, cl)
+selectCodeEditor("game.vhd", 229, 729); // cl (w, cl)
+selectCodeEditor("game.vhd", 121, 327); // cl (w, cl)
+selectCodeEditor("game.vhd", 250, 331); // cl (w, cl)
+selectCodeEditor("game.vhd", 137, 452); // cl (w, cl)
+selectCodeEditor("game.vhd", 238, 484); // cl (w, cl)
+// Elapsed time: 13 seconds
+selectCodeEditor("game.vhd", 128, 329); // cl (w, cl)
+// Elapsed time: 78 seconds
+selectCodeEditor("game.vhd", 217, 419); // cl (w, cl)
+selectCodeEditor("game.vhd", 502, 419); // cl (w, cl)
+// Elapsed time: 102 seconds
+selectCodeEditor("game.vhd", 65, 595); // cl (w, cl)
+selectCodeEditor("game.vhd", 239, 586); // cl (w, cl)
+// Elapsed time: 47 seconds
+selectCodeEditor("game.vhd", 394, 534); // cl (w, cl)
+// Elapsed time: 40 seconds
+selectCodeEditor("game.vhd", 217, 298); // cl (w, cl)
+selectCodeEditor("game.vhd", 452, 306); // cl (w, cl)
+selectCodeEditor("game.vhd", 643, 287); // cl (w, cl)
+selectCodeEditor("game.vhd", 651, 299); // cl (w, cl)
+// Elapsed time: 25 seconds
+selectCodeEditor("game.vhd", 258, 366); // cl (w, cl)
+// Elapsed time: 11 seconds
+selectCodeEditor("game.vhd", 195, 691); // cl (w, cl)
+selectCodeEditor("game.vhd", 61, 367); // cl (w, cl)
+selectCodeEditor("game.vhd", 61, 367, false, false, false, false, true); // cl (w, cl) - Double Click
+// Elapsed time: 36 seconds
+selectCodeEditor("game.vhd", 266, 373); // cl (w, cl)
+// Elapsed time: 94 seconds
+selectCodeEditor("game.vhd", 148, 372, false, false, false, true, false); // cl (w, cl) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_COPY, "Copy"); // ah (an, Popup.HeavyWeightWindow)
+selectCodeEditor("game.vhd", 389, 438); // cl (w, cl)
+selectCodeEditor("game.vhd", 380, 396); // cl (w, cl)
+selectCodeEditor("game.vhd", 384, 378); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// Elapsed time: 16 seconds
+selectCodeEditor("game.vhd", 404, 486); // cl (w, cl)
+// Elapsed time: 83 seconds
+selectCodeEditor("game.vhd", 259, 720); // cl (w, cl)
+// Elapsed time: 27 seconds
+selectCodeEditor("game.vhd", 264, 806); // cl (w, cl)
+selectCodeEditor("game.vhd", 451, 681); // cl (w, cl)
+selectCodeEditor("game.vhd", 286, 711); // cl (w, cl)
+selectCodeEditor("game.vhd", 300, 737); // cl (w, cl)
+// Elapsed time: 15 seconds
+selectCodeEditor("game.vhd", 307, 313); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'c'); // cl (w, cl)
+selectCodeEditor("game.vhd", 297, 292); // cl (w, cl)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("game.vhd", 306, 210); // cl (w, cl)
+selectCodeEditor("game.vhd", 89, 397); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+selectCodeEditor("game.vhd", 144, 505); // cl (w, cl)
+selectCodeEditor("game.vhd", 98, 648); // cl (w, cl)
+typeControlKey((HResource) null, "game.vhd", 'v'); // cl (w, cl)
+selectCodeEditor("game.vhd", 496, 639); // cl (w, cl)
+// WARNING: HEventQueue.dispatchEvent() is taking  2794 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2757 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2654 ms.
+// Elapsed time: 32 seconds
+selectCodeEditor("game.vhd", 310, 719, false, false, false, true, false); // cl (w, cl) - Popup Trigger
+selectCodeEditor("game.vhd", 352, 562, false, false, false, true, false); // cl (w, cl) - Popup Trigger
+selectCodeEditor("game.vhd", 654, 576, false, false, false, true, false); // cl (w, cl) - Popup Trigger
+selectCodeEditor("game.vhd", 654, 576, false, false, false, true, false); // cl (w, cl) - Popup Trigger
+selectMenuItem(RDIResource.HInputHandler_INDENT_SELECTION, "Indent Selection"); // ah (an, Popup.HeavyWeightWindow)
+// WARNING: HEventQueue.dispatchEvent() is taking  2778 ms.
+selectCodeEditor("game.vhd", 887, 167); // cl (w, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 69 MB. Current time: 11/11/22, 1:42:05 PM GMT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 12 seconds
+selectCodeEditor("game.vhd", 108, 765); // cl (w, cl)
+selectCodeEditor("game.vhd", 136, 757); // cl (w, cl)

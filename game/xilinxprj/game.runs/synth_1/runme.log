@@ -1,0 +1,513 @@
+
+*** Running vivado
+    with args -log gameAndReg32x32.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source gameAndReg32x32.tcl
+
+
+****** Vivado v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source gameAndReg32x32.tcl -notrace
+Command: synth_design -top gameAndReg32x32 -part xc7z020clg400-1 -no_iobuf
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 23040 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 444.566 ; gain = 165.402
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'gameAndReg32x32' [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd:32]
+INFO: [Synth 8-3491] module 'game' declared at 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd:41' bound to instance 'game_i' of component 'game' [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd:46]
+INFO: [Synth 8-638] synthesizing module 'game' [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd:61]
+WARNING: [Synth 8-614] signal 'CSBallVec' is read in the process but is not in the sensitivity list [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd:97]
+INFO: [Synth 8-256] done synthesizing module 'game' (1#1) [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd:61]
+INFO: [Synth 8-256] done synthesizing module 'gameAndReg32x32' (2#1) [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd:32]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][31]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][30]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][29]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][23]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][22]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][21]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][15]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][14]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][13]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][12]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][11]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][10]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][9]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][8]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[0][1]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[0][0]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][31]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][30]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][29]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][28]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][27]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][23]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][22]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][21]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][20]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][31]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][30]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][29]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][23]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][22]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][21]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][15]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][14]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][13]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][12]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][11]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][10]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][9]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][8]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][7]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][6]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][5]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][4]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][3]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][2]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][1]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][0]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][31]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][30]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][29]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][28]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][27]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][26]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][25]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][24]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][23]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][22]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][21]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][20]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][19]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][18]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][17]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][16]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][15]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][14]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][13]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][12]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][11]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][10]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][7]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][6]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][5]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][4]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][3]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][2]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][1]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][0]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[255]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[254]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[253]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[252]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[251]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[250]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[249]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[248]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[247]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[246]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[245]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[244]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[243]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[242]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[241]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[240]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[239]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[238]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[237]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[236]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[235]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[234]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[233]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 506.523 ; gain = 227.359
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 506.523 ; gain = 227.359
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 506.523 ; gain = 227.359
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd:237]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd:239]
+INFO: [Synth 8-802] inferred FSM for state register 'CS_reg' in module 'game'
+INFO: [Synth 8-5544] ROM "active" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "NSWallVec" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                     000000000001 |                             0000
+     setupgameparameters |                     000000000010 |                             0010
+           initgamearena |                     000000000100 |                             0011
+                initball |                     000000001000 |                             0100
+              initpaddle |                     000000010000 |                             0101
+               initlives |                     000000100000 |                             0110
+               initscore |                     000001000000 |                             0111
+             writetocsr0 |                     000010000000 |                             0001
+               waitstate |                     000100000000 |                             1000
+           processpaddle |                     001000000000 |                             1001
+             processball |                     010000000000 |                             1010
+          writeballtomem |                     100000000000 |                             1011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'CS_reg' using encoding 'one-hot' in module 'game'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 506.523 ; gain = 227.359
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     21 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 4     
++---Registers : 
+	               32 Bit    Registers := 35    
+	               21 Bit    Registers := 2     
+	                5 Bit    Registers := 8     
+	                3 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	  12 Input     32 Bit        Muxes := 1     
+	   2 Input     31 Bit        Muxes := 2     
+	   2 Input     21 Bit        Muxes := 1     
+	  12 Input     21 Bit        Muxes := 1     
+	  12 Input     12 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 2     
+	  12 Input      8 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+	  12 Input      5 Bit        Muxes := 4     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
+	   3 Input      1 Bit        Muxes := 33    
+	  12 Input      1 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module gameAndReg32x32 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 32    
++---Muxes : 
+	   3 Input      1 Bit        Muxes := 32    
+Module game 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     21 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 4     
++---Registers : 
+	               32 Bit    Registers := 3     
+	               21 Bit    Registers := 2     
+	                5 Bit    Registers := 8     
+	                3 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	  12 Input     32 Bit        Muxes := 1     
+	   2 Input     31 Bit        Muxes := 2     
+	   2 Input     21 Bit        Muxes := 1     
+	  12 Input     21 Bit        Muxes := 1     
+	  12 Input     12 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 2     
+	  12 Input      8 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+	  12 Input      5 Bit        Muxes := 4     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
+	   3 Input      1 Bit        Muxes := 1     
+	  12 Input      1 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port add[7] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port add[5] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[95] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[94] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[93] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[92] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[91] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[90] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[89] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[88] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[87] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[86] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[85] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[84] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[83] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[82] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[81] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[80] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[79] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[78] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[77] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[76] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[75] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[74] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[73] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[72] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[71] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[70] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[69] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[68] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[67] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[66] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[65] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[64] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[63] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[62] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[61] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[60] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[59] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[58] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[57] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[56] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[55] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[54] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[53] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[52] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[51] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[50] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[49] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[48] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[47] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[46] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[45] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[44] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[43] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[42] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[41] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[40] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[39] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[38] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[37] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[36] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[35] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[34] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[33] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[32] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[31] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[30] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[29] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[28] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[27] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[26] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[25] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[24] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[23] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[22] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[21] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[20] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[19] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[18] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[17] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[16] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[15] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[14] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[13] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[12] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[11] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[10] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[9] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[8] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[7] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[6] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[5] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[4] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[3] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[2] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[1] driven by constant 0
+WARNING: [Synth 8-3917] design gameAndReg32x32 has port functBus[0] driven by constant 0
+INFO: [Synth 8-3886] merging instance 'game_i/CSDlyCountMax_reg[20]' (FDCE) to 'game_i/CSScore_reg[4]'
+INFO: [Synth 8-3886] merging instance 'game_i/CSScore_reg[4]' (FDCE) to 'game_i/CSLives_reg[4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\game_i/CSLives_reg[4] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 774.391 ; gain = 495.227
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 774.391 ; gain = 495.227
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 774.391 ; gain = 495.227
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 774.391 ; gain = 495.227
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 774.391 ; gain = 495.227
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 774.391 ; gain = 495.227
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 774.391 ; gain = 495.227
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 774.391 ; gain = 495.227
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 774.391 ; gain = 495.227
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |     7|
+|2     |LUT1   |     5|
+|3     |LUT2   |    11|
+|4     |LUT3   |    41|
+|5     |LUT4   |    42|
+|6     |LUT5   |    42|
+|7     |LUT6   |   455|
+|8     |MUXF7  |    42|
+|9     |FDCE   |  1213|
+|10    |FDPE   |     1|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |  1859|
+|2     |  game_i |game   |   835|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 774.391 ; gain = 495.227
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 509 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 774.391 ; gain = 495.227
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 774.391 ; gain = 495.227
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 49 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 802.184 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+24 Infos, 199 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 802.184 ; gain = 523.020
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 802.184 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.runs/synth_1/gameAndReg32x32.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file gameAndReg32x32_utilization_synth.rpt -pb gameAndReg32x32_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Nov  8 13:30:20 2022...

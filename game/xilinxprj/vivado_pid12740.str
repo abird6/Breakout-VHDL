@@ -1,0 +1,770 @@
+/*
+
+Xilinx Vivado v2019.1 (64-bit) [Major: 2019, Minor: 1]
+SW Build: 2552052 on Fri May 24 14:49:42 MDT 2019
+IP Build: 2548770 on Fri May 24 18:01:18 MDT 2019
+
+Process ID (PID): 12740
+License: Customer
+
+Current time: 	Tue Nov 08 12:31:20 GMT 2022
+Time zone: 	Greenwich Mean Time (Europe/London)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1366x768
+Screen resolution (DPI): 100
+Available screens: 1
+Available disk space: 11 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2019.1/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2019.1/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	FEARG
+User home directory: C:/Users/FEARG
+User working directory: C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj
+User country: 	IE
+User language: 	en
+User locale: 	en_IE
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2019.1
+RDI_DATADIR: C:/Xilinx/Vivado/2019.1/data
+RDI_BINDIR: C:/Xilinx/Vivado/2019.1/bin
+
+Vivado preferences file location: C:/Users/FEARG/AppData/Roaming/Xilinx/Vivado/2019.1/vivado.xml
+Vivado preferences directory: C:/Users/FEARG/AppData/Roaming/Xilinx/Vivado/2019.1/
+Vivado layouts directory: C:/Users/FEARG/AppData/Roaming/Xilinx/Vivado/2019.1/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2019.1/lib/classes/planAhead.jar
+Vivado log file location: 	C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/vivado.log
+Vivado journal file location: 	C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/vivado.jou
+Engine tmp dir: 	C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/.Xil/Vivado-12740-DESKTOP-FKL96NT
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2019.1
+XILINX_VIVADO: C:/Xilinx/Vivado/2019.1
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2019.1
+
+
+GUI allocated memory:	185 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 605 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// by (cl):  Open Project : addNotify
+// Opening Vivado Project: C:\2022b\courses\EE452\0_EE452_2122\DSPProc\game\xilinxprj\game.xpr. Version: Vivado v2019.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/DSPProcV1.1/DSPFunctions/game/xilinxprj' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 104 MB (+106100kb) [00:00:18]
+// [Engine Memory]: 629 MB (+507763kb) [00:00:18]
+// WARNING: HEventQueue.dispatchEvent() is taking  4957 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 658 MB. GUI used memory: 49 MB. Current time: 11/8/22, 12:31:27 PM GMT
+// Tcl Message: open_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:09 . Memory (MB): peak = 686.918 ; gain = 52.422 
+// Project name: game; location: C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj; part: xc7z020clg400-1
+dismissDialog("Open Project"); // by (cl)
+// RDIResource.RDIViews_PROPERTIES: Properties: close view
+// Tcl Message: update_compile_order -fileset sources_1 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, gameAndReg32x32(struct) (gameAndReg32x32.vhd)]", 1); // B (F, cl)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Libraries", 1); // i (N, cl)
+// PAPropertyPanels.initPanels (arrayPackage.vhd) elapsed time: 0.4s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, arrayPackage.vhd]", 3, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, arrayPackage.vhd]", 3, false, false, false, false, true, false); // B (F, cl) - Popup Trigger
+selectMenuItem(PAResourceCommand.PACommandNames_SRC_REPLACE_FILE, "Replace File..."); // ah (an, cl)
+// Run Command: PAResourceCommand.PACommandNames_SRC_REPLACE_FILE
+// Elapsed time: 24 seconds
+setFileChooser("C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/arrayPackage.vhd");
+// 'dJ' command handler elapsed time: 24 seconds
+// [Engine Memory]: 672 MB (+12342kb) [00:01:00]
+// TclEventType: DG_GRAPH_STALE
+// by (cl):  Replace File : addNotify
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_files -from_files C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/arrayPackage.vhd -to_files C:/2022b/courses/EE452/0_EE452_2122/DSPProc/DSPProcV1.1/pkgAndComponents/arrayPackage.vhd -filesets [get_filesets *] 
+// Tcl Message: INFO: [filemgmt 20-762] Replacing file 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/DSPProcV1.1/pkgAndComponents/arrayPackage.vhd' with file 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/arrayPackage.vhd'. 
+dismissDialog("Replace File"); // by (cl)
+// [Engine Memory]: 708 MB (+2952kb) [00:01:02]
+// HMemoryUtils.trashcanNow. Engine heap size: 708 MB. GUI used memory: 51 MB. Current time: 11/8/22, 12:32:08 PM GMT
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, game.vhd]", 4, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, game.vhd]", 4, false, false, false, false, true, false); // B (F, cl) - Popup Trigger
+selectMenuItem(PAResourceCommand.PACommandNames_SRC_REPLACE_FILE, "Replace File..."); // ah (an, cl)
+// Run Command: PAResourceCommand.PACommandNames_SRC_REPLACE_FILE
+setFileChooser("C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd");
+// Tcl Message: update_files -from_files C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd -to_files C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd -filesets [get_filesets *] 
+// Tcl Message: ERROR: [Vivado 12-3481] Cannot replace a file with itself: 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd' 
+// CommandFailedException: ERROR: [Common 17-69] Command failed: ERROR: [Vivado 12-3481] Cannot replace a file with itself: 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd'  
+// by (cl):  Replace File : addNotify
+// a (cl): Critical Messages: addNotify
+dismissDialog("Replace File"); // by (cl)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+dismissDialog("Critical Messages"); // a (cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, gameAndReg32x32.vhd]", 5, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, VHDL, xil_defaultlib, gameAndReg32x32.vhd]", 5, false, false, false, false, true, false); // B (F, cl) - Popup Trigger
+selectMenuItem(PAResourceCommand.PACommandNames_SRC_REPLACE_FILE, "Replace File..."); // ah (an, Popup.HeavyWeightWindow)
+// Run Command: PAResourceCommand.PACommandNames_SRC_REPLACE_FILE
+setFileChooser("C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd");
+// Tcl Message: update_files -from_files C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd -to_files C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd -filesets [get_filesets *] 
+// Tcl Message: ERROR: [Vivado 12-3481] Cannot replace a file with itself: 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd' 
+// CommandFailedException: ERROR: [Common 17-69] Command failed: ERROR: [Vivado 12-3481] Cannot replace a file with itself: 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd'  
+// a (cl): Critical Messages: addNotify
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+dismissDialog("Critical Messages"); // a (cl)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Hierarchy", 0); // i (N, cl)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 4); // B (F, cl)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 5); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, gameAndReg32x32_TB(Behavioral) (gameAndReg32x32_TB.vhd)]", 6, true); // B (F, cl) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, gameAndReg32x32_TB(Behavioral) (gameAndReg32x32_TB.vhd)]", 6, true, false, false, false, true, false); // B (F, cl) - Popup Trigger - Node
+selectMenuItem(PAResourceCommand.PACommandNames_SRC_REPLACE_FILE, "Replace File..."); // ah (an, Popup.HeavyWeightWindow)
+// Run Command: PAResourceCommand.PACommandNames_SRC_REPLACE_FILE
+setFileChooser("C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB.vhd");
+// 'dJ' command handler elapsed time: 3 seconds
+// Tcl Message: update_files -from_files C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB.vhd -to_files C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB.vhd -filesets [get_filesets *] 
+// Tcl Message: ERROR: [Vivado 12-3481] Cannot replace a file with itself: 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB.vhd' 
+// CommandFailedException: ERROR: [Common 17-69] Command failed: ERROR: [Vivado 12-3481] Cannot replace a file with itself: 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB.vhd'  
+// [GUI Memory]: 109 MB (+461kb) [00:01:26]
+// a (cl): Critical Messages: addNotify
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+dismissDialog("Critical Messages"); // a (cl)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, game_TB(Behavioral) (game_TB.vhd)]", 7); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, game_TB(Behavioral) (game_TB.vhd)]", 7, true); // B (F, cl) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, game_TB(Behavioral) (game_TB.vhd)]", 7, true, false, false, false, true, false); // B (F, cl) - Popup Trigger - Node
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ah (an, Popup.HeavyWeightWindow)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// aE (cl): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aE)
+dismissDialog("Remove Sources"); // aE (cl)
+// Tcl Message: export_ip_user_files -of_objects  [get_files C:/2022b/courses/EE452/0_EE452_2122/DSPProc/DSPProcV1.1/DSPFunctions/game/testbench/game_TB.vhd] -no_script -reset -force -quiet 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// aE (cl): Remove Sources: addNotify
+// by (aE):  Remove Sources : addNotify
+// Tcl Message: remove_files  -fileset sim_1 C:/2022b/courses/EE452/0_EE452_2122/DSPProc/DSPProcV1.1/DSPFunctions/game/testbench/game_TB.vhd 
+dismissDialog("Remove Sources"); // by (aE)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Waveform Configuration File]", 7); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Waveform Configuration File, game_TB_behav.wcfg]", 9, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Waveform Configuration File, game_TB_behav.wcfg]", 9, false, false, false, false, true, false); // B (F, cl) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ah (an, Popup.HeavyWeightWindow)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// aE (cl): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aE)
+dismissDialog("Remove Sources"); // aE (cl)
+// Tcl Message: export_ip_user_files -of_objects  [get_files C:/2022b/courses/EE452/0_EE452_2122/DSPProc/DSPProcV1.1/DSPFunctions/game/testbench/game_TB_behav.wcfg] -no_script -reset -force -quiet 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  -fileset sim_1 C:/2022b/courses/EE452/0_EE452_2122/DSPProc/DSPProcV1.1/DSPFunctions/game/testbench/game_TB_behav.wcfg 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Waveform Configuration File, gameAndReg32x32_TB_behav.wcfg]", 8, false); // B (F, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 725 MB. GUI used memory: 53 MB. Current time: 11/8/22, 12:32:57 PM GMT
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Waveform Configuration File, gameAndReg32x32_TB_behav.wcfg]", 8, false, false, false, false, true, false); // B (F, cl) - Popup Trigger
+selectMenuItem(PAResourceCommand.PACommandNames_SRC_REPLACE_FILE, "Replace File..."); // ah (an, Popup.HeavyWeightWindow)
+// Run Command: PAResourceCommand.PACommandNames_SRC_REPLACE_FILE
+setFileChooser("C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB_behav.wcfg");
+// Tcl Message: update_files -from_files C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB_behav.wcfg -to_files C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB_behav.wcfg -filesets [get_filesets *] 
+// Tcl Message: ERROR: [Vivado 12-3481] Cannot replace a file with itself: 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB_behav.wcfg' 
+// CommandFailedException: ERROR: [Common 17-69] Command failed: ERROR: [Vivado 12-3481] Cannot replace a file with itself: 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB_behav.wcfg'  
+// a (cl): Critical Messages: addNotify
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+dismissDialog("Critical Messages"); // a (cl)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (O, cl)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ah (an, cl)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// e (cl):  Run Simulation : addNotify
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [SIM-utils-54] Inspecting design source files for 'gameAndReg32x32_TB' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design 
+// Tcl Message: INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.sim/sim_1/behav/xsim' 
+// Tcl Message: "xvhdl --incr --relax -prj gameAndReg32x32_TB_vhdl.prj" 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [VRFC 10-163] Analyzing VHDL file "C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/arrayPackage.vhd" into library xil_defaultlib INFO: [VRFC 10-163] Analyzing VHDL file "C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd" into library xil_defaultlib INFO: [VRFC 10-3107] analyzing entity 'game' INFO: [VRFC 10-163] Analyzing VHDL file "C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd" into library xil_defaultlib INFO: [VRFC 10-3107] analyzing entity 'gameAndReg32x32' INFO: [VRFC 10-163] Analyzing VHDL file "C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB.vhd" into library xil_defaultlib INFO: [VRFC 10-3107] analyzing entity 'gameAndReg32x32_TB' 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '2' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.sim/sim_1/behav/xsim' 
+// Tcl Message: "xelab -wto 27a44575197744788964bd24ef8376a1 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot gameAndReg32x32_TB_behav xil_defaultlib.gameAndReg32x32_TB -log elaborate.log" 
+// TclEventType: LAUNCH_SIM
+// TclEventType: LOAD_FEATURE
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "gameAndReg32x32_TB_behav -key {Behavioral:sim_1:Functional:gameAndReg32x32_TB} -tclbatch {gameAndReg32x32_TB.tcl} -view {C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB_behav.wcfg} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2019.1 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// WARNING: HEventQueue.dispatchEvent() is taking  1118 ms.
+// Tcl Message: Time resolution is 1 ps 
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Waveform: addNotify
+// Tcl Message: open_wave_config C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB_behav.wcfg 
+// Waveform: addNotify
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// HMemoryUtils.trashcanNow. Engine heap size: 725 MB. GUI used memory: 58 MB. Current time: 11/8/22, 12:33:22 PM GMT
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: source gameAndReg32x32_TB.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } # run 2500ns 
+// Tcl Message: Note: %N : Simulation Start. Time: 0 ps  Iteration: 0  Process: /gameAndReg32x32_TB/stim  File: C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB.vhd 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'gameAndReg32x32_TB_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 2500ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 738.836 ; gain = 4.227 
+// 'd' command handler elapsed time: 11 seconds
+dismissDialog("Run Simulation"); // e (cl)
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Waveform: addNotify
+// Waveform: addNotify
+// Waveform: addNotify
+floatFrame(RDIResource.RDIViews_WAVEFORM_VIEWER, "gameAndReg32x32_TB_behav.wcfg"); // az (aK, cl)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// RDIResource.RDIViews_WAVEFORM_VIEWER: gameAndReg32x32_TB_behav.wcfg: float view
+maximizeFrame(RDIResource.RDIViews_WAVEFORM_VIEWER, "gameAndReg32x32_TB_behav.wcfg"); // az (aK, aM)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// [GUI Memory]: 117 MB (+2205kb) [00:02:21]
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 733 MB. GUI used memory: 61 MB. Current time: 11/8/22, 12:33:27 PM GMT
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 204, 357); // n (o, aM)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 733 MB. GUI used memory: 61 MB. Current time: 11/8/22, 12:33:28 PM GMT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 733 MB. GUI used memory: 61 MB. Current time: 11/8/22, 12:33:31 PM GMT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 733 MB. GUI used memory: 61 MB. Current time: 11/8/22, 12:33:32 PM GMT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 733 MB. GUI used memory: 61 MB. Current time: 11/8/22, 12:33:32 PM GMT
+collapseTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, game, reg4x32_CSRB[3:0][31:0], [0][31:0]]", 8); // a (r, aM)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, game, reg32x32(15:0)(31:0)]", 14, true); // a (r, aM) - Node
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, game, reg32x32(15:0)(31:0)]", 14, true, false, false, false, true, false); // a (r, aM) - Popup Trigger - Node
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Elapsed time: 12 seconds
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 212, 358); // n (o, cl)Waveform: addNotify
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 212, 358); // n (o, cl)Waveform: addNotify
+dockFrame(RDIResource.RDIViews_WAVEFORM_VIEWER, "gameAndReg32x32_TB_behav.wcfg"); // az (aK, aM)
+maximizeFrame(RDIResource.RDIViews_WAVEFORM_VIEWER, "gameAndReg32x32_TB_behav.wcfg"); // az (aK, aM)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// RDIResource.RDIViews_WAVEFORM_VIEWER: gameAndReg32x32_TB_behav.wcfg: dock view
+// HMemoryUtils.trashcanNow. Engine heap size: 734 MB. GUI used memory: 58 MB. Current time: 11/8/22, 12:33:59 PM GMT
+selectButton(RDIResourceCommand.RDICommands_WAVEFORM_SAVE_CONFIGURATION, "Waveform Viewer_waveform_save_configuration"); // B (f, cl)
+// Run Command: RDIResourceCommand.RDICommands_WAVEFORM_SAVE_CONFIGURATION
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// Tcl Message: save_wave_config {C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB_behav.wcfg} 
+// TclEventType: FILE_SET_CHANGE
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 963, 1140); // n (o, cl)Waveform: addNotify
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 963, 1140); // n (o, aM)Waveform: addNotify
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 963, 1140); // n (o, aM)Waveform: addNotify
+floatFrame(RDIResource.RDIViews_WAVEFORM_VIEWER, "gameAndReg32x32_TB_behav.wcfg"); // az (aK, cl)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// RDIResource.RDIViews_WAVEFORM_VIEWER: gameAndReg32x32_TB_behav.wcfg: float view
+collapseTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, game, reg32x32(15:0)(31:0)]", 14); // a (r, aM)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 734 MB. GUI used memory: 61 MB. Current time: 11/8/22, 12:34:07 PM GMT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 734 MB. GUI used memory: 61 MB. Current time: 11/8/22, 12:34:10 PM GMT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 734 MB. GUI used memory: 61 MB. Current time: 11/8/22, 12:34:11 PM GMT
+collapseTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, game, P_reg4x32_CSRA[3:0][31:0]]", 4); // a (r, aM)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+collapseTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, game, reg4x32_CSRB[3:0][31:0]]", 6); // a (r, aM)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 734 MB. GUI used memory: 61 MB. Current time: 11/8/22, 12:34:17 PM GMT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectButton(RDIResourceCommand.RDICommands_WAVEFORM_SAVE_CONFIGURATION, "Waveform Viewer_waveform_save_configuration"); // B (f, aM)
+// Run Command: RDIResourceCommand.RDICommands_WAVEFORM_SAVE_CONFIGURATION
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// Tcl Message: save_wave_config {C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB_behav.wcfg} 
+// TclEventType: FILE_SET_CHANGE
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 212, 358); // n (o, cl)Waveform: addNotify
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 212, 358); // n (o, cl)Waveform: addNotify
+dockFrame(RDIResource.RDIViews_WAVEFORM_VIEWER, "gameAndReg32x32_TB_behav.wcfg"); // az (aK, aM)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// RDIResource.RDIViews_WAVEFORM_VIEWER: gameAndReg32x32_TB_behav.wcfg: dock view
+// HMemoryUtils.trashcanNow. Engine heap size: 761 MB. GUI used memory: 58 MB. Current time: 11/8/22, 12:34:23 PM GMT
+// [Engine Memory]: 761 MB (+18462kb) [00:03:19]
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (O, cl)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager]", 0); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// by (cl):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// f (cl): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// by (cl):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cl)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 -jobs 2 
+// Tcl Message: [Tue Nov  8 12:34:28 2022] Launched synth_1... Run output will be captured here: C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.runs/synth_1/runme.log 
+// 'k' command handler elapsed time: 4 seconds
+dismissDialog("Starting Design Runs"); // by (cl)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// ah (cl): Synthesis Completed: addNotify
+// Elapsed time: 55 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (ah)
+dismissDialog("Synthesis Completed"); // ah (cl)
+collapseTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis, Open Elaborated Design]", 12); // u (O, cl)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis, Open Elaborated Design]", 12); // u (O, cl)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis, Open Elaborated Design, Schematic]", 15, false); // u (O, cl)
+// A (cl): Elaborate Design: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (A)
+// by (cl):  Open Elaborated Design : addNotify
+dismissDialog("Elaborate Design"); // A (cl)
+// Tcl Message: synth_design -rtl -name rtl_1 
+// Tcl Message: Command: synth_design -rtl -name rtl_1 Starting synth_design Using part: xc7z020clg400-1 Top: gameAndReg32x32 
+// HMemoryUtils.trashcanNow. Engine heap size: 912 MB. GUI used memory: 58 MB. Current time: 11/8/22, 12:35:32 PM GMT
+// TclEventType: ELABORATE_START
+// TclEventType: ELABORATE_FINISH
+// HMemoryUtils.trashcanNow. Engine heap size: 1,212 MB. GUI used memory: 58 MB. Current time: 11/8/22, 12:35:47 PM GMT
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// [Engine Memory]: 1,242 MB (+463456kb) [00:04:45]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,242 MB. GUI used memory: 58 MB. Current time: 11/8/22, 12:35:50 PM GMT
+// Xgd.load filename: C:/Xilinx/Vivado/2019.1/data/parts/xilinx/zynq/devint/zynq/xc7z020/xc7z020.xgd; ZipEntry: xc7z020_detail.xgd elapsed time: 2s
+// [Engine Memory]: 1,350 MB (+48526kb) [00:04:49]
+// TclEventType: DESIGN_NEW
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// RouteApi::loadEngineXgd elapsed time: 2.5s
+// Schematic: addNotify
+// [GUI Memory]: 141 MB (+18876kb) [00:04:53]
+// WARNING: HEventQueue.dispatchEvent() is taking  5183 ms.
+// Tcl Message: INFO: [Device 21-403] Loading part xc7z020clg400-1 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1190.488 ; gain = 174.918 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: INFO: [Synth 8-638] synthesizing module 'gameAndReg32x32' [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd:29] INFO: [Synth 8-3491] module 'game' declared at 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd:43' bound to instance 'game_i' of component 'game' [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd:43] INFO: [Synth 8-638] synthesizing module 'game' [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd:63] 
+// Tcl Message: INFO: [Synth 8-256] done synthesizing module 'game' (1#1) [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd:63] INFO: [Synth 8-256] done synthesizing module 'gameAndReg32x32' (2#1) [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd:29] 
+// Tcl Message: INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1231.637 ; gain = 216.066 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message:  Report Check Netlist:  +------+------------------+-------+---------+-------+------------------+ |      |Item              |Errors |Warnings |Status |Description       | +------+------------------+-------+---------+-------+------------------+ |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets | +------+------------------+-------+---------+-------+------------------+ --------------------------------------------------------------------------------- Start Handling Custom Attributes --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1231.637 ; gain = 216.066 
+// Tcl Message: --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1231.637 ; gain = 216.066 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: INFO: [Project 1-570] Preparing netlist for logic optimization INFO: [Opt 31-141] Inserted 96 OBUFs to IO ports without IO buffers. 
+// Tcl Message:  Processing XDC Constraints Initializing timing engine Completed Processing XDC Constraints  
+// Tcl Message: INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1374.914 ; gain = 0.000 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary: No Unisim elements were transformed.  
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: RTL Elaboration Complete:  : Time (s): cpu = 00:00:29 ; elapsed = 00:00:21 . Memory (MB): peak = 1391.508 ; gain = 375.938 
+// Tcl Message: 11 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered. synth_design completed successfully 
+// Tcl Message: synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:30 . Memory (MB): peak = 1391.508 ; gain = 612.934 
+// Run Command: PAResourceCommand.PACommandNames_SCHEMATIC
+// Schematic: addNotify
+// Elapsed time: 31 seconds
+dismissDialog("Open Elaborated Design"); // by (cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 199 seconds
+floatFrame(PAResourceOtoP.PAViews_SCHEMATIC, "Schematic (2)"); // az (aK, cl)
+// PAResourceOtoP.PAViews_SCHEMATIC: Schematic: float view
+maximizeFrame(PAResourceOtoP.PAViews_SCHEMATIC, "Schematic (2)"); // az (aK, aM)
+// PAResourceOtoP.PAViews_SCHEMATIC: Schematic: close view
+closeFrame(PAResourceOtoP.PAViews_SCHEMATIC, "Schematic (2)"); // az (aK, aM)
+dockFrame(PAResourceOtoP.PAViews_SCHEMATIC, "Schematic (2)"); // az (aK, aM)
+maximizeFrame(PAResourceOtoP.PAViews_SCHEMATIC, "Schematic (2)"); // az (aK, aM)
+closeView(PAResourceOtoP.PAViews_SCHEMATIC, "Schematic"); // f
+selectButton(PAResourceOtoP.ProjectTab_RELOAD, "Reload"); // h (cS, cl)
+// by (cl):  Reloading : addNotify
+// TclEventType: ELABORATE_START
+// Tcl Message: refresh_design 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1405.496 ; gain = 13.520 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: INFO: [Synth 8-638] synthesizing module 'gameAndReg32x32' [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd:29] INFO: [Synth 8-3491] module 'game' declared at 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd:41' bound to instance 'game_i' of component 'game' [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd:43] INFO: [Synth 8-638] synthesizing module 'game' [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd:61] 
+// Tcl Message: INFO: [Synth 8-256] done synthesizing module 'game' (1#1) [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd:61] INFO: [Synth 8-256] done synthesizing module 'gameAndReg32x32' (2#1) [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd:29] 
+// Tcl Message: INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1436.348 ; gain = 44.371 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// TclEventType: ELABORATE_FINISH
+// TclEventType: DESIGN_REFRESH
+// [Engine Memory]: 1,423 MB (+5501kb) [00:08:35]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,423 MB. GUI used memory: 63 MB. Current time: 11/8/22, 12:39:41 PM GMT
+// Engine heap size: 1,423 MB. GUI used memory: 63 MB. Current time: 11/8/22, 12:39:41 PM GMT
+// WARNING: HEventQueue.dispatchEvent() is taking  1357 ms.
+// Tcl Message:  Report Check Netlist:  +------+------------------+-------+---------+-------+------------------+ |      |Item              |Errors |Warnings |Status |Description       | +------+------------------+-------+---------+-------+------------------+ |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets | +------+------------------+-------+---------+-------+------------------+ --------------------------------------------------------------------------------- Start Handling Custom Attributes --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1436.348 ; gain = 44.371 
+// Tcl Message: --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1436.348 ; gain = 44.371 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_REFRESH
+// HMemoryUtils.trashcanNow. Engine heap size: 1,423 MB. GUI used memory: 63 MB. Current time: 11/8/22, 12:39:45 PM GMT
+// Xgd.load filename: C:/Xilinx/Vivado/2019.1/data/parts/xilinx/zynq/devint/zynq/xc7z020/xc7z020.xgd; ZipEntry: xc7z020_detail.xgd elapsed time: 1s
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// RouteApi::loadEngineXgd elapsed time: 1.8s
+// Schematic: addNotify
+// [GUI Memory]: 148 MB (+450kb) [00:08:43]
+// WARNING: HEventQueue.dispatchEvent() is taking  3631 ms.
+// Tcl Message: INFO: [Project 1-570] Preparing netlist for logic optimization INFO: [Opt 31-141] Inserted 96 OBUFs to IO ports without IO buffers. 
+// Tcl Message:  Processing XDC Constraints Initializing timing engine Completed Processing XDC Constraints  
+// Tcl Message: INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: refresh_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:16 . Memory (MB): peak = 1447.660 ; gain = 55.684 
+// Elapsed time: 16 seconds
+dismissDialog("Reloading"); // by (cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,435 MB. GUI used memory: 87 MB. Current time: 11/8/22, 1:09:48 PM GMT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DESIGN_STALE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DESIGN_STALE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DESIGN_STALE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 2734 seconds
+selectButton(PAResourceOtoP.ProjectTab_RELOAD, "Reload"); // h (cS, cl)
+// by (cl):  Reloading : addNotify
+// TclEventType: ELABORATE_START
+// Tcl Message: refresh_design 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1450.203 ; gain = 2.543 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: INFO: [Synth 8-638] synthesizing module 'gameAndReg32x32' [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd:32] INFO: [Synth 8-3491] module 'game' declared at 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd:41' bound to instance 'game_i' of component 'game' [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd:46] INFO: [Synth 8-638] synthesizing module 'game' [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd:61] 
+// Tcl Message: INFO: [Synth 8-256] done synthesizing module 'game' (1#1) [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd:61] INFO: [Synth 8-256] done synthesizing module 'gameAndReg32x32' (2#1) [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd:32] 
+// Tcl Message: INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1450.203 ; gain = 2.543 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// TclEventType: ELABORATE_FINISH
+// TclEventType: DESIGN_REFRESH
+// Engine heap size: 1,435 MB. GUI used memory: 122 MB. Current time: 11/8/22, 1:25:33 PM GMT
+// Tcl Message:  Report Check Netlist:  +------+------------------+-------+---------+-------+------------------+ |      |Item              |Errors |Warnings |Status |Description       | +------+------------------+-------+---------+-------+------------------+ |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets | +------+------------------+-------+---------+-------+------------------+ --------------------------------------------------------------------------------- Start Handling Custom Attributes --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1462.570 ; gain = 14.910 
+// Tcl Message: --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1462.570 ; gain = 14.910 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,435 MB. GUI used memory: 89 MB. Current time: 11/8/22, 1:25:34 PM GMT
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_REFRESH
+// HMemoryUtils.trashcanNow. Engine heap size: 1,435 MB. GUI used memory: 59 MB. Current time: 11/8/22, 1:25:36 PM GMT
+// Xgd.load filename: C:/Xilinx/Vivado/2019.1/data/parts/xilinx/zynq/devint/zynq/xc7z020/xc7z020.xgd; ZipEntry: xc7z020_detail.xgd elapsed time: 1s
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// RouteApi::loadEngineXgd elapsed time: 1.6s
+// Schematic: addNotify
+// WARNING: HEventQueue.dispatchEvent() is taking  3745 ms.
+// Tcl Message: INFO: [Project 1-570] Preparing netlist for logic optimization INFO: [Opt 31-141] Inserted 96 OBUFs to IO ports without IO buffers. 
+// Tcl Message:  Processing XDC Constraints Initializing timing engine Completed Processing XDC Constraints  
+// Tcl Message: INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: refresh_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:17 . Memory (MB): peak = 1472.766 ; gain = 25.105 
+// Elapsed time: 17 seconds
+dismissDialog("Reloading"); // by (cl)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (O, cl)
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 963, 1140); // n (o, cl)Waveform: addNotify
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 963, 1140); // n (o, cl)Waveform: addNotify
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 963, 1140); // n (o, cl)Waveform: addNotify
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ah (an, cl)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// by (cl):  Close : addNotify
+selectButton("OptionPane.button", "Yes"); // JButton (A, G)
+// TclEventType: WAVEFORM_CLOSE_WCFG
+// TclEventType: SIMULATION_CLOSE_SIMULATION
+// Tcl Message: close_sim 
+// Tcl Message: INFO: [Simtcl 6-16] Simulation closed 
+// e (cl):  Run Simulation : addNotify
+dismissDialog("Close"); // by (cl)
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [SIM-utils-54] Inspecting design source files for 'gameAndReg32x32_TB' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.sim/sim_1/behav/xsim' 
+// Tcl Message: "xvhdl --incr --relax -prj gameAndReg32x32_TB_vhdl.prj" 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '2' seconds INFO: [USF-XSim-99] Step results log file:'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.sim/sim_1/behav/xsim/xvhdl.log' 
+// Tcl Message: ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.sim/sim_1/behav/xsim/xvhdl.log' file for more information. ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation. 
+// Tcl Message: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors. 
+// CommandFailedException: ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.  
+// HOptionPane Error: 'ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.  (Run Simulation)'
+// 'd' command handler elapsed time: 11 seconds
+selectButton("OptionPane.button", "OK"); // JButton (A, G)
+// a (cl): Critical Messages: addNotify
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+dismissDialog("Critical Messages"); // a (cl)
+// RDIResource.RDIViews_PROPERTIES: Properties: close view
+// PAPropertyPanels.initPanels (gameAndReg32x32_TB.vhd) elapsed time: 0.2s
+// Elapsed time: 24 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, gameAndReg32x32_TB(Behavioral) (gameAndReg32x32_TB.vhd)]", 6, true); // B (F, cl) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, gameAndReg32x32_TB(Behavioral) (gameAndReg32x32_TB.vhd)]", 6, true, false, false, false, false, true); // B (F, cl) - Double Click - Node
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "P_", true); // l (aT, cl)
+selectCodeEditor("gameAndReg32x32_TB.vhd", 105, 156); // cl (w, cl)
+selectCodeEditor("gameAndReg32x32_TB.vhd", 28, 165); // cl (w, cl)
+// Elapsed time: 16 seconds
+floatFrame(PAResourceOtoP.PAViews_CODE, "gameAndReg32x32_TB.vhd *"); // az (aK, cl)
+// PAResourceOtoP.PAViews_CODE: Code: float view
+maximizeFrame(PAResourceOtoP.PAViews_CODE, "gameAndReg32x32_TB.vhd *"); // az (aK, aM)
+selectCodeEditor("gameAndReg32x32_TB.vhd", 286, 91); // cl (w, aM)
+selectCodeEditor("gameAndReg32x32_TB.vhd", 144, 29); // cl (w, aM)
+// Elapsed time: 15 seconds
+selectCodeEditor("gameAndReg32x32_TB.vhd", 25, 499); // cl (w, aM)
+// Elapsed time: 14 seconds
+selectCodeEditor("gameAndReg32x32_TB.vhd", 89, 281); // cl (w, aM)
+selectCodeEditor("gameAndReg32x32_TB.vhd", 89, 281, false, false, false, false, true); // cl (w, aM) - Double Click
+typeControlKey((HResource) null, "gameAndReg32x32_TB.vhd", 'c'); // cl (w, aM)
+// Elapsed time: 10 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "reg4x32_CSRA"); // l (aT, aM)
+selectCodeEditor("gameAndReg32x32_TB.vhd", 65, 34); // cl (w, aM)
+selectCodeEditor("gameAndReg32x32_TB.vhd", 135, 46); // cl (w, aM)
+selectCodeEditor("gameAndReg32x32_TB.vhd", 198, 302); // cl (w, aM)
+// Elapsed time: 30 seconds
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, aM)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+dockFrame(PAResourceOtoP.PAViews_CODE, "gameAndReg32x32_TB.vhd"); // az (aK, aM)
+maximizeFrame(PAResourceOtoP.PAViews_CODE, "gameAndReg32x32_TB.vhd"); // az (aK, aM)
+// PAResourceOtoP.PAViews_CODE: Code: dock view
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (O, cl)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ah (an, cl)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// e (cl):  Run Simulation : addNotify
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [SIM-utils-54] Inspecting design source files for 'gameAndReg32x32_TB' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.sim/sim_1/behav/xsim' 
+// Tcl Message: "xvhdl --incr --relax -prj gameAndReg32x32_TB_vhdl.prj" 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [VRFC 10-163] Analyzing VHDL file "C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/arrayPackage.vhd" into library xil_defaultlib INFO: [VRFC 10-163] Analyzing VHDL file "C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd" into library xil_defaultlib INFO: [VRFC 10-3107] analyzing entity 'game' INFO: [VRFC 10-163] Analyzing VHDL file "C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd" into library xil_defaultlib INFO: [VRFC 10-3107] analyzing entity 'gameAndReg32x32' INFO: [VRFC 10-163] Analyzing VHDL file "C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB.vhd" into library xil_defaultlib INFO: [VRFC 10-3107] analyzing entity 'gameAndReg32x32_TB' 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '3' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.sim/sim_1/behav/xsim' 
+// Tcl Message: "xelab -wto 27a44575197744788964bd24ef8376a1 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot gameAndReg32x32_TB_behav xil_defaultlib.gameAndReg32x32_TB -log elaborate.log" 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "gameAndReg32x32_TB_behav -key {Behavioral:sim_1:Functional:gameAndReg32x32_TB} -tclbatch {gameAndReg32x32_TB.tcl} -view {C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB_behav.wcfg} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2019.1 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// Tcl Message: Time resolution is 1 ps 
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// Waveform: addNotify
+// Waveform: addNotify
+// Tcl Message: open_wave_config C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB_behav.wcfg 
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// HMemoryUtils.trashcanNow. Engine heap size: 1,435 MB. GUI used memory: 89 MB. Current time: 11/8/22, 1:28:39 PM GMT
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: source gameAndReg32x32_TB.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } # run 2500ns 
+// Tcl Message: Note: %N : Simulation Start. Time: 0 ps  Iteration: 0  Process: /gameAndReg32x32_TB/stim  File: C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB.vhd 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'gameAndReg32x32_TB_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 2500ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 1472.766 ; gain = 0.000 
+// 'd' command handler elapsed time: 10 seconds
+dismissDialog("Run Simulation"); // e (cl)
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "uut ; gameAndReg32x32(struct) ; VHDL Entity", 1, "uut", 0, true); // c (c, cl) - Node
+// TclEventType: SIMULATION_REQUEST_SELECT_SCOPES
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "game_i ; game(RTL) ; VHDL Entity", 2, "game_i", 0, false); // c (c, cl)
+// TclEventType: SIMULATION_REQUEST_SELECT_SCOPES
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,435 MB. GUI used memory: 90 MB. Current time: 11/8/22, 1:28:57 PM GMT
+// Waveform: addNotify
+// Waveform: addNotify
+// Waveform: addNotify
+// Elapsed time: 18 seconds
+floatFrame(RDIResource.RDIViews_WAVEFORM_VIEWER, "gameAndReg32x32_TB_behav.wcfg"); // az (aK, cl)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// RDIResource.RDIViews_WAVEFORM_VIEWER: gameAndReg32x32_TB_behav.wcfg: float view
+maximizeFrame(RDIResource.RDIViews_WAVEFORM_VIEWER, "gameAndReg32x32_TB_behav.wcfg"); // az (aK, aM)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,435 MB. GUI used memory: 92 MB. Current time: 11/8/22, 1:29:04 PM GMT
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 184, 426); // n (o, aM)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,435 MB. GUI used memory: 100 MB. Current time: 11/8/22, 1:29:05 PM GMT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,435 MB. GUI used memory: 92 MB. Current time: 11/8/22, 1:29:06 PM GMT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+expandTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, game, reg32x32(15:0)(31:0)]", 13); // a (r, aM)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,435 MB. GUI used memory: 92 MB. Current time: 11/8/22, 1:29:11 PM GMT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 196, 433); // n (o, cl)Waveform: addNotify
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 196, 433); // n (o, cl)Waveform: addNotify
+dockFrame(RDIResource.RDIViews_WAVEFORM_VIEWER, "gameAndReg32x32_TB_behav.wcfg"); // az (aK, aM)
+maximizeFrame(RDIResource.RDIViews_WAVEFORM_VIEWER, "gameAndReg32x32_TB_behav.wcfg"); // az (aK, aM)
+// RDIResource.RDIViews_WAVEFORM_VIEWER: gameAndReg32x32_TB_behav.wcfg: dock view
+// HMemoryUtils.trashcanNow. Engine heap size: 1,435 MB. GUI used memory: 89 MB. Current time: 11/8/22, 1:29:15 PM GMT
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 17, false); // u (O, cl)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug]", 6); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// by (cl):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// f (cl): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// by (cl):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cl)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 -jobs 2 
+// Tcl Message: [Tue Nov  8 13:29:21 2022] Launched synth_1... Run output will be captured here: C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.runs/synth_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+dismissDialog("Starting Design Runs"); // by (cl)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// ah (cl): Synthesis Completed: addNotify

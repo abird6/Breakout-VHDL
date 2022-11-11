@@ -1,0 +1,1 @@
+-wto "27a44575197744788964bd24ef8376a1" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "gameAndReg32x32_TB_behav" "xil_defaultlib.gameAndReg32x32_TB" -log "elaborate.log" 

@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="gameAndReg32x32_TB_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="arraypackage" />
+            <top_module name="gameAndReg32x32_TB" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="2500000001fs"></ZoomEndTime>
+      <Cursor1Time time="1480000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="292"></NameColumnWidth>
+      <ValueColumnWidth column_width="129"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="3" />
+   <wvobject fp_name="group53" type="group">
+      <obj_property name="label">game_TB</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/gameAndReg32x32_TB/testNo" type="other">
+         <obj_property name="ElementShortName">testNo</obj_property>
+         <obj_property name="ObjectShortName">testNo</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/rst" type="logic">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/ce" type="logic">
+         <obj_property name="ElementShortName">ce</obj_property>
+         <obj_property name="ObjectShortName">ce</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/go" type="logic">
+         <obj_property name="ElementShortName">go</obj_property>
+         <obj_property name="ObjectShortName">go</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/active" type="logic">
+         <obj_property name="ElementShortName">active</obj_property>
+         <obj_property name="ObjectShortName">active</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/P_reg4x32_CSRA" type="array">
+         <obj_property name="ElementShortName">P_reg4x32_CSRA[3:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">P_reg4x32_CSRA[3:0][31:0]</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/reg4x32_CSRB" type="array">
+         <obj_property name="ElementShortName">reg4x32_CSRB[3:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">reg4x32_CSRB[3:0][31:0]</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/wr" type="logic">
+         <obj_property name="ElementShortName">wr</obj_property>
+         <obj_property name="ObjectShortName">wr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/add" type="array">
+         <obj_property name="ElementShortName">add[7:0]</obj_property>
+         <obj_property name="ObjectShortName">add[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/datToMem" type="array">
+         <obj_property name="ElementShortName">datToMem[31:0]</obj_property>
+         <obj_property name="ObjectShortName">datToMem[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/functBus" type="array">
+         <obj_property name="ElementShortName">functBus[95:0]</obj_property>
+         <obj_property name="ObjectShortName">functBus[95:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/endOfSim" type="other">
+         <obj_property name="ElementShortName">endOfSim</obj_property>
+         <obj_property name="ObjectShortName">endOfSim</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/testNo" type="other">
+         <obj_property name="ElementShortName">testNo</obj_property>
+         <obj_property name="ObjectShortName">testNo</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/period" type="other">
+         <obj_property name="ElementShortName">period</obj_property>
+         <obj_property name="ObjectShortName">period</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group54" type="group">
+      <obj_property name="label">UUT</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/gameAndReg32x32_TB/testNo" type="other">
+         <obj_property name="ElementShortName">testNo</obj_property>
+         <obj_property name="ObjectShortName">testNo</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/rst" type="logic">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/ce" type="logic">
+         <obj_property name="ElementShortName">ce</obj_property>
+         <obj_property name="ObjectShortName">ce</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/go" type="logic">
+         <obj_property name="ElementShortName">go</obj_property>
+         <obj_property name="ObjectShortName">go</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/active" type="logic">
+         <obj_property name="ElementShortName">active</obj_property>
+         <obj_property name="ObjectShortName">active</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/P_reg4x32_CSRA" type="array">
+         <obj_property name="ElementShortName">P_reg4x32_CSRA[3:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">P_reg4x32_CSRA[3:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/reg4x32_CSRB" type="array">
+         <obj_property name="ElementShortName">reg4x32_CSRB[3:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">reg4x32_CSRB[3:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/wr" type="logic">
+         <obj_property name="ElementShortName">wr</obj_property>
+         <obj_property name="ObjectShortName">wr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/add" type="array">
+         <obj_property name="ElementShortName">add[7:0]</obj_property>
+         <obj_property name="ObjectShortName">add[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/datToMem" type="array">
+         <obj_property name="ElementShortName">datToMem[31:0]</obj_property>
+         <obj_property name="ObjectShortName">datToMem[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/functBus" type="array">
+         <obj_property name="ElementShortName">functBus[95:0]</obj_property>
+         <obj_property name="ObjectShortName">functBus[95:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32_dOut" type="array">
+         <obj_property name="ElementShortName">reg32x32_dOut[31:0]</obj_property>
+         <obj_property name="ObjectShortName">reg32x32_dOut[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32" type="array">
+         <obj_property name="ElementShortName">reg32x32[31:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">reg32x32[31:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/intWr" type="logic">
+         <obj_property name="ElementShortName">intWr</obj_property>
+         <obj_property name="ObjectShortName">intWr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/intAdd" type="array">
+         <obj_property name="ElementShortName">intAdd[7:0]</obj_property>
+         <obj_property name="ObjectShortName">intAdd[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/intDatToMem" type="array">
+         <obj_property name="ElementShortName">intDatToMem[31:0]</obj_property>
+         <obj_property name="ObjectShortName">intDatToMem[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="group400" type="group">
+         <obj_property name="label">reg32x32(15:0)(31:0)</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[15]" type="array">
+            <obj_property name="ElementShortName">[15][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[15][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[14]" type="array">
+            <obj_property name="ElementShortName">[14][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[14][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[13]" type="array">
+            <obj_property name="ElementShortName">[13][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[13][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[12]" type="array">
+            <obj_property name="ElementShortName">[12][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[12][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[11]" type="array">
+            <obj_property name="ElementShortName">[11][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[11][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[10]" type="array">
+            <obj_property name="ElementShortName">[10][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[10][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[9]" type="array">
+            <obj_property name="ElementShortName">[9][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[9][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[8]" type="array">
+            <obj_property name="ElementShortName">[8][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[8][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[7]" type="array">
+            <obj_property name="ElementShortName">[7][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[7][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[6]" type="array">
+            <obj_property name="ElementShortName">[6][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[6][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[5]" type="array">
+            <obj_property name="ElementShortName">[5][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[5][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[4]" type="array">
+            <obj_property name="ElementShortName">[4][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[4][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[3]" type="array">
+            <obj_property name="ElementShortName">[3][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[3][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[2]" type="array">
+            <obj_property name="ElementShortName">[2][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[2][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[1]" type="array">
+            <obj_property name="ElementShortName">[1][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[1][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[0]" type="array">
+            <obj_property name="ElementShortName">[0][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[0][31:0]</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group255" type="group">
+      <obj_property name="label">game</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/gameAndReg32x32_TB/testNo" type="other">
+         <obj_property name="ElementShortName">testNo</obj_property>
+         <obj_property name="ObjectShortName">testNo</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/functBus" type="array">
+         <obj_property name="ElementShortName">functBus[95:0]</obj_property>
+         <obj_property name="ObjectShortName">functBus[95:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/rst" type="logic">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/ce" type="logic">
+         <obj_property name="ElementShortName">ce</obj_property>
+         <obj_property name="ObjectShortName">ce</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/go" type="logic">
+         <obj_property name="ElementShortName">go</obj_property>
+         <obj_property name="ObjectShortName">go</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/active" type="logic">
+         <obj_property name="ElementShortName">active</obj_property>
+         <obj_property name="ObjectShortName">active</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/zone" type="other">
+         <obj_property name="ElementShortName">zone</obj_property>
+         <obj_property name="ObjectShortName">zone</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/P_reg4x32_CSRA" type="array">
+         <obj_property name="ElementShortName">P_reg4x32_CSRA[3:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">P_reg4x32_CSRA[3:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/reg4x32_CSRA" type="array">
+         <obj_property name="ElementShortName">reg4x32_CSRA[3:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">reg4x32_CSRA[3:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/reg4x32_CSRB" type="array">
+         <obj_property name="ElementShortName">reg4x32_CSRB[3:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">reg4x32_CSRB[3:0][31:0]</obj_property>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/reg4x32_CSRB[3]" type="array">
+            <obj_property name="ElementShortName">[3][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[3][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/reg4x32_CSRB[2]" type="array">
+            <obj_property name="ElementShortName">[2][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[2][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/reg4x32_CSRB[1]" type="array">
+            <obj_property name="ElementShortName">[1][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[1][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/reg4x32_CSRB[0]" type="array">
+            <obj_property name="ElementShortName">[0][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[0][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/reg4x32_CSRB[3]" type="array">
+            <obj_property name="ElementShortName">[3][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[3][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/reg4x32_CSRB[2]" type="array">
+            <obj_property name="ElementShortName">[2][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[2][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/reg4x32_CSRB[1]" type="array">
+            <obj_property name="ElementShortName">[1][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[1][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/reg4x32_CSRB[0]" type="array">
+            <obj_property name="ElementShortName">[0][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[0][31:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/reg32x32_dOut" type="array">
+         <obj_property name="ElementShortName">reg32x32_dOut[31:0]</obj_property>
+         <obj_property name="ObjectShortName">reg32x32_dOut[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/reg4x32_CSRB[0][9]" type="logic">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">[9]</obj_property>
+         <obj_property name="ObjectShortName">[9]</obj_property>
+         <obj_property name="label">left CSRB[9]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/reg4x32_CSRB[0][8]" type="logic">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">[8]</obj_property>
+         <obj_property name="ObjectShortName">[8]</obj_property>
+         <obj_property name="label">right CSRB[8]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NS" type="other">
+         <obj_property name="ElementShortName">NS</obj_property>
+         <obj_property name="ObjectShortName">NS</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CS" type="other">
+         <obj_property name="ElementShortName">CS</obj_property>
+         <obj_property name="ObjectShortName">CS</obj_property>
+      </wvobject>
+      <wvobject fp_name="group400" type="group">
+         <obj_property name="label">reg32x32(15:0)(31:0)</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[15]" type="array">
+            <obj_property name="ElementShortName">[15][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[15][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[14]" type="array">
+            <obj_property name="ElementShortName">[14][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[14][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[13]" type="array">
+            <obj_property name="ElementShortName">[13][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[13][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[12]" type="array">
+            <obj_property name="ElementShortName">[12][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[12][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[11]" type="array">
+            <obj_property name="ElementShortName">[11][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[11][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[10]" type="array">
+            <obj_property name="ElementShortName">[10][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[10][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[9]" type="array">
+            <obj_property name="ElementShortName">[9][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[9][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[8]" type="array">
+            <obj_property name="ElementShortName">[8][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[8][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[7]" type="array">
+            <obj_property name="ElementShortName">[7][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[7][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[6]" type="array">
+            <obj_property name="ElementShortName">[6][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[6][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[5]" type="array">
+            <obj_property name="ElementShortName">[5][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[5][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[4]" type="array">
+            <obj_property name="ElementShortName">[4][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[4][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[3]" type="array">
+            <obj_property name="ElementShortName">[3][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[3][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[2]" type="array">
+            <obj_property name="ElementShortName">[2][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[2][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[1]" type="array">
+            <obj_property name="ElementShortName">[1][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[1][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/reg32x32[0]" type="array">
+            <obj_property name="ElementShortName">[0][31:0]</obj_property>
+            <obj_property name="ObjectShortName">[0][31:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group727" type="group">
+         <obj_property name="label">wallAndPaddle</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSWallVec" type="array">
+            <obj_property name="ElementShortName">NSWallVec[31:0]</obj_property>
+            <obj_property name="ObjectShortName">NSWallVec[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSWallVec" type="array">
+            <obj_property name="ElementShortName">CSWallVec[31:0]</obj_property>
+            <obj_property name="ObjectShortName">CSWallVec[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSPaddleVec" type="array">
+            <obj_property name="ElementShortName">NSPaddleVec[31:0]</obj_property>
+            <obj_property name="ObjectShortName">NSPaddleVec[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSPaddleVec" type="array">
+            <obj_property name="ElementShortName">CSPaddleVec[31:0]</obj_property>
+            <obj_property name="ObjectShortName">CSPaddleVec[31:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group726" type="group">
+         <obj_property name="label">ballData</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSBallVec" type="array">
+            <obj_property name="ElementShortName">NSBallVec[31:0]</obj_property>
+            <obj_property name="ObjectShortName">NSBallVec[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSBallVec" type="array">
+            <obj_property name="ElementShortName">CSBallVec[31:0]</obj_property>
+            <obj_property name="ObjectShortName">CSBallVec[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSBallXAdd" type="other">
+            <obj_property name="ElementShortName">NSBallXAdd</obj_property>
+            <obj_property name="ObjectShortName">NSBallXAdd</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSBallXAdd" type="other">
+            <obj_property name="ElementShortName">CSBallXAdd</obj_property>
+            <obj_property name="ObjectShortName">CSBallXAdd</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSBallYAdd" type="other">
+            <obj_property name="ElementShortName">NSBallYAdd</obj_property>
+            <obj_property name="ObjectShortName">NSBallYAdd</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSBallYAdd" type="other">
+            <obj_property name="ElementShortName">CSBallYAdd</obj_property>
+            <obj_property name="ObjectShortName">CSBallYAdd</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSBallDir" type="array">
+            <obj_property name="ElementShortName">NSBallDir[2:0]</obj_property>
+            <obj_property name="ObjectShortName">NSBallDir[2:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSBallDir" type="array">
+            <obj_property name="ElementShortName">CSBallDir[2:0]</obj_property>
+            <obj_property name="ObjectShortName">CSBallDir[2:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group725" type="group">
+         <obj_property name="label">ScoreAndLives</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSScore" type="other">
+            <obj_property name="ElementShortName">NSScore</obj_property>
+            <obj_property name="ObjectShortName">NSScore</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSScore" type="other">
+            <obj_property name="ElementShortName">CSScore</obj_property>
+            <obj_property name="ObjectShortName">CSScore</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSLives" type="other">
+            <obj_property name="ElementShortName">NSLives</obj_property>
+            <obj_property name="ObjectShortName">NSLives</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSLives" type="other">
+            <obj_property name="ElementShortName">CSLives</obj_property>
+            <obj_property name="ObjectShortName">CSLives</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group724" type="group">
+         <obj_property name="label">delayCounters</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSDlyCountMax" type="other">
+            <obj_property name="ElementShortName">NSDlyCountMax</obj_property>
+            <obj_property name="ObjectShortName">NSDlyCountMax</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSDlyCountMax" type="other">
+            <obj_property name="ElementShortName">CSDlyCountMax</obj_property>
+            <obj_property name="ObjectShortName">CSDlyCountMax</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSDlyCount" type="other">
+            <obj_property name="ElementShortName">NSDlyCount</obj_property>
+            <obj_property name="ObjectShortName">NSDlyCount</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSDlyCount" type="other">
+            <obj_property name="ElementShortName">CSDlyCount</obj_property>
+            <obj_property name="ObjectShortName">CSDlyCount</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSPaddleNumDlyMax" type="other">
+            <obj_property name="ElementShortName">NSPaddleNumDlyMax</obj_property>
+            <obj_property name="ObjectShortName">NSPaddleNumDlyMax</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSPaddleNumDlyMax" type="other">
+            <obj_property name="ElementShortName">CSPaddleNumDlyMax</obj_property>
+            <obj_property name="ObjectShortName">CSPaddleNumDlyMax</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSPaddleNumDlyCount" type="other">
+            <obj_property name="ElementShortName">NSPaddleNumDlyCount</obj_property>
+            <obj_property name="ObjectShortName">NSPaddleNumDlyCount</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSPaddleNumDlyCount" type="other">
+            <obj_property name="ElementShortName">CSPaddleNumDlyCount</obj_property>
+            <obj_property name="ObjectShortName">CSPaddleNumDlyCount</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSBallNumDlyMax" type="other">
+            <obj_property name="ElementShortName">NSBallNumDlyMax</obj_property>
+            <obj_property name="ObjectShortName">NSBallNumDlyMax</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSBallNumDlyMax" type="other">
+            <obj_property name="ElementShortName">CSBallNumDlyMax</obj_property>
+            <obj_property name="ObjectShortName">CSBallNumDlyMax</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSBallNumDlyCount" type="other">
+            <obj_property name="ElementShortName">NSBallNumDlyCount</obj_property>
+            <obj_property name="ObjectShortName">NSBallNumDlyCount</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSBallNumDlyCount" type="other">
+            <obj_property name="ElementShortName">CSBallNumDlyCount</obj_property>
+            <obj_property name="ObjectShortName">CSBallNumDlyCount</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/wr" type="logic">
+         <obj_property name="ElementShortName">wr</obj_property>
+         <obj_property name="ObjectShortName">wr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/add" type="array">
+         <obj_property name="ElementShortName">add[7:0]</obj_property>
+         <obj_property name="ObjectShortName">add[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/datToMem" type="array">
+         <obj_property name="ElementShortName">datToMem[31:0]</obj_property>
+         <obj_property name="ObjectShortName">datToMem[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

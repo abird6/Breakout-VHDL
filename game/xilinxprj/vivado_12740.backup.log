@@ -1,0 +1,642 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Nov  8 12:30:55 2022
+# Process ID: 12740
+# Current directory: C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10016 C:\2022b\courses\EE452\0_EE452_2122\DSPProc\game\xilinxprj\game.xpr
+# Log file: C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/vivado.log
+# Journal file: C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.xpr
+WARNING: [Board 49-91] Board repository path 'C:/Users/FEARG/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store' does not exist, it will not be used to search board files.
+INFO: [Project 1-313] Project file moved from 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/DSPProcV1.1/DSPFunctions/game/xilinxprj' since last save.
+WARNING: [Project 1-312] File not found as 'C:/2022b/courses/EE452/0_EE452_2122/pkgAndComponents/arrayPackage.vhd'; using path 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/DSPProcV1.1/pkgAndComponents/arrayPackage.vhd' instead.
+WARNING: [Project 1-312] File not found as 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/game_TB.vhd'; using path 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/DSPProcV1.1/DSPFunctions/game/testbench/game_TB.vhd' instead.
+WARNING: [Project 1-312] File not found as 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/game_TB_behav.wcfg'; using path 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/DSPProcV1.1/DSPFunctions/game/testbench/game_TB_behav.wcfg' instead.
+Scanning sources...
+Finished scanning sources
+WARNING: [Project 1-312] File not found as 'C:/2022b/courses/EE452/0_EE452_2122/pkgAndComponents/arrayPackage.vhd'; using path 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/DSPProcV1.1/pkgAndComponents/arrayPackage.vhd' instead.
+WARNING: [filemgmt 56-2] Board Part Repository Path: Could not find the directory 'C:/../../../Users/FEARG/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store', nor could it be found using path 'C:/../Users/FEARG/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+open_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:09 . Memory (MB): peak = 686.918 ; gain = 52.422
+update_compile_order -fileset sources_1
+update_files -from_files C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/arrayPackage.vhd -to_files C:/2022b/courses/EE452/0_EE452_2122/DSPProc/DSPProcV1.1/pkgAndComponents/arrayPackage.vhd -filesets [get_filesets *]
+INFO: [filemgmt 20-762] Replacing file 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/DSPProcV1.1/pkgAndComponents/arrayPackage.vhd' with file 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/arrayPackage.vhd'.
+update_files -from_files C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd -to_files C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd -filesets [get_filesets *]
+ERROR: [Vivado 12-3481] Cannot replace a file with itself: 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd'
+update_files -from_files C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd -to_files C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd -filesets [get_filesets *]
+ERROR: [Vivado 12-3481] Cannot replace a file with itself: 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd'
+update_files -from_files C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB.vhd -to_files C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB.vhd -filesets [get_filesets *]
+ERROR: [Vivado 12-3481] Cannot replace a file with itself: 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB.vhd'
+export_ip_user_files -of_objects  [get_files C:/2022b/courses/EE452/0_EE452_2122/DSPProc/DSPProcV1.1/DSPFunctions/game/testbench/game_TB.vhd] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 C:/2022b/courses/EE452/0_EE452_2122/DSPProc/DSPProcV1.1/DSPFunctions/game/testbench/game_TB.vhd
+export_ip_user_files -of_objects  [get_files C:/2022b/courses/EE452/0_EE452_2122/DSPProc/DSPProcV1.1/DSPFunctions/game/testbench/game_TB_behav.wcfg] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 C:/2022b/courses/EE452/0_EE452_2122/DSPProc/DSPProcV1.1/DSPFunctions/game/testbench/game_TB_behav.wcfg
+update_files -from_files C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB_behav.wcfg -to_files C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB_behav.wcfg -filesets [get_filesets *]
+ERROR: [Vivado 12-3481] Cannot replace a file with itself: 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB_behav.wcfg'
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'gameAndReg32x32_TB' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj gameAndReg32x32_TB_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/arrayPackage.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'game'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'gameAndReg32x32'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'gameAndReg32x32_TB'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.sim/sim_1/behav/xsim'
+"xelab -wto 27a44575197744788964bd24ef8376a1 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot gameAndReg32x32_TB_behav xil_defaultlib.gameAndReg32x32_TB -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 27a44575197744788964bd24ef8376a1 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot gameAndReg32x32_TB_behav xil_defaultlib.gameAndReg32x32_TB -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package xil_defaultlib.arraypackage
+Compiling architecture rtl of entity xil_defaultlib.game [game_default]
+Compiling architecture struct of entity xil_defaultlib.gameAndReg32x32 [gameandreg32x32_default]
+Compiling architecture behavioral of entity xil_defaultlib.gameandreg32x32_tb
+Built simulation snapshot gameAndReg32x32_TB_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "gameAndReg32x32_TB_behav -key {Behavioral:sim_1:Functional:gameAndReg32x32_TB} -tclbatch {gameAndReg32x32_TB.tcl} -view {C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+open_wave_config C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB_behav.wcfg
+source gameAndReg32x32_TB.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 2500ns
+Note: %N : Simulation Start.
+Time: 0 ps  Iteration: 0  Process: /gameAndReg32x32_TB/stim  File: C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'gameAndReg32x32_TB_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 2500ns
+launch_simulation: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 738.836 ; gain = 4.227
+save_wave_config {C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB_behav.wcfg}
+save_wave_config {C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB_behav.wcfg}
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.runs/synth_1
+
+launch_runs synth_1 -jobs 2
+[Tue Nov  8 12:34:28 2022] Launched synth_1...
+Run output will be captured here: C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.runs/synth_1/runme.log
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7z020clg400-1
+Top: gameAndReg32x32
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1190.488 ; gain = 174.918
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'gameAndReg32x32' [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd:29]
+INFO: [Synth 8-3491] module 'game' declared at 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd:43' bound to instance 'game_i' of component 'game' [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd:43]
+INFO: [Synth 8-638] synthesizing module 'game' [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd:63]
+WARNING: [Synth 8-614] signal 'CSBallVec' is read in the process but is not in the sensitivity list [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd:102]
+INFO: [Synth 8-256] done synthesizing module 'game' (1#1) [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd:63]
+INFO: [Synth 8-256] done synthesizing module 'gameAndReg32x32' (2#1) [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd:29]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][31]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][30]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][29]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][23]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][22]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][21]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][15]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][14]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][13]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][12]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][11]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][10]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][9]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][8]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[0][1]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[0][0]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][31]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][30]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][29]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][28]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][27]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][23]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][22]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][21]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][20]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][31]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][30]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][29]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][23]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][22]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][21]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][15]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][14]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][13]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][12]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][11]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][10]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][9]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][8]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][7]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][6]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][5]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][4]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][3]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][2]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][1]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][0]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][31]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][30]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][29]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][28]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][27]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][26]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][25]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][24]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][23]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][22]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][21]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][20]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][19]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][18]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][17]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][16]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][15]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][14]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][13]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][12]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][11]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][10]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][7]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][6]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][5]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][4]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][3]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][2]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][1]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][0]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[255]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[254]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[253]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[252]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[251]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[250]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[249]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[248]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[247]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[246]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[245]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[244]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[243]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[242]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[241]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[240]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[239]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[238]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[237]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[236]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[235]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[234]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[233]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1231.637 ; gain = 216.066
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1231.637 ; gain = 216.066
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1231.637 ; gain = 216.066
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-141] Inserted 96 OBUFs to IO ports without IO buffers.
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1374.914 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:29 ; elapsed = 00:00:21 . Memory (MB): peak = 1391.508 ; gain = 375.938
+11 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:30 . Memory (MB): peak = 1391.508 ; gain = 612.934
+refresh_design
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1405.496 ; gain = 13.520
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'gameAndReg32x32' [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd:29]
+INFO: [Synth 8-3491] module 'game' declared at 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd:41' bound to instance 'game_i' of component 'game' [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd:43]
+INFO: [Synth 8-638] synthesizing module 'game' [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd:61]
+WARNING: [Synth 8-614] signal 'CSBallVec' is read in the process but is not in the sensitivity list [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd:100]
+INFO: [Synth 8-256] done synthesizing module 'game' (1#1) [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd:61]
+INFO: [Synth 8-256] done synthesizing module 'gameAndReg32x32' (2#1) [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd:29]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][31]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][30]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][29]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][23]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][22]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][21]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][15]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][14]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][13]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][12]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][11]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][10]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][9]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[2][8]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[0][1]
+WARNING: [Synth 8-3331] design game has unconnected port P_reg4x32_CSRA[0][0]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][31]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][30]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][29]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][28]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][27]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][23]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][22]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][21]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][20]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][31]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][30]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][29]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][23]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][22]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][21]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][15]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][14]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][13]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][12]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][11]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][10]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][9]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][8]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][7]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][6]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][5]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][4]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][3]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][2]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][1]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][0]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][31]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][30]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][29]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][28]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][27]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][26]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][25]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][24]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][23]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][22]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][21]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][20]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][19]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][18]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][17]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][16]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][15]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][14]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][13]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][12]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][11]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][10]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][7]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][6]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][5]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][4]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][3]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][2]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][1]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][0]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[255]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[254]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[253]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[252]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[251]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[250]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[249]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[248]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[247]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[246]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[245]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[244]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[243]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[242]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[241]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[240]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[239]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[238]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[237]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[236]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[235]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[234]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[233]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1436.348 ; gain = 44.371
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1436.348 ; gain = 44.371
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1436.348 ; gain = 44.371
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-141] Inserted 96 OBUFs to IO ports without IO buffers.
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:16 . Memory (MB): peak = 1447.660 ; gain = 55.684
+refresh_design
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1450.203 ; gain = 2.543
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'gameAndReg32x32' [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd:32]
+INFO: [Synth 8-3491] module 'game' declared at 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd:41' bound to instance 'game_i' of component 'game' [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd:46]
+INFO: [Synth 8-638] synthesizing module 'game' [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd:61]
+WARNING: [Synth 8-614] signal 'CSBallVec' is read in the process but is not in the sensitivity list [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd:97]
+INFO: [Synth 8-256] done synthesizing module 'game' (1#1) [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd:61]
+INFO: [Synth 8-256] done synthesizing module 'gameAndReg32x32' (2#1) [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd:32]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][31]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][30]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][29]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][23]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][22]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][21]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][15]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][14]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][13]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][12]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][11]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][10]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][9]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[2][8]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[0][1]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRA[0][0]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][31]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][30]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][29]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][28]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][27]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][23]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][22]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][21]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[2][20]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][31]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][30]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][29]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][23]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][22]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][21]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][15]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][14]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][13]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][12]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][11]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][10]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][9]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][8]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][7]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][6]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][5]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][4]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][3]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][2]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][1]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[1][0]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][31]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][30]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][29]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][28]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][27]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][26]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][25]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][24]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][23]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][22]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][21]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][20]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][19]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][18]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][17]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][16]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][15]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][14]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][13]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][12]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][11]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][10]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][7]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][6]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][5]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][4]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][3]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][2]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][1]
+WARNING: [Synth 8-3331] design game has unconnected port reg4x32_CSRB[0][0]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[255]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[254]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[253]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[252]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[251]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[250]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[249]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[248]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[247]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[246]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[245]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[244]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[243]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[242]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[241]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[240]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[239]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[238]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[237]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[236]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[235]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[234]
+WARNING: [Synth 8-3331] design game has unconnected port BRAM_dOut[233]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1450.203 ; gain = 2.543
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1462.570 ; gain = 14.910
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1462.570 ; gain = 14.910
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-141] Inserted 96 OBUFs to IO ports without IO buffers.
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:17 . Memory (MB): peak = 1472.766 ; gain = 25.105
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'gameAndReg32x32_TB' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj gameAndReg32x32_TB_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/arrayPackage.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'game'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'gameAndReg32x32'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'gameAndReg32x32_TB'
+ERROR: [VRFC 10-719] formal port/generic <p_reg4x32_csra> is not declared in <gameandreg32x32> [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB.vhd:50]
+ERROR: [VRFC 10-3353] formal port 'reg4x32_csra' has no actual or default value [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB.vhd:43]
+ERROR: [VRFC 10-3782] unit 'behavioral' ignored due to previous errors [C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB.vhd:17]
+INFO: [VRFC 10-3070] VHDL file 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB.vhd' ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.sim/sim_1/behav/xsim/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.sim/sim_1/behav/xsim/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'gameAndReg32x32_TB' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj gameAndReg32x32_TB_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/arrayPackage.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/game.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'game'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/gameAndReg32x32.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'gameAndReg32x32'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'gameAndReg32x32_TB'
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.sim/sim_1/behav/xsim'
+"xelab -wto 27a44575197744788964bd24ef8376a1 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot gameAndReg32x32_TB_behav xil_defaultlib.gameAndReg32x32_TB -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 27a44575197744788964bd24ef8376a1 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot gameAndReg32x32_TB_behav xil_defaultlib.gameAndReg32x32_TB -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package xil_defaultlib.arraypackage
+Compiling architecture rtl of entity xil_defaultlib.game [game_default]
+Compiling architecture struct of entity xil_defaultlib.gameAndReg32x32 [gameandreg32x32_default]
+Compiling architecture behavioral of entity xil_defaultlib.gameandreg32x32_tb
+Built simulation snapshot gameAndReg32x32_TB_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "gameAndReg32x32_TB_behav -key {Behavioral:sim_1:Functional:gameAndReg32x32_TB} -tclbatch {gameAndReg32x32_TB.tcl} -view {C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+open_wave_config C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB_behav.wcfg
+WARNING: Simulation object /gameAndReg32x32_TB/P_reg4x32_CSRA was not found in the design.
+WARNING: Simulation object /gameAndReg32x32_TB/uut/P_reg4x32_CSRA was not found in the design.
+WARNING: Simulation object /gameAndReg32x32_TB/uut/game_i/P_reg4x32_CSRA was not found in the design.
+source gameAndReg32x32_TB.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 2500ns
+Note: %N : Simulation Start.
+Time: 0 ps  Iteration: 0  Process: /gameAndReg32x32_TB/stim  File: C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/testbench/gameAndReg32x32_TB.vhd
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'gameAndReg32x32_TB_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 2500ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 1472.766 ; gain = 0.000
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.runs/synth_1
+
+launch_runs synth_1 -jobs 2
+[Tue Nov  8 13:29:21 2022] Launched synth_1...
+Run output will be captured here: C:/2022b/courses/EE452/0_EE452_2122/DSPProc/game/xilinxprj/game.runs/synth_1/runme.log
