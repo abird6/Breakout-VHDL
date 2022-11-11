@@ -16,3 +16,43 @@ launch_simulation
 launch_simulation
 open_wave_config {C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/testbench/gameAndReg32x32_TB_behav.wcfg}
 source gameAndReg32x32_TB.tcl
+close_sim
+launch_simulation
+open_wave_config {C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/testbench/gameAndReg32x32_TB_behav.wcfg}
+source gameAndReg32x32_TB.tcl
+current_wave_config {gameAndReg32x32_TB_behav.wcfg}
+add_wave {{/gameAndReg32x32_TB/uut/game_i/zone}} 
+save_wave_config {C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/testbench/gameAndReg32x32_TB_behav.wcfg}
+close_sim
+launch_simulation
+launch_simulation
+open_wave_config {C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/testbench/gameAndReg32x32_TB_behav.wcfg}
+source gameAndReg32x32_TB.tcl
+close_sim
+launch_simulation
+open_wave_config {C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/testbench/gameAndReg32x32_TB_behav.wcfg}
+source gameAndReg32x32_TB.tcl
+save_wave_config {C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/testbench/gameAndReg32x32_TB_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config {C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/testbench/gameAndReg32x32_TB_behav.wcfg}
+source gameAndReg32x32_TB.tcl
+close_sim
+launch_simulation
+open_wave_config {C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/testbench/gameAndReg32x32_TB_behav.wcfg}
+source gameAndReg32x32_TB.tcl
+save_wave_config {C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/testbench/gameAndReg32x32_TB_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config {C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/testbench/gameAndReg32x32_TB_behav.wcfg}
+source gameAndReg32x32_TB.tcl
+close_sim
+launch_simulation
+open_wave_config {C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/testbench/gameAndReg32x32_TB_behav.wcfg}
+source gameAndReg32x32_TB.tcl
+close_sim
+launch_simulation
+open_wave_config {C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/testbench/gameAndReg32x32_TB_behav.wcfg}
+source gameAndReg32x32_TB.tcl
+save_wave_config {C:/Users/antho/OneDrive/Documents/NUI Galway/4th Year/EE452 - System on Chip Design II/Breakout-VHDL/game/testbench/gameAndReg32x32_TB_behav.wcfg}
+close_sim

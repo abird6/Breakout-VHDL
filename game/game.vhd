@@ -63,7 +63,7 @@ architecture RTL of game is
 -- Additional states include:
 --      * checkBallZone
 --      * respawn
-type stateType is (idle, writeToCSR0, setupGameParameters, initGameArena, initBall, initPaddle, initLives, initScore, waitState, processPaddle, checkBallZone, processBall, writeBallToMem, endGame, respawn); -- declare enumerated state type
+type stateType is (idle, writeToCSR0, setupGameParameters, initGameArena, initBall, initPaddle, initLives, initScore, waitState, processPaddle, checkBallZone, assignBallDir, processBall, writeBallToMem, endGame, respawn); -- declare enumerated state type
 signal NS, CS                                   : stateType; -- declare FSM state 
 								                
 signal NSWallVec, CSWallVec                     : std_logic_vector(31 downto 0);
@@ -126,9 +126,7 @@ begin
    wr   	           <= '0';
    add	               <= "010" & "00000"; -- reg32x32 base address
    datToMem            <= (others => '0');
-   zone                <= 0;
-   paddleMSBAdd		   <= 0;
-   paddleLSBAdd		   <= 0;
+   zone                <= 6;
 
   case CS is 
 		when idle => 			     
@@ -185,8 +183,8 @@ begin
            	NS            <= initLives;
            	----------------------------------------------------------------------
 			-- set paddle MSB and LSB Addresses to center
-			paddleMSBAdd   <= 18;
-			paddleLSBAdd   <= 14;
+			paddleMSBAdd   <= 17;
+			paddleLSBAdd   <= 13;
 			----------------------------------------------------------------------
 		when initLives =>                          
 			wr   	      <= '1';
@@ -253,9 +251,18 @@ begin
                                 zone <= 3;
                             elsif (CSBallXAdd > 1 and CSBallXAdd < 30) and (CSBallYAdd = 15) then
                                 zone <= 1;
+                            else
+                                zone <= 6;
                             end if;
-                                
-                            -- zone actions
+                  NS <= assignBallDir;
+                           
+        else -- CSBallNumDlyCount != CSBallNumDlyMax 
+			   NSBallNumDlyCount <= CSBallNumDlyCount + 1; -- increment counter
+			   NS  <= waitState;
+			end if;	
+		-- ========= Only partially completed =========
+        when assignBallDir => 
+             -- zone actions
                             case zone is				   
                                 when 0 =>      -- below wall
                                    if CSBallDir(2) = '1' then
@@ -356,15 +363,13 @@ begin
                                         NS <= respawn;
                                     end if;  
                                 
-                                when others =>
+                                when 6 =>
                                      NSBallDir <= CSBallDir; 
+                                when others =>
+                                    null;
                             end case;
                             NS <= processBall;   -- apply new direction vectors to ball
-        else -- CSBallNumDlyCount != CSBallNumDlyMax 
-			   NSBallNumDlyCount <= CSBallNumDlyCount + 1; -- increment counter
-			   NS  <= waitState;
-			end if;	
-		-- ========= Only partially completed =========
+                            
         when processBall => 	
 			
                 
