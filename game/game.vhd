@@ -187,10 +187,6 @@ begin
 			add	          <= "010" & "00010";               -- reg32x32 row 2 
 			datToMem      <= CSPaddleVec;
            	NS            <= initLives;
-           	----------------------------------------------------------------------
-			-- set paddle MSB and LSB Addresses to center
-			paddleMSBAdd   <= 18;
-			paddleLSBAdd   <= 14;
 			----------------------------------------------------------------------
 		when initLives =>                          
 			wr   	      <= '1';
