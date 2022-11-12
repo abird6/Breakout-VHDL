@@ -91,10 +91,8 @@ signal NSBallNumDlyCount, CSBallNumDlyCount     : integer range 0 to 31;
 signal zone 									: integer; 
 signal CSEndGameCounter, NSEndGameCounter       : integer;
 
-----------------------------------------------------------------------
--- paddle MSB and LSB for ball rebound parameters
-signal paddleMSBAdd, paddleLSBAdd                 : integer range 0 to 31;
-----------------------------------------------------------------------
+
+
 
 begin
 
@@ -225,16 +223,12 @@ begin
 				        wr   	      <= '1';
 					    add	          <= "010" & "00010";   -- reg32x32 row 2, paddle row address 
 					    datToMem      <= reg32x32_dOut(30 downto 0) & '0'; 
-					    paddleMSBAdd   <= paddleMSBAdd + 1;
-					    paddleLSBAdd   <= paddleLSBAdd + 1;
 				    end if;
 			      elsif reg4x32_CSRB(0)(8) = '1' then       -- shift paddle right 
 			        if reg32x32_dOut(0) = '0' then 
 					    wr   	      <= '1';
 					    add	          <= "010" & "00010";   -- reg32x32 row 2, paddle row address 
 					    datToMem      <= '0' & reg32x32_dOut(31 downto 1); 
-					    paddleMSBAdd   <= paddleMSBAdd - 1;
-					    paddleLSBAdd   <= paddleLSBAdd - 1;
 				    end if;
 				  end if;   		  
            	else
