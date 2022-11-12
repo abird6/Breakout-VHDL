@@ -247,20 +247,16 @@ begin
 				NSBallNumDlyCount   <= 0;
             
                             -- checking CS ball location to assign zones
-                if CSBallYAdd = 3 then 
-                    zone <= 5;
-                elsif (CSBallXAdd = 31 or CSBallXAdd = 0) and (CSBallYAdd > 3 and CSBallYAdd < 14) then
+                if CSBallYAdd = 3 then      
                     zone <= 4;
-                elsif (CSBallXAdd > 1 and CSBallXAdd < 30) and (CSBallYAdd = 14) then
-                    zone <= 0;
-                elsif CSBallXAdd > 29 and CSBallYAdd > 13 then
-                    zone <= 2;
-                elsif CSBallXAdd < 2 and CSBallYAdd > 13 then
+                elsif (CSBallXAdd = 31 or CSBallXAdd = 0) and (CSBallYAdd = 14) then 
                     zone <= 3;
-                elsif (CSBallXAdd > 1 and CSBallXAdd < 30) and (CSBallYAdd = 15) then
+                elsif (CSBallYAdd = 14) then                       
+                    zone <= 2;
+                elsif (CSBallXAdd = 31 or CSBallXAdd = 0) then
                     zone <= 1;
                 else
-                    zone <= 6;
+                    zone <= 0;
                 end if;
                 NS <= assignBallDir;   
             else -- CSBallNumDlyCount != CSBallNumDlyMax 
@@ -280,105 +276,120 @@ begin
              -- zone actions
              NS <= processBall;   -- apply new direction vectors to ball
             case zone is				   
-                when 0 =>      -- below wall
+                when 4 =>      -- above paddle
+                    if (CSBallXAdd = paddleMSBAdd) then 
+                            NSBallDir <= "110";
+                        elsif (CSBallXAdd = paddleMSBAdd) then
+                            NSBallDir <= "101";
+                        elsif (CSBallXAdd > paddleLSBAdd) and (CSBallXAdd < paddleMSBAdd) then
+                            NSBallDir <= "100";
+                        else
+                            NS <= respawn;
+                    end if; 
+--                    if CSBallXAdd = paddleMSBAdd then 
+--                        if CSBallDir = "001" then
+--                            NSBallDir <= "100";
+--                        else 
+--                            NSBallDir <= "110";
+--                        end if;
+--                    elsif CSBallXAdd = paddleLSBAdd then 
+--                        if CSBallDir = "010" then 
+--                            NSBallDir <= "100";
+--                        else 
+--                            NSBallDir <= "101";
+--                        end if;
+--                    elsif CSBallXAdd > paddleLSBAdd and CSBallXAdd < paddleMSBAdd then
+--                        NSBallDir(2) <= '1';
+--                    else
+--                        NS <= respawn;
+--                    end if;
+                   
+--                when 1 =>      -- wall
+--                   NSBallDir(2) <= '0';
+                when 3 =>      -- top left corner
                    if CSBallDir(2) = '1' then
+                        NSBallDir <= not(CSBallDir);
+                        if (CSBallXAdd = 31) and (CSWallVec(31) = '1') then
+                            NSWallVec(31) <= '0';
+                        elsif (CSBallXAdd = 0) and (CSWallVec(0) = '1') then
+                            NSWallVec(0) <= '0';
+                        end if;
+--                        if CSBallXAdd = 30 then
+--                            if CSBallYAdd = 14 then
+--                                if CSWallVec(30) = '1' or CSWallVec(31) = '1' then
+--                                    NSWallVec(31 downto 30) <= "00";
+--                                    NSBallDir <= "001";                                
+--                                end if;
+--                            elsif CSBallYAdd = 15 then
+--                                NSBallDir(2) <= '0';
+--                            end if;
+--                        elsif CSBallXAdd = 31 then 
+--                            if CSBallYAdd = 14 then
+--                                if CSWallVec(31) = '1' then
+--                                    NSWallVec(31) <= '0';
+--                                 end if;  
+--                            end if;              
+--                            if CSBallDir = "100" then
+--                                NSBallDir(2) <= not(CSBallDir(2));
+--                            else 
+--                                NSBallDir <= not(CSBallDir);
+--                            end if;
+--                        end if;
+                   end if;
+                   
+               when 2 =>      -- below wall
+                   if CSBallDir(2) = '1' then
+                       NSBallDir(2) <= '0';
                        if CSWallVec(to_integer(to_unsigned(CSBallXAdd, 5))) = '1' then
                            NSScore <= CSScore + 1;
-                           NSBallDir(2) <= '0';
                            NSWallVec(to_integer(to_unsigned(CSBallXAdd, 5))) <= '0';
                            NS <= updateWall;
-                       elsif CSBallDir(1 downto 0) = "10" then
-                           if CSWallVec(to_integer(to_unsigned(CSBallXAdd + 1, 5))) = '1' then 
-                               NSScore <= CSScore + 1;
-                               NSBallDir <= not(CSBallDir);
-                               NSWallVec(to_integer(to_unsigned(CSBallXAdd + 1, 5))) <= '0';
-                               NS <= updateWall;
-                           end if;
-                       elsif CSBallDir(1 downto 0) = "01" then
-                           if CSWallVec(to_integer(to_unsigned(CSBallXAdd - 1, 5))) = '1' then 
-                               NSScore <= CSScore + 1;
-                               NSBallDir <= not(CSBallDir);
-                               NSWallVec(to_integer(to_unsigned(CSBallXAdd - 1, 5))) <= '0';
-                               NS <= updateWall;
-                           end if;
+--                       elsif CSBallDir(1 downto 0) = "10" then
+--                           if CSWallVec(to_integer(to_unsigned(CSBallXAdd + 1, 5))) = '1' then 
+--                               NSScore <= CSScore + 1;
+--                               NSBallDir <= not(CSBallDir);
+--                               NSWallVec(to_integer(to_unsigned(CSBallXAdd + 1, 5))) <= '0';
+--                               NS <= updateWall;
+--                           end if;
+--                       elsif CSBallDir(1 downto 0) = "01" then
+--                           if CSWallVec(to_integer(to_unsigned(CSBallXAdd - 1, 5))) = '1' then 
+--                               NSScore <= CSScore + 1;
+--                               NSBallDir <= not(CSBallDir);
+--                               NSWallVec(to_integer(to_unsigned(CSBallXAdd - 1, 5))) <= '0';
+--                               NS <= updateWall;
+--                           end if;
                        end if;
-                   end if;
-                   
-                when 1 =>      -- wall
-                   NSBallDir(2) <= '0';
-                when 2 =>      -- top left corner
-                   if CSBallDir(2) = '1' then
-                        if CSBallXAdd = 30 then
-                            if CSBallYAdd = 14 then
-                                if CSWallVec(30) = '1' or CSWallVec(31) = '1' then
-                                    NSWallVec(31 downto 30) <= "00";
-                                    NSBallDir <= "001";                                
-                                end if;
-                            elsif CSBallYAdd = 15 then
-                                NSBallDir(2) <= '0';
-                            end if;
-                        elsif CSBallXAdd = 31 then 
-                            if CSBallYAdd = 14 then
-                                if CSWallVec(31) = '1' then
-                                    NSWallVec(31) <= '0';
-                                 end if;  
-                            end if;              
-                            if CSBallDir = "100" then
-                                NSBallDir(2) <= not(CSBallDir(2));
-                            else 
-                                NSBallDir <= not(CSBallDir);
-                            end if;
-                        end if;
-                   end if;
-                   
-                   
-                when 3 =>      -- top right corner
-                    if CSBallDir(2) = '1' then
-                        if CSBallXAdd = 1 then
-                            if CSBallYAdd = 14 then
-                                if CSWallVec(1) = '1' or CSWallVec(0) = '1' then
-                                    NSWallVec(1 downto 0) <= "00";
-                                    NSBallDir <= "010";                                
-                                end if;
-                            elsif CSBallYAdd = 15 then
-                                NSBallDir(2) <= '0';
-                            end if;
-                        elsif CSBallXAdd = 0 then 
-                            if CSBallYAdd = 14 then
-                                if CSWallVec(0) = '1' then
-                                    NSWallVec(0) <= '0';
-                                 end if;  
-                            end if;              
-                            if CSBallDir = "100" then
-                                NSBallDir(2) <= not(CSBallDir(2));
-                            else 
-                                NSBallDir <= not(CSBallDir);
-                            end if;
-                        end if;
-                    end if;
+                   end if;  
+--                when 3 =>      -- top right corner
+--                    if CSBallDir(2) = '1' then
+--                        if CSBallXAdd = 1 then
+--                            if CSBallYAdd = 14 then
+--                                if CSWallVec(1) = '1' or CSWallVec(0) = '1' then
+--                                    NSWallVec(1 downto 0) <= "00";
+--                                    NSBallDir <= "010";                                
+--                                end if;
+--                            elsif CSBallYAdd = 15 then
+--                                NSBallDir(2) <= '0';
+--                            end if;
+--                        elsif CSBallXAdd = 0 then 
+--                            if CSBallYAdd = 14 then
+--                                if CSWallVec(0) = '1' then
+--                                    NSWallVec(0) <= '0';
+--                                 end if;  
+--                            end if;              
+--                            if CSBallDir = "100" then
+--                                NSBallDir(2) <= not(CSBallDir(2));
+--                            else 
+--                                NSBallDir <= not(CSBallDir);
+--                            end if;
+--                        end if;
+--                    end if;
                     
               
-                when 4 =>      -- arena boundary
+                when 1 =>      -- arena boundary
                     NSBallDir(1 downto 0) <= not(CSBallDir(1 downto 0));
                     
-                when 5 =>      -- above paddle
-                    if CSBallXAdd = paddleMSBAdd then 
-                        if CSBallDir = "001" then
-                            NSBallDir <= "100";
-                        else 
-                            NSBallDir <= "110";
-                        end if;
-                    elsif CSBallXAdd = paddleLSBAdd then 
-                        if CSBallDir = "010" then 
-                            NSBallDir <= "100";
-                        else 
-                            NSBallDir <= "101";
-                        end if;
-                    elsif CSBallXAdd > paddleLSBAdd and CSBallXAdd < paddleMSBAdd then
-                        NSBallDir(2) <= '1';
-                    else
-                        NS <= respawn;
-                    end if;  
+                  
                 
                 when 6 =>
                      NSBallDir <= CSBallDir; 
