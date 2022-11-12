@@ -286,25 +286,26 @@ begin
                            NSScore <= CSScore + 1;
                            NSBallDir(2) <= '0';
                            NSWallVec(to_integer(to_unsigned(CSBallXAdd, 5))) <= '0';
-                       
+                           NS <= updateWall;
                        elsif CSBallDir(1 downto 0) = "10" then
                            if CSWallVec(to_integer(to_unsigned(CSBallXAdd + 1, 5))) = '1' then 
                                NSScore <= CSScore + 1;
                                NSBallDir <= not(CSBallDir);
                                NSWallVec(to_integer(to_unsigned(CSBallXAdd + 1, 5))) <= '0';
+                               NS <= updateWall;
                            end if;
                        elsif CSBallDir(1 downto 0) = "01" then
                            if CSWallVec(to_integer(to_unsigned(CSBallXAdd - 1, 5))) = '1' then 
                                NSScore <= CSScore + 1;
                                NSBallDir <= not(CSBallDir);
                                NSWallVec(to_integer(to_unsigned(CSBallXAdd - 1, 5))) <= '0';
+                               NS <= updateWall;
                            end if;
                        end if;
                    end if;
                    
                 when 1 =>      -- wall
                    NSBallDir(2) <= '0';
-                   
                 when 2 =>      -- top left corner
                    if CSBallDir(2) = '1' then
                         if CSBallXAdd = 30 then
