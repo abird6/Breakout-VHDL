@@ -63,7 +63,7 @@ architecture RTL of game is
 -- Additional states include:
 --      * checkBallZone
 --      * respawn
-type stateType is (idle, writeToCSR0, setupGameParameters, initGameArena, initBall, initPaddle, initLives, initScore, waitState, processPaddle, checkBallZone, assignBallDir, processBall, writeBallToMem, endGame, respawn, updateScore, updateLives); -- declare enumerated state type
+type stateType is (idle, writeToCSR0, setupGameParameters, initGameArena, initBall, initPaddle, initLives, initScore, waitState, processPaddle, checkBallZone, assignBallDir, processBall, writeBallToMem, endGame, respawn, updateScore, updateLives, updateWall); -- declare enumerated state type
 signal NS, CS                                   : stateType; -- declare FSM state 
 								                
 signal NSWallVec, CSWallVec                     : std_logic_vector(31 downto 0);
@@ -268,6 +268,14 @@ begin
 			   NS  <= waitState;
 			end if;	
 		-- ========= Only partially completed =========
+        when updateWall =>
+            -- write wallVec
+			wr   	      <= '1';
+			add           <= "010" & "01111";               -- reg32x32 row 15
+			datToMem      <= CSWallVec;
+           	NS            <= processBall;
+        
+        
         when assignBallDir => 
              -- zone actions
              NS <= processBall;   -- apply new direction vectors to ball
