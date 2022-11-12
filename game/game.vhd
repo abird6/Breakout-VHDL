@@ -269,7 +269,7 @@ begin
 			wr   	      <= '1';
 			add           <= "010" & "01111";               -- reg32x32 row 15
 			datToMem      <= CSWallVec;
-           	NS            <= processBall;
+           	NS            <= updateScore;
         
         
         when assignBallDir => 
@@ -479,7 +479,7 @@ begin
 			wr   	      <= '1';
 			add	          <= "010" & "00000";               -- reg32x32 row 0 
 			datToMem      <= X"000000" & "000" & std_logic_vector( to_unsigned(CSScore, 5) );  
-		    NS                  <= updateLives;
+		    NS                  <= processBall;
 		
 		when updateLives =>
 		    -- Move to writeBallToMem
