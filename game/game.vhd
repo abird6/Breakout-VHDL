@@ -415,7 +415,7 @@ begin
 			 when 13 => datToMem <= x"20AAA000";
 			 when 12 => datToMem <= x"20AAA000";
 			 when 11 => datToMem <= x"2EEAB800";
-			 when 10 => datToMem <= x"20AAA000";
+			 when 10 => datToMem <= x"22AAA000";
 			 when 9 => datToMem <= x"1CAA9C00";
 			 when 8 => datToMem <= x"00000000";
 			 when 7 => datToMem <= x"00000000";
