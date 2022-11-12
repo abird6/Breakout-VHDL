@@ -191,8 +191,8 @@ begin
            	NS            <= initLives;
            	----------------------------------------------------------------------
 			-- set paddle MSB and LSB Addresses to center
-			paddleMSBAdd   <= 17;
-			paddleLSBAdd   <= 13;
+			paddleMSBAdd   <= 18;
+			paddleLSBAdd   <= 14;
 			----------------------------------------------------------------------
 		when initLives =>                          
 			wr   	      <= '1';
