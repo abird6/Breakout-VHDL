@@ -269,17 +269,47 @@ begin
         when assignBallDir => 
              -- zone actions
              NS <= processBall;   -- apply new direction vectors to ball
-            case zone is				   
+             add	<= "010" & "00010";                     -- reg32x32 row 2 (paddle row) 
+			   
+--			        if reg32x32_dOut(31) = '0' then 
+             
+             
+            case zone is			   
                 when 4 =>      -- above paddle
-                    if (CSBallXAdd = paddleMSBAdd) then 
+                    NS <= respawn;
+                    if (CSBallVec(CSBallXAdd) = reg32x32_dOut(CSBallXAdd)) then         -- Paddle is hit
+                        NSBallDir <= "100";
+                        if (reg32x32_dOut(CSBallXAdd-2) = '0') then -- If the bit two less than hit is 0, then paddle is hit at LSB or LSB + 1.
+                            NSBallDir <= "101";                 -- Move NE
+                        elsif (reg32x32_dOut(CSBallXAdd+2) = '0') then
                             NSBallDir <= "110";
-                        elsif (CSBallXAdd = paddleMSBAdd) then
-                            NSBallDir <= "101";
-                        elsif (CSBallXAdd > paddleLSBAdd) and (CSBallXAdd < paddleMSBAdd) then
-                            NSBallDir <= "100";
-                        else
-                            NS <= respawn;
-                    end if; 
+                        end if;
+                        NS <= processBall;
+                    end if;
+                    
+                    
+                    
+--                    if (CSBallXAdd = paddleMSBAdd) then 
+--                            NSBallDir <= "110";
+--                        elsif (CSBallXAdd = paddleMSBAdd) then
+--                            NSBallDir <= "101";
+--                        elsif (CSBallXAdd > paddleLSBAdd) and (CSBallXAdd < paddleMSBAdd) then
+--                            NSBallDir <= "100";
+--                        else
+--                            NS <= respawn;
+--                    end if; 
+                    
+                    
+                    
+                    
+--                        if (CSBallVec(CSBallXAdd-1) = reg32x32_dOut(CSBallXAdd-1)) then
+--                            NSBallDir <= "101";
+--                            end if;
+--                        elsif (CSBallXAdd > paddleLSBAdd) and (CSBallXAdd < paddleMSBAdd) then
+--                            NSBallDir <= "100";
+--                        else
+--                            NS <= respawn;
+--                    end if; 
 --                    if CSBallXAdd = paddleMSBAdd then 
 --                        if CSBallDir = "001" then
 --                            NSBallDir <= "100";
