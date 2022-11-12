@@ -123,8 +123,8 @@ begin
   reg4x32_CSRB       <= ( others => (others => '0') ); -- clear all CSRB array         
   reg4x32_CSRB(0)(9 downto 8) <= "00"; -- assert left control bit        
   wait for 20*period;  
-  reg4x32_CSRB(0)(9 downto 8) <= "00"; -- assert right control bit        
-  wait for 200*period;  
+  reg4x32_CSRB(0)(9 downto 8) <= "10"; -- assert right control bit        
+  wait for 1000*period;  
   reg4x32_CSRB(0)(9 downto 8) <= "00"; -- assert left control bit        
   wait for 200*period;  
   
