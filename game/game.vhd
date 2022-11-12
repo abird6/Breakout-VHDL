@@ -488,9 +488,10 @@ begin
 			NSLives             <= CSLives - 1;
 			NSBallVec           <= reg4x32_CSRA(1);
 			NSPaddleVec         <= reg4x32_CSRB(3);
-			NSBallDir           <= reg4x32_CSRB(2)(26 downto  24);
+--			NSBallDir           <= reg4x32_CSRB(2)(26 downto  24);
+            NSBallDir           <= "100";
 --            NS                  <= writeBallToMem;
-            NS                  <= updateScore;
+            NS                  <= updateLives;
 		  else
 		      NS <= endGame;
 		  end if;
