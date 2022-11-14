@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1566804695fs"></ZoomStartTime>
-      <ZoomEndTime time="1726639062fs"></ZoomEndTime>
-      <Cursor1Time time="1700000000fs"></Cursor1Time>
+      <ZoomStartTime time="13053500000fs"></ZoomStartTime>
+      <ZoomEndTime time="13189288489fs"></ZoomEndTime>
+      <Cursor1Time time="4280000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="292"></NameColumnWidth>
-      <ValueColumnWidth column_width="336"></ValueColumnWidth>
+      <NameColumnWidth column_width="271"></NameColumnWidth>
+      <ValueColumnWidth column_width="248"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="3" />
    <wvobject fp_name="group53" type="group">
@@ -383,6 +383,10 @@
          <obj_property name="ElementShortName">CSPaddleVec[31:0]</obj_property>
          <obj_property name="ObjectShortName">CSPaddleVec[31:0]</obj_property>
       </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSLives" type="other">
+         <obj_property name="ElementShortName">NSLives</obj_property>
+         <obj_property name="ObjectShortName">NSLives</obj_property>
+      </wvobject>
       <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSBallDir" type="array">
          <obj_property name="ElementShortName">NSBallDir[2:0]</obj_property>
          <obj_property name="ObjectShortName">NSBallDir[2:0]</obj_property>
@@ -390,14 +394,7 @@
       <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSBallDir" type="array">
          <obj_property name="ElementShortName">CSBallDir[2:0]</obj_property>
          <obj_property name="ObjectShortName">CSBallDir[2:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/paddleMSBAdd" type="other">
-         <obj_property name="ElementShortName">paddleMSBAdd</obj_property>
-         <obj_property name="ObjectShortName">paddleMSBAdd</obj_property>
-      </wvobject>
-      <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/paddleLSBAdd" type="other">
-         <obj_property name="ElementShortName">paddleLSBAdd</obj_property>
-         <obj_property name="ObjectShortName">paddleLSBAdd</obj_property>
+         <obj_property name="isExpanded"></obj_property>
       </wvobject>
       <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSBallXAdd" type="other">
          <obj_property name="ElementShortName">NSBallXAdd</obj_property>
