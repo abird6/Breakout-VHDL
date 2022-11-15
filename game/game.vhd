@@ -60,10 +60,10 @@ end game;
 
 architecture RTL of game is
 -- Internal signal declarations
--- Additional states include:
---      * checkBallZone
---      * respawn
-type stateType is (idle, writeToCSR0, setupGameParameters, initGameArena, initBall, initPaddle, initLives, initScore, waitState, processPaddle, checkBallZone, assignBallDir, processBall, writeBallToMem, endGame, respawn, updateScore, updateLives, updateWall); -- declare enumerated state type
+type stateType is (	idle, writeToCSR0, setupGameParameters, initGameArena, 
+					initBall, initPaddle, initLives, initScore, waitState, 
+					processPaddle, checkBallZone, processBallZone, processBall, 
+					writeBallToMem, endGame, respawn, updateScore, updateLives, updateWall); -- declare enumerated state type
 signal NS, CS                                   : stateType; -- declare FSM state 
 								                
 signal NSWallVec, CSWallVec                     : std_logic_vector(31 downto 0);
@@ -91,22 +91,17 @@ signal NSBallNumDlyCount, CSBallNumDlyCount     : integer range 0 to 31;
 signal zone 									: integer; 
 signal CSEndGameCounter, NSEndGameCounter       : integer;
 
-
-
-
 begin
 
 asgnFunctBus2_i: functBus <= (others => '0'); -- not currently used 
 
 -- FSM next state and o/p decode process
--- <include new signals in sensitivity list>
 NSAndOPDec_i: process (CS, go, 
 					   reg4x32_CSRA, reg4x32_CSRB, reg32x32_dOut, 
 					   CSWallVec, CSPaddleVec, CSBallXAdd, CSBallYAdd, CSBallDir, CSScore, CSLives, 
 					   CSDlyCountMax, CSPaddleNumDlyMax, CSBallNumDlyMax, CSDlyCount, CSPaddleNumDlyCount, CSBallNumDlyCount, CSEndGameCounter)
 begin
 
-   -- <<<< This code runs every loop >>>>>> -- 
    NS 	 		       <= CS;     -- default signal assignments
    NSWallVec           <= CSWallVec;
    NSBallVec           <= CSBallVec;
@@ -127,10 +122,9 @@ begin
    wr   	           <= '0';
    add	               <= "010" & "00000"; -- reg32x32 base address
    datToMem            <= (others => '0');
---   zone                <= 6;
    NSEndGameCounter <= CSEndGameCounter;
-
-  case CS is 
+   
+   case CS is 
 		when idle => 			     
 			active  <= '0';  
             if go = '1' then 
@@ -143,6 +137,7 @@ begin
 					NS                  <= waitState;
 				end if;
 			end if;
+
 
 		when writeToCSR0 =>                                        -- finish. Return done state and return control to host
 			wr       <= '1';
@@ -171,28 +166,36 @@ begin
 			
 			NS                  <= initGameArena;
 
+
 		when initGameArena => -- follow an initialisation sequence
             -- write wallVec
 			wr   	      <= '1';
 			add           <= "010" & "01111";               -- reg32x32 row 15
 			datToMem      <= CSWallVec;
            	NS            <= initBall;
+			
+			
 		when initBall => 
 			wr   	      <= '1';
 			add	          <= "010" & std_logic_vector( to_unsigned(CSBallYAdd,5) );  
 			datToMem      <= CSBallVec;
            	NS            <= initPaddle;
+			
+			
 		when initPaddle =>
 			wr   	      <= '1';
 			add	          <= "010" & "00010";               -- reg32x32 row 2 
 			datToMem      <= CSPaddleVec;
            	NS            <= initLives;
-			----------------------------------------------------------------------
+			
+			
 		when initLives =>                          
 			wr   	      <= '1';
 			add	          <= "010" & "00001";               -- reg32x32 row 1
 			datToMem      <= X"000000" & "000" & std_logic_vector( to_unsigned(CSLives, 5) );  
-           	NS            <= initScore;     
+           	NS            <= initScore;  
+
+			
 		when initScore =>                          
 			wr   	      <= '1';
 			add	          <= "010" & "00000";               -- reg32x32 row 0 
@@ -232,48 +235,66 @@ begin
            	   NS  <= checkBallZone;
            	end if;		
 
-        when checkBallZone => 
+
+        when checkBallZone => -- determine the zone of ball, given ball location 
             if CSBallNumDlyCount = CSBallNumDlyMax then
 				NSBallNumDlyCount   <= 0;
-            
-                            -- checking CS ball location to assign zones
-                if CSBallYAdd = 3 then      
-                    zone <= 4;
+                if CSBallYAdd = 3 then	
+                    zone <= 4;	-- row above paddle 
                 elsif (CSBallXAdd = 31 or CSBallXAdd = 0) and (CSBallYAdd = 14) then 
-                    zone <= 3;
+                    zone <= 3;	-- top left/right corner
                 elsif (CSBallYAdd = 14) then                       
-                    zone <= 2;
+                    zone <= 2;	-- row below wall
                 elsif (CSBallXAdd = 31 or CSBallXAdd = 0) then
-                    zone <= 1;
+                    zone <= 1;	-- left/right arena boundary
                 else
-                    zone <= 0;
+                    zone <= 0;	-- free space
                 end if;
-                NS <= assignBallDir;   
+                NS <= processBallZone;   
             else -- CSBallNumDlyCount != CSBallNumDlyMax 
 			   NSBallNumDlyCount <= CSBallNumDlyCount + 1; -- increment counter
 			   NS  <= waitState;
 			end if;	
-		-- ========= Only partially completed =========
-        when updateWall =>
-            -- write wallVec
-			wr   	      <= '1';
-			add           <= "010" & "01111";               -- reg32x32 row 15
-			datToMem      <= CSWallVec;
-           	NS            <= updateScore;
-        
-        
-        when assignBallDir => 
-             -- zone actions
+
+
+        when processBallZone => -- update arena and assign new ball direction based on current zone
              NS <= processBall;   -- apply new direction vectors to ball
-             add	<= "010" & "00010";                     -- reg32x32 row 2 (paddle row) 
-			   
---			        if reg32x32_dOut(31) = '0' then 
-             
+             add	<= "010" & "00010";                     -- reg32x32 row 2 (paddle row)              
              
             case zone is			   
+                
+                when 1 =>      -- left/right arena boundary
+                    NSBallDir(1 downto 0) <= not(CSBallDir(1 downto 0));
+                
+                when 2 =>      -- row below wall
+                   if CSBallDir(2) = '1' then
+                       NSBallDir(2) <= '0';
+                       if CSWallVec(to_integer(to_unsigned(CSBallXAdd, 5))) = '1' then
+                           NSScore <= CSScore + 1;
+                           NSWallVec(to_integer(to_unsigned(CSBallXAdd, 5))) <= '0';
+                           NS <= updateWall;  
+                       end if;
+                   end if;
+                   
+                when 3 =>      -- top left/right corner
+                   if CSBallDir(2) = '1' then
+                        NSBallDir <= not(CSBallDir);
+                        if (CSBallXAdd = 31) and (CSWallVec(31) = '1') then
+                            NSScore <= CSScore + 1;
+							NSWallVec(31) <= '0';
+							NS <=  updateWall;
+                        elsif (CSBallXAdd = 0) and (CSWallVec(0) = '1') then
+                            NSScore <= CSScore + 1;
+							NSWallVec(0) <= '0';
+							NS <= updateWall;
+						else 
+							NS <= processBall;
+                        end if;
+                   end if;
+                
                 when 4 =>      -- above paddle
                     NS <= respawn;
-                    if (CSBallVec(CSBallXAdd) = reg32x32_dOut(CSBallXAdd)) then         -- Paddle is hit
+                    if (reg32x32_dOut(CSBallXAdd) = '1') then         -- Paddle is hit
                         NSBallDir <= "100";
                         if (reg32x32_dOut(CSBallXAdd-2) = '0') then -- If the bit two less than hit is 0, then paddle is hit at LSB or LSB + 1.
                             NSBallDir <= "101";                 -- Move NE
@@ -282,160 +303,33 @@ begin
                         end if;
                         NS <= processBall;
                     end if;
-                    
-                    
-                    
---                    if (CSBallXAdd = paddleMSBAdd) then 
---                            NSBallDir <= "110";
---                        elsif (CSBallXAdd = paddleMSBAdd) then
---                            NSBallDir <= "101";
---                        elsif (CSBallXAdd > paddleLSBAdd) and (CSBallXAdd < paddleMSBAdd) then
---                            NSBallDir <= "100";
---                        else
---                            NS <= respawn;
---                    end if; 
-                    
-                    
-                    
-                    
---                        if (CSBallVec(CSBallXAdd-1) = reg32x32_dOut(CSBallXAdd-1)) then
---                            NSBallDir <= "101";
---                            end if;
---                        elsif (CSBallXAdd > paddleLSBAdd) and (CSBallXAdd < paddleMSBAdd) then
---                            NSBallDir <= "100";
---                        else
---                            NS <= respawn;
---                    end if; 
---                    if CSBallXAdd = paddleMSBAdd then 
---                        if CSBallDir = "001" then
---                            NSBallDir <= "100";
---                        else 
---                            NSBallDir <= "110";
---                        end if;
---                    elsif CSBallXAdd = paddleLSBAdd then 
---                        if CSBallDir = "010" then 
---                            NSBallDir <= "100";
---                        else 
---                            NSBallDir <= "101";
---                        end if;
---                    elsif CSBallXAdd > paddleLSBAdd and CSBallXAdd < paddleMSBAdd then
---                        NSBallDir(2) <= '1';
---                    else
---                        NS <= respawn;
---                    end if;
-                   
---                when 1 =>      -- wall
---                   NSBallDir(2) <= '0';
-                when 3 =>      -- top left corner
-                   if CSBallDir(2) = '1' then
-                        NSBallDir <= not(CSBallDir);
-                        if (CSBallXAdd = 31) and (CSWallVec(31) = '1') then
-                            NSWallVec(31) <= '0';
-                        elsif (CSBallXAdd = 0) and (CSWallVec(0) = '1') then
-                            NSWallVec(0) <= '0';
-                        end if;
---                        if CSBallXAdd = 30 then
---                            if CSBallYAdd = 14 then
---                                if CSWallVec(30) = '1' or CSWallVec(31) = '1' then
---                                    NSWallVec(31 downto 30) <= "00";
---                                    NSBallDir <= "001";                                
---                                end if;
---                            elsif CSBallYAdd = 15 then
---                                NSBallDir(2) <= '0';
---                            end if;
---                        elsif CSBallXAdd = 31 then 
---                            if CSBallYAdd = 14 then
---                                if CSWallVec(31) = '1' then
---                                    NSWallVec(31) <= '0';
---                                 end if;  
---                            end if;              
---                            if CSBallDir = "100" then
---                                NSBallDir(2) <= not(CSBallDir(2));
---                            else 
---                                NSBallDir <= not(CSBallDir);
---                            end if;
---                        end if;
-                   end if;
-                   
-               when 2 =>      -- below wall
-                   if CSBallDir(2) = '1' then
-                       NSBallDir(2) <= '0';
-                       if CSWallVec(to_integer(to_unsigned(CSBallXAdd, 5))) = '1' then
-                           NSScore <= CSScore + 1;
-                           NSWallVec(to_integer(to_unsigned(CSBallXAdd, 5))) <= '0';
-                           NS <= updateWall;
---                       elsif CSBallDir(1 downto 0) = "10" then
---                           if CSWallVec(to_integer(to_unsigned(CSBallXAdd + 1, 5))) = '1' then 
---                               NSScore <= CSScore + 1;
---                               NSBallDir <= not(CSBallDir);
---                               NSWallVec(to_integer(to_unsigned(CSBallXAdd + 1, 5))) <= '0';
---                               NS <= updateWall;
---                           end if;
---                       elsif CSBallDir(1 downto 0) = "01" then
---                           if CSWallVec(to_integer(to_unsigned(CSBallXAdd - 1, 5))) = '1' then 
---                               NSScore <= CSScore + 1;
---                               NSBallDir <= not(CSBallDir);
---                               NSWallVec(to_integer(to_unsigned(CSBallXAdd - 1, 5))) <= '0';
---                               NS <= updateWall;
---                           end if;
-                       end if;
-                   end if;  
---                when 3 =>      -- top right corner
---                    if CSBallDir(2) = '1' then
---                        if CSBallXAdd = 1 then
---                            if CSBallYAdd = 14 then
---                                if CSWallVec(1) = '1' or CSWallVec(0) = '1' then
---                                    NSWallVec(1 downto 0) <= "00";
---                                    NSBallDir <= "010";                                
---                                end if;
---                            elsif CSBallYAdd = 15 then
---                                NSBallDir(2) <= '0';
---                            end if;
---                        elsif CSBallXAdd = 0 then 
---                            if CSBallYAdd = 14 then
---                                if CSWallVec(0) = '1' then
---                                    NSWallVec(0) <= '0';
---                                 end if;  
---                            end if;              
---                            if CSBallDir = "100" then
---                                NSBallDir(2) <= not(CSBallDir(2));
---                            else 
---                                NSBallDir <= not(CSBallDir);
---                            end if;
---                        end if;
---                    end if;
-                    
-              
-                when 1 =>      -- arena boundary
-                    NSBallDir(1 downto 0) <= not(CSBallDir(1 downto 0));
-                    
-                  
-                
-                when 6 =>
-                     NSBallDir <= CSBallDir; 
+					
                 when others =>
                     null;
             end case;
             
-        when processBall => 	
-               case CSBallDir(1 downto 0) is 
-                   when "10" => NSBallXAdd <= CSBallXAdd + 1;
-                   when "01" => NSBallXAdd <= CSBallXAdd - 1;
-                   when others => null;
-               end case;
-                -- applying ball directions to addresses
-				if CSBallDir(2) = '1' then 
-                   NSBallYAdd <= CSBallYAdd + 1;
-               elsif CSBallDir(2) = '0' then
-                   NSBallYAdd <= CSBallYAdd - 1;
-               end if;
-               wr                  <= '1'; 					        			             -- clear current ball row
-               add(7 downto 5)     <= "010";                                                 -- reg32x32 memory bank select 
-               add(4 downto 0)     <= std_logic_vector( to_unsigned(CSBallYAdd, 5) );        -- current row address 
-               datToMem            <= (others => '0');							             -- clear row
-               NS                  <= writeBallToMem;
+			
+        when processBall => 	-- move ball according to CSBallDir
+			-- processing E or W movement 
+			case CSBallDir(1 downto 0) is 
+				when "10" => NSBallXAdd <= CSBallXAdd + 1;
+				when "01" => NSBallXAdd <= CSBallXAdd - 1;
+				when others => null;
+			end case;
+			-- processing N or S movement
+			if CSBallDir(2) = '1' then 
+				NSBallYAdd <= CSBallYAdd + 1;
+			elsif CSBallDir(2) = '0' then
+				NSBallYAdd <= CSBallYAdd - 1;
+			end if;
+			-- clearing current ball row 
+			wr                  <= '1'; 					        			          -- clear current ball row
+			add(7 downto 5)     <= "010";                                                 -- reg32x32 memory bank select 
+			add(4 downto 0)     <= std_logic_vector( to_unsigned(CSBallYAdd, 5) );        -- current row address 
+			datToMem            <= (others => '0');							              -- clear row
+			NS                  <= writeBallToMem;
 
-		when writeBallToMem =>                                                           -- write new ball row
+		when writeBallToMem =>  -- write new ball row
              wr                       <= '1'; 					        			      
              add(7 downto 5)          <= "010";                                          -- reg32x32 memory bank select 
              add(4 downto 0)          <= std_logic_vector( to_unsigned(CSBallYAdd, 5) ); -- row address
@@ -443,9 +337,49 @@ begin
    	         datToMem( to_integer(to_unsigned(CSBallXAdd, 5)) ) <= '1';                  -- ball bit asserted
 			 NS <= waitState;
 		
-
-		when endGame =>                          
-			-- <perform pattern write to arena to indicate game over>
+		
+		when updateWall =>	-- writing wall to memory after a score
+            -- write wallVec
+			wr   	      <= '1';
+			add           <= "010" & "01111";               -- reg32x32 row 15
+			datToMem      <= CSWallVec;
+           	NS            <= updateScore;
+		
+	
+		when updateScore => -- update score row in memory (row 0)
+			wr   	      <= '1';
+			add	          <= "010" & "00000";               -- reg32x32 row 0 
+			datToMem      <= X"000000" & "000" & std_logic_vector( to_unsigned(CSScore, 5) );  
+		    NS            <= processBall;
+		
+		
+		when updateLives =>	-- update lives row in memory (row 1)
+			wr   	      <= '1';
+			add	          <= "010" & "00001";               -- reg32x32 row 1
+			datToMem      <= X"000000" & "000" & std_logic_vector( to_unsigned(CSLives, 5) );      
+		    NS            <= writeBallToMem;
+			
+		
+		when respawn =>		-- respawn ball after losing a life
+		  if CSLives > 1 then
+            wr                  <= '1'; 					        			            -- clear current ball row
+            add(7 downto 5)     <= "010";                                                   -- reg32x32 memory bank select 
+            add(4 downto 0)     <= std_logic_vector( to_unsigned(CSBallYAdd, 5) );          -- current row address 
+            datToMem            <= (others => '0');							                -- clear row
+			
+			-- respawning ball to starting position
+			NSBallXAdd 	        <= to_integer( unsigned(reg4x32_CSRA(2)(28 downto 24)) );
+			NSBallYAdd 	        <= to_integer( unsigned(reg4x32_CSRA(2)(20 downto 16)) );
+			NSLives             <= CSLives - 1;
+			NSPaddleVec         <= reg4x32_CSRB(3);
+            NSBallDir           <= "100";
+            NS                  <= updateLives; -- write updated lives to memory
+		  else
+		      NS <= endGame;
+		  end if;
+			
+			
+		when endGame =>  -- display 'GAME OVER' on arena                         
 			wr <= '1';
 			add(4 downto 0) <= std_logic_vector( to_unsigned(CSEndGameCounter,5) );
 			add(7 downto 5) <= "010";
@@ -474,49 +408,16 @@ begin
 			  NS <= endGame;
 			end if;
 			NSEndGameCounter <= CSEndGameCounter + 1;
-            
-		when respawn =>
-		  if CSLives > 1 then
-            wr                  <= '1'; 					        			            -- clear current ball row
-            add(7 downto 5)     <= "010";                                                   -- reg32x32 memory bank select 
-            add(4 downto 0)     <= std_logic_vector( to_unsigned(CSBallYAdd, 5) );          -- current row address 
-            datToMem            <= (others => '0');							                -- clear row
-            -- ================================================================
-            -- NSWallVec           <= reg4x32_CSRA(3);
-			NSBallXAdd 	        <= to_integer( unsigned(reg4x32_CSRA(2)(28 downto 24)) );
-			NSBallYAdd 	        <= to_integer( unsigned(reg4x32_CSRA(2)(20 downto 16)) );
-			NSLives             <= CSLives - 1;
-			NSBallVec           <= reg4x32_CSRA(1);
-			NSPaddleVec         <= reg4x32_CSRB(3);
---			NSBallDir           <= reg4x32_CSRB(2)(26 downto  24);
-            NSBallDir           <= "100";
---            NS                  <= writeBallToMem;
-            NS                  <= updateLives;
-		  else
-		      NS <= endGame;
-		  end if;
-		when updateScore => 
-            -- Write changes to mem. move to updateLives
-			wr   	      <= '1';
-			add	          <= "010" & "00000";               -- reg32x32 row 0 
-			datToMem      <= X"000000" & "000" & std_logic_vector( to_unsigned(CSScore, 5) );  
-		    NS                  <= processBall;
-		
-		when updateLives =>
-		    -- Move to writeBallToMem
-			wr   	      <= '1';
-			add	          <= "010" & "00001";               -- reg32x32 row 1
-			datToMem      <= X"000000" & "000" & std_logic_vector( to_unsigned(CSLives, 5) );      
-		    NS                  <= writeBallToMem;
-		
+
 
 		when others => 
 			null;
 	end case;
 end process; 
-
-
--- Synchronous process registering current FSM state value, and other registered signals
+   
+   
+   
+ -- Synchronous process registering current FSM state value, and other registered signals
 -- registers include chip enable control
 stateReg_i: process (clk, rst)
 begin
@@ -561,4 +462,20 @@ begin
   end if;
 end process; 
 
-end RTL;
+end RTL;  
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   

@@ -99,7 +99,7 @@ begin
 -- 0003e000040000020204000000000000
   reg4x32_CSRB                 <= ( others => (others => '0') ); -- clear all CSRA array         
 
-  reg4x32_CSRB(3)              <= X"0003e000";     -- paddleVec  
+  reg4x32_CSRB(3)              <= X"0001e000";     -- paddleVec  
 
   reg4x32_CSRB(2)(31 downto 24)<= "00000" & "000"; -- ball direction (2:0)   
   reg4x32_CSRB(2)(19 downto  0)<= X"00002";        -- dlyCount(19:0) 
@@ -112,10 +112,29 @@ begin
   go     				<= '0';   
   wait for 20*period;  
 
+  testNo                <= 2;   -- rebound paddle MSB / left arena boundary / wall
+  reg4x32_CSRA(0)       <= X"00001101"; -- DSPProc command (15:8) = 0b00010 001, (0) = 1. Play game
+  go     				<= '1'; 
+  wait for period;  
+  go     				<= '0';   
+  wait for 500*period;  
+  
+  testNo                <= 3;   -- rebound paddle LSB / right arena boundary / wall
+  go     				<= '1'; 
+  wait for period;  
+  go     				<= '0';   
+  wait for 20*period; 
+  reg4x32_CSRB       <= ( others => (others => '0') ); -- clear all CSRB array         
+  reg4x32_CSRB(0)(9 downto 8) <= "10"; -- assert left control bit        
+  wait for 10*period;
+  wait for 500*period;  
+  
+  
+  testNo                <= 4;   -- rebound corner
 
 
-  testNo 				<= 2;      
-  reg4x32_CSRA(0)       <= X"00001101"; -- DSPProc command (15:8) = 0b00010 001, (0) = 1. Play game 
+
+  testNo 				<= 5;  -- Stage A test     
   go     				<= '1'; 
   wait for period;  
   go     				<= '0';   
@@ -129,6 +148,9 @@ begin
   wait for 200*period;  
   
 
+
+  
+  
   wait for 2000*period;  
   
   endOfSim 				<= true;  -- assert flag. Stops clk signal generation in process clkStim
