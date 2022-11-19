@@ -63,7 +63,7 @@ architecture RTL of game is
 type stateType is (	idle, writeToCSR0, setupGameParameters, initGameArena, 
 					initBall, initPaddle, initLives, initScore, waitState, 
 					processPaddle, checkBallZone, processBallZone, processBall, 
-					writeBallToMem, endGame, respawn, updateScore, updateLives, updateWall); -- declare enumerated state type
+					writeBallToMem, endGame, respawn, updateScore, updateLives, updateWall, winGame); -- declare enumerated state type
 signal NS, CS                                   : stateType; -- declare FSM state 
 								                
 signal NSWallVec, CSWallVec                     : std_logic_vector(31 downto 0);
@@ -88,9 +88,9 @@ signal NSPaddleNumDlyCount, CSPaddleNumDlyCount : integer range 0 to 31;
 signal NSBallNumDlyMax, CSBallNumDlyMax         : integer range 0 to 31;
 signal NSBallNumDlyCount, CSBallNumDlyCount     : integer range 0 to 31;
 
-signal zone 									: integer; 
+-- signal zone 									: integer; 
 signal CSEndGameCounter, NSEndGameCounter       : integer;
-
+signal CSZone, NSZone                           : integer;
 begin
 
 asgnFunctBus2_i: functBus <= (others => '0'); -- not currently used 
@@ -118,6 +118,7 @@ begin
    NSDlyCount          <= CSDlyCount;
    NSPaddleNumDlyMax   <= CSPaddleNumDlyMax;
    NSBallNumDlyMax     <= CSBallNumDlyMax;
+   NSZone              <= CSZone;
    active    	       <= '1';             -- default asserted. Deasserted only in idle state. 
    wr   	           <= '0';
    add	               <= "010" & "00000"; -- reg32x32 base address
@@ -151,9 +152,9 @@ begin
 			NSWallVec           <= reg4x32_CSRA(3);
 			NSBallXAdd 	        <= to_integer( unsigned(reg4x32_CSRA(2)(28 downto 24)) );
 			NSBallYAdd 	        <= to_integer( unsigned(reg4x32_CSRA(2)(20 downto 16)) );
-			-- NSLives             <= to_integer( unsigned(reg4x32_CSRA(2)( 3 downto  0)) );
-			NSLives             <= 3;
-			NSScore             <= to_integer( unsigned(reg4x32_CSRA(2)( 7 downto  4)) );
+			NSLives             <= to_integer( unsigned(reg4x32_CSRA(2)( 15 downto  8)) );
+			--NSLives             <= 3;
+			NSScore             <= to_integer( unsigned(reg4x32_CSRA(2)( 7 downto  0)) );
 			NSBallVec           <= reg4x32_CSRA(1);
 
 			NSPaddleVec         <= reg4x32_CSRB(3);
@@ -232,23 +233,23 @@ begin
 				  end if;   		  
            	else
 	           NSPaddleNumDlyCount <= CSPaddleNumDlyCount + 1; -- increment counter
-           	   NS  <= checkBallZone;
            	end if;		
-
+            NS  <= checkBallZone;
 
         when checkBallZone => -- determine the zone of ball, given ball location 
             if CSBallNumDlyCount = CSBallNumDlyMax then
 				NSBallNumDlyCount   <= 0;
-                if CSBallYAdd = 3 then	
-                    zone <= 4;	-- row above paddle 
-                elsif (CSBallXAdd = 31 or CSBallXAdd = 0) and (CSBallYAdd = 14) then 
-                    zone <= 3;	-- top left/right corner
+              
+                if (CSBallXAdd = 31 or CSBallXAdd = 0) and (CSBallYAdd = 14 or CSBallYAdd = 3) then 
+                    NSZone <= 3;	-- top left/right corner
+                elsif CSBallYAdd = 3 then	
+                    NSZone <= 4;	-- row above paddle 
                 elsif (CSBallYAdd = 14) then                       
-                    zone <= 2;	-- row below wall
+                    NSZone <= 2;	-- row below wall
                 elsif (CSBallXAdd = 31 or CSBallXAdd = 0) then
-                    zone <= 1;	-- left/right arena boundary
+                    NSZone <= 1;	-- left/right arena boundary
                 else
-                    zone <= 0;	-- free space
+                    NSZone <= 0;	-- free space
                 end if;
                 NS <= processBallZone;   
             else -- CSBallNumDlyCount != CSBallNumDlyMax 
@@ -261,7 +262,7 @@ begin
              NS <= processBall;   -- apply new direction vectors to ball
              add	<= "010" & "00010";                     -- reg32x32 row 2 (paddle row)              
              
-            case zone is			   
+            case CSZone is			   
                 
                 when 1 =>      -- left/right arena boundary
                     NSBallDir(1 downto 0) <= not(CSBallDir(1 downto 0));
@@ -276,9 +277,9 @@ begin
                        end if;
                    end if;
                    
-                when 3 =>      -- top left/right corner
+                when 3 =>      -- top/bottom left/right corner
+                   NSBallDir <= not(CSBallDir);
                    if CSBallDir(2) = '1' then
-                        NSBallDir <= not(CSBallDir);
                         if (CSBallXAdd = 31) and (CSWallVec(31) = '1') then
                             NSScore <= CSScore + 1;
 							NSWallVec(31) <= '0';
@@ -290,6 +291,13 @@ begin
 						else 
 							NS <= processBall;
                         end if;
+                   elsif CSBallDir(2) = '0' then
+                        add <= "010" & "00010";   -- reg32x32 row 2, paddle row address 
+					    if reg32x32_dOut(CSBallXAdd) = '1' then
+					       NS <= processBall;
+					    else
+					       NS <= respawn;
+					    end if;
                    end if;
                 
                 when 4 =>      -- above paddle
@@ -343,8 +351,11 @@ begin
 			wr   	      <= '1';
 			add           <= "010" & "01111";               -- reg32x32 row 15
 			datToMem      <= CSWallVec;
-           	NS            <= updateScore;
-		
+			if CSScore = 31 then
+			     NS       <= winGame;
+			else 
+           	    NS        <= updateScore;
+		    end if;
 	
 		when updateScore => -- update score row in memory (row 0)
 			wr   	      <= '1';
@@ -378,6 +389,35 @@ begin
 		      NS <= endGame;
 		  end if;
 			
+	    when winGame =>  -- display 'WINNER' on arena
+			wr <= '1';
+			add(4 downto 0) <= std_logic_vector( to_unsigned(CSEndGameCounter,5) );
+			add(7 downto 5) <= "010";
+			case CSEndGameCounter is
+			 when 15 => datToMem <= x"00000000";
+			 when 14 => datToMem <= x"41000000";
+			 when 13 => datToMem <= x"4140000A";
+			 when 12 => datToMem <= x"4100000A";
+			 when 11 => datToMem <= x"495999EA";
+			 when 10 => datToMem <= x"4955552A";
+			 when 9  => datToMem <= x"49555D0A";
+			 when 8  => datToMem <= x"49555100";
+			 when 7  => datToMem <= x"36555D0A";
+			 when 6  => datToMem <= x"00000000";
+			 when 5  => datToMem <= x"00000000";
+			 when 4  => datToMem <= x"00000000";
+			 when 3  => datToMem <= x"00000000";
+			 when 2  => datToMem <= x"00000000";
+			 when 1  => wr <= '0';   -- Wish not to overwrite the lives remaining
+			 when 0  => wr <= '0';   -- Wish not to overwrite the score
+			 when others => null;
+			end case;
+			if CSEndGameCounter > 15 then
+		      NS <= writeToCSR0;
+			else
+			  NS <= winGame;
+			end if;
+			NSEndGameCounter <= CSEndGameCounter + 1;
 			
 		when endGame =>  -- display 'GAME OVER' on arena                         
 			wr <= '1';
@@ -409,7 +449,6 @@ begin
 			end if;
 			NSEndGameCounter <= CSEndGameCounter + 1;
 
-
 		when others => 
 			null;
 	end case;
@@ -438,7 +477,8 @@ begin
     CSDlyCount          <= 0;
     CSPaddleNumDlyMax   <= 0;
 	CSBallNumDlyMax     <= 0;
-	CSEndGameCounter <= 0;
+	CSEndGameCounter    <= 0;
+	CSZone              <= 0;
   elsif clk'event and clk = '1' then 
     if ce = '1' then
 		CS 	                <= NS;		
@@ -457,25 +497,11 @@ begin
         CSDlyCount          <= NSDlyCount;
 		CSPaddleNumDlyMax   <= NSPaddleNumDlyMax;
 		CSBallNumDlyMax     <= NSBallNumDlyMax;
-		CSEndGameCounter <= NSEndGameCounter;
+		CSEndGameCounter    <= NSEndGameCounter;
+		CSZone              <= NSZone;
      end if;
   end if;
 end process; 
 
 end RTL;  
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
    
