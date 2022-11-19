@@ -278,7 +278,7 @@ begin
   
   reg4x32_CSRA(2)(31 downto 24)<= "000" & "10000"; -- "000" & ballXAdd(4:0)      
   reg4x32_CSRA(2)(23 downto 16)<= "000" & "00100"; -- "000" & ballYAdd(4:0)      
-  reg4x32_CSRA(2)(15 downto  8)<= "000" & "00011"; -- "000" & lives(4:0)      
+  reg4x32_CSRA(2)(15 downto  8)<= "000" & "00001"; -- "000" & lives(4:0)      
   reg4x32_CSRA(2)( 7 downto  0)<= "000" & "00000"; -- "000" & score(4:0)      
   
   reg4x32_CSRA(1)              <= X"00010000";     -- ballVec 
@@ -290,7 +290,7 @@ begin
 
   reg4x32_CSRB(3)              <= X"0007c000";     -- paddleVec  
 
-  reg4x32_CSRB(2)(31 downto 24)<= "00000" & "100"; -- ball direction (2:0)   
+  reg4x32_CSRB(2)(31 downto 24)<= "00000" & "000"; -- ball direction (2:0)   
   reg4x32_CSRB(2)(19 downto  0)<= X"00002";        -- dlyCount(19:0) 
 
   reg4x32_CSRB(1)(31 downto 24)<= "000" & "00010"; -- "000" & paddleNumDlyMax(4:0)      
@@ -311,7 +311,7 @@ begin
   wait for 5*period;  
   reg4x32_CSRB       <= ( others => (others => '0') ); -- clear all CSRB array          
   reg4x32_CSRB(0)(9 downto 8) <= "10";       
-  wait for 300*period;
+  wait for 600*period;
   -- =================================== End of Game =================================== --
 
 
