@@ -88,9 +88,9 @@ signal NSPaddleNumDlyCount, CSPaddleNumDlyCount : integer range 0 to 31;
 signal NSBallNumDlyMax, CSBallNumDlyMax         : integer range 0 to 31;
 signal NSBallNumDlyCount, CSBallNumDlyCount     : integer range 0 to 31;
 
-signal zone 									: integer; 
+-- signal zone 									: integer; 
 signal CSEndGameCounter, NSEndGameCounter       : integer;
-
+signal CSZone, NSZone                           : integer;
 begin
 
 asgnFunctBus2_i: functBus <= (others => '0'); -- not currently used 
@@ -118,6 +118,7 @@ begin
    NSDlyCount          <= CSDlyCount;
    NSPaddleNumDlyMax   <= CSPaddleNumDlyMax;
    NSBallNumDlyMax     <= CSBallNumDlyMax;
+   NSZone              <= CSZone;
    active    	       <= '1';             -- default asserted. Deasserted only in idle state. 
    wr   	           <= '0';
    add	               <= "010" & "00000"; -- reg32x32 base address
@@ -240,15 +241,15 @@ begin
             if CSBallNumDlyCount = CSBallNumDlyMax then
 				NSBallNumDlyCount   <= 0;
                 if CSBallYAdd = 3 then	
-                    zone <= 4;	-- row above paddle 
+                    NSZone <= 4;	-- row above paddle 
                 elsif (CSBallXAdd = 31 or CSBallXAdd = 0) and (CSBallYAdd = 14) then 
-                    zone <= 3;	-- top left/right corner
+                    NSZone <= 3;	-- top left/right corner
                 elsif (CSBallYAdd = 14) then                       
-                    zone <= 2;	-- row below wall
+                    NSZone <= 2;	-- row below wall
                 elsif (CSBallXAdd = 31 or CSBallXAdd = 0) then
-                    zone <= 1;	-- left/right arena boundary
+                    NSZone <= 1;	-- left/right arena boundary
                 else
-                    zone <= 0;	-- free space
+                    NSZone <= 0;	-- free space
                 end if;
                 NS <= processBallZone;   
             else -- CSBallNumDlyCount != CSBallNumDlyMax 
@@ -261,7 +262,7 @@ begin
              NS <= processBall;   -- apply new direction vectors to ball
              add	<= "010" & "00010";                     -- reg32x32 row 2 (paddle row)              
              
-            case zone is			   
+            case CSZone is			   
                 
                 when 1 =>      -- left/right arena boundary
                     NSBallDir(1 downto 0) <= not(CSBallDir(1 downto 0));
@@ -438,7 +439,8 @@ begin
     CSDlyCount          <= 0;
     CSPaddleNumDlyMax   <= 0;
 	CSBallNumDlyMax     <= 0;
-	CSEndGameCounter <= 0;
+	CSEndGameCounter    <= 0;
+	CSZone              <= 0;
   elsif clk'event and clk = '1' then 
     if ce = '1' then
 		CS 	                <= NS;		
@@ -457,25 +459,11 @@ begin
         CSDlyCount          <= NSDlyCount;
 		CSPaddleNumDlyMax   <= NSPaddleNumDlyMax;
 		CSBallNumDlyMax     <= NSBallNumDlyMax;
-		CSEndGameCounter <= NSEndGameCounter;
+		CSEndGameCounter    <= NSEndGameCounter;
+		CSZone              <= NSZone;
      end if;
   end if;
 end process; 
 
 end RTL;  
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
    
