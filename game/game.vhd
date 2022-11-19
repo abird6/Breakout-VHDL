@@ -353,7 +353,7 @@ begin
 			datToMem      <= CSWallVec;
 			if CSScore = 31 then
 			     NS       <= winGame;
-			elsif CSScore = 10 then                          -- Could do modulo 10 also..
+			elsif CSScore mod 10 = 0 and CSScore > 0 then                          
 			     NSBallNumDlyMax     <=      CSBallNumDlyMax / 2;    -- Could this need to be rounded too?
 			     NS       <= updateScore;
 			else 
