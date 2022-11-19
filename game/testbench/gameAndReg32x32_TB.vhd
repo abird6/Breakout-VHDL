@@ -671,8 +671,65 @@ begin
   wait for 300*period;
 -- =================================== End of Game =================================== --
 
-testNo <= 10;
-subTestNo <= -1;
+  testNo <= 10;
+
+  -- =================================== Reset Assert =================================== --
+  subTestNo <= 0; 				  -- include a unique test number to help browsing of the simulation waveform     
+							      -- apply rst signal pattern, to deassert 0.2*period after the active clk edge
+  go            		<= '0';   -- default assignments
+  ce            		<= '1';
+  reg4x32_CSRA          <= ( others => (others => '0') );        
+  reg4x32_CSRB          <= ( others => (others => '0') );        
+  rst    				<= '1';
+  wait for 1.2 * period;
+  rst    				<= '0';
+  wait for 3*period;
+
+  -- =================================== Game(or Test) Set Up =================================== --
+-- ffffffff100403000001000000001000             
+  subTestNo 				<= 1; 
+  reg4x32_CSRA                 <= ( others => (others => '0') ); -- clear all CSRA array         
+  
+  reg4x32_CSRA(3)              <= X"00010000";     -- wallVec 
+  
+  reg4x32_CSRA(2)(31 downto 24)<= "000" & "10000"; -- "000" & ballXAdd(4:0)      
+  reg4x32_CSRA(2)(23 downto 16)<= "000" & "00111"; -- "000" & ballYAdd(4:0)      
+  reg4x32_CSRA(2)(15 downto  8)<= "000" & "00011"; -- "000" & lives(4:0)      
+  reg4x32_CSRA(2)( 7 downto  0)<= "000" & "11110"; -- "000" & score(4:0)      
+  
+  reg4x32_CSRA(1)              <= X"00010000";     -- ballVec 
+  
+  reg4x32_CSRA(0)(15 downto 8) <= "00010" & "000"; -- Initialise game. At top DPSProc level, (0) would also be asserted 
+  
+-- 0003e000040000020204000000000000
+  reg4x32_CSRB                 <= ( others => (others => '0') ); -- clear all CSRA array         
+
+  reg4x32_CSRB(3)              <= X"0007c000";     -- paddleVec  
+
+  reg4x32_CSRB(2)(31 downto 24)<= "00000" & "100"; -- ball direction (2:0)   
+  reg4x32_CSRB(2)(19 downto  0)<= X"00002";        -- dlyCount(19:0) 
+
+  reg4x32_CSRB(1)(31 downto 24)<= "000" & "00010"; -- "000" & paddleNumDlyMax(4:0)      
+  reg4x32_CSRB(1)(23 downto 16)<= "000" & "00100"; -- "000" & ballNumDlyMax(4:0)      
+  
+  go     				<= '1'; 
+  wait for period;  
+  go     				<= '0';   
+  wait for 20*period;  
+
+
+-- =================================== Play Game =================================== --
+  subTestNo 				<= 2;      
+  reg4x32_CSRA(0)       <= X"00001101"; -- DSPProc command (15:8) = 0b00010 001, (0) = 1. Play game 
+  go     				<= '1'; 
+  wait for period;  
+  go     				<= '0';   
+  wait for 5*period;  
+  reg4x32_CSRB       <= ( others => (others => '0') ); -- clear all CSRB array          
+  reg4x32_CSRB(0)(9 downto 8) <= "00";       
+  wait for 300*period;
+-- =================================== End of Game =================================== --
+
 -- This test involves presenting the Winner screen which is currently not completed.
 
 
