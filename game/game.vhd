@@ -152,9 +152,9 @@ begin
 			NSWallVec           <= reg4x32_CSRA(3);
 			NSBallXAdd 	        <= to_integer( unsigned(reg4x32_CSRA(2)(28 downto 24)) );
 			NSBallYAdd 	        <= to_integer( unsigned(reg4x32_CSRA(2)(20 downto 16)) );
-			-- NSLives             <= to_integer( unsigned(reg4x32_CSRA(2)( 3 downto  0)) );
-			NSLives             <= 3;
-			NSScore             <= to_integer( unsigned(reg4x32_CSRA(2)( 7 downto  4)) );
+			NSLives             <= to_integer( unsigned(reg4x32_CSRA(2)( 15 downto  8)) );
+			--NSLives             <= 3;
+			NSScore             <= to_integer( unsigned(reg4x32_CSRA(2)( 7 downto  0)) );
 			NSBallVec           <= reg4x32_CSRA(1);
 
 			NSPaddleVec         <= reg4x32_CSRB(3);
