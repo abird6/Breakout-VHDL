@@ -99,7 +99,7 @@ begin
 -- 0003e000040000020204000000000000
   reg4x32_CSRB                 <= ( others => (others => '0') ); -- clear all CSRA array         
 
-  reg4x32_CSRB(3)              <= X"0001e000";     -- paddleVec  
+  reg4x32_CSRB(3)              <= X"0003e000";     -- paddleVec  
 
   reg4x32_CSRB(2)(31 downto 24)<= "00000" & "000"; -- ball direction (2:0)   
   reg4x32_CSRB(2)(19 downto  0)<= X"00002";        -- dlyCount(19:0) 
