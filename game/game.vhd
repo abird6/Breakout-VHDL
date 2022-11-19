@@ -63,7 +63,7 @@ architecture RTL of game is
 type stateType is (	idle, writeToCSR0, setupGameParameters, initGameArena, 
 					initBall, initPaddle, initLives, initScore, waitState, 
 					processPaddle, checkBallZone, processBallZone, processBall, 
-					writeBallToMem, endGame, respawn, updateScore, updateLives, updateWall); -- declare enumerated state type
+					writeBallToMem, endGame, respawn, updateScore, updateLives, updateWall, winGame); -- declare enumerated state type
 signal NS, CS                                   : stateType; -- declare FSM state 
 								                
 signal NSWallVec, CSWallVec                     : std_logic_vector(31 downto 0);
@@ -351,8 +351,11 @@ begin
 			wr   	      <= '1';
 			add           <= "010" & "01111";               -- reg32x32 row 15
 			datToMem      <= CSWallVec;
-           	NS            <= updateScore;
-		
+			if CSScore = 31 then
+			     NS       <= winGame;
+			else 
+           	    NS        <= updateScore;
+		    end if;
 	
 		when updateScore => -- update score row in memory (row 0)
 			wr   	      <= '1';
@@ -386,6 +389,35 @@ begin
 		      NS <= endGame;
 		  end if;
 			
+	    when winGame =>  -- display 'WINNER' on arena
+			wr <= '1';
+			add(4 downto 0) <= std_logic_vector( to_unsigned(CSEndGameCounter,5) );
+			add(7 downto 5) <= "010";
+			case CSEndGameCounter is
+			 when 15 => datToMem <= x"00000000";
+			 when 14 => datToMem <= x"41000000";
+			 when 13 => datToMem <= x"4140000A";
+			 when 12 => datToMem <= x"4100000A";
+			 when 11 => datToMem <= x"495999EA";
+			 when 10 => datToMem <= x"4955552A";
+			 when 9  => datToMem <= x"49555D0A";
+			 when 8  => datToMem <= x"49555100";
+			 when 7  => datToMem <= x"36555D0A";
+			 when 6  => datToMem <= x"00000000";
+			 when 5  => datToMem <= x"00000000";
+			 when 4  => datToMem <= x"00000000";
+			 when 3  => datToMem <= x"00000000";
+			 when 2  => datToMem <= x"00000000";
+			 when 1  => wr <= '0';   -- Wish not to overwrite the lives remaining
+			 when 0  => wr <= '0';   -- Wish not to overwrite the score
+			 when others => null;
+			end case;
+			if CSEndGameCounter > 15 then
+		      NS <= writeToCSR0;
+			else
+			  NS <= winGame;
+			end if;
+			NSEndGameCounter <= CSEndGameCounter + 1;
 			
 		when endGame =>  -- display 'GAME OVER' on arena                         
 			wr <= '1';
@@ -416,7 +448,6 @@ begin
 			  NS <= endGame;
 			end if;
 			NSEndGameCounter <= CSEndGameCounter + 1;
-
 
 		when others => 
 			null;
