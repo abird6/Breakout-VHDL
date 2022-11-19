@@ -233,17 +233,17 @@ begin
 				  end if;   		  
            	else
 	           NSPaddleNumDlyCount <= CSPaddleNumDlyCount + 1; -- increment counter
-           	   NS  <= checkBallZone;
            	end if;		
-
+            NS  <= checkBallZone;
 
         when checkBallZone => -- determine the zone of ball, given ball location 
             if CSBallNumDlyCount = CSBallNumDlyMax then
 				NSBallNumDlyCount   <= 0;
-                if CSBallYAdd = 3 then	
-                    NSZone <= 4;	-- row above paddle 
-                elsif (CSBallXAdd = 31 or CSBallXAdd = 0) and (CSBallYAdd = 14) then 
+              
+                if (CSBallXAdd = 31 or CSBallXAdd = 0) and (CSBallYAdd = 14 or CSBallYAdd = 3) then 
                     NSZone <= 3;	-- top left/right corner
+                elsif CSBallYAdd = 3 then	
+                    NSZone <= 4;	-- row above paddle 
                 elsif (CSBallYAdd = 14) then                       
                     NSZone <= 2;	-- row below wall
                 elsif (CSBallXAdd = 31 or CSBallXAdd = 0) then
@@ -277,9 +277,9 @@ begin
                        end if;
                    end if;
                    
-                when 3 =>      -- top left/right corner
+                when 3 =>      -- top/bottom left/right corner
+                   NSBallDir <= not(CSBallDir);
                    if CSBallDir(2) = '1' then
-                        NSBallDir <= not(CSBallDir);
                         if (CSBallXAdd = 31) and (CSWallVec(31) = '1') then
                             NSScore <= CSScore + 1;
 							NSWallVec(31) <= '0';
@@ -291,6 +291,13 @@ begin
 						else 
 							NS <= processBall;
                         end if;
+                   elsif CSBallDir(2) = '0' then
+                        add <= "010" & "00010";   -- reg32x32 row 2, paddle row address 
+					    if reg32x32_dOut(CSBallXAdd) = '1' then
+					       NS <= processBall;
+					    else
+					       NS <= respawn;
+					    end if;
                    end if;
                 
                 when 4 =>      -- above paddle
