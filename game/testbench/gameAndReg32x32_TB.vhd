@@ -1035,12 +1035,7 @@ begin
   reg4x32_CSRB(0)(9 downto 8) <= "00";       
   wait for 300*period;
 -- =================================== End of Game =================================== --
-
-
-
-
-  wait for 2000*period;  
-  
+    
   endOfSim 				<= true;  -- assert flag. Stops clk signal generation in process clkStim
   report "simulation done";   
   wait;                           -- include to prevent the stim process from repeating execution, since it does not include a sensitivity list
