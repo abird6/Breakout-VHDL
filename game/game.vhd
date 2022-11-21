@@ -1,8 +1,9 @@
 -- Description: breakout game component
 -- FSM-based design 
 
--- Engineer: Fearghal Morgan, National University of Ireland, Galway
--- Date: 26/10/2022
+-- Engineer: Fearghal Morgan, University of Galway, Ireland
+-- Students: Anthony Bird, Luke Canny
+-- Date: 21/11/22
 -- 
 -- 16 x 32-bit game array, using reg32x32(15 downto 0)(31:0)
 
@@ -88,7 +89,6 @@ signal NSPaddleNumDlyCount, CSPaddleNumDlyCount : integer range 0 to 31;
 signal NSBallNumDlyMax, CSBallNumDlyMax         : integer range 0 to 31;
 signal NSBallNumDlyCount, CSBallNumDlyCount     : integer range 0 to 31;
 
--- signal zone 									: integer; 
 signal CSEndGameCounter, NSEndGameCounter       : integer;
 signal CSZone, NSZone                           : integer;
 begin
@@ -123,7 +123,7 @@ begin
    wr   	           <= '0';
    add	               <= "010" & "00000"; -- reg32x32 base address
    datToMem            <= (others => '0');
-   NSEndGameCounter <= CSEndGameCounter;
+   NSEndGameCounter <= CSEndGameCounter;   
    
    case CS is 
 		when idle => 			     
@@ -153,18 +153,14 @@ begin
 			NSBallXAdd 	        <= to_integer( unsigned(reg4x32_CSRA(2)(28 downto 24)) );
 			NSBallYAdd 	        <= to_integer( unsigned(reg4x32_CSRA(2)(20 downto 16)) );
 			NSLives             <= to_integer( unsigned(reg4x32_CSRA(2)( 15 downto  8)) );
-			--NSLives             <= 3;
 			NSScore             <= to_integer( unsigned(reg4x32_CSRA(2)( 7 downto  0)) );
 			NSBallVec           <= reg4x32_CSRA(1);
-
 			NSPaddleVec         <= reg4x32_CSRB(3);
 			NSBallDir           <= reg4x32_CSRB(2)(26 downto  24);
 			NSDlyCountMax       <= to_integer( unsigned(reg4x32_CSRB(2)(19 downto  0)) );                 
 			NSPaddleNumDlyMax   <= to_integer( unsigned(reg4x32_CSRB(1)(28 downto 24)) );
-			NSBallNumDlyMax     <= to_integer( unsigned(reg4x32_CSRB(1)(20 downto 16)) );
-			
+			NSBallNumDlyMax     <= to_integer( unsigned(reg4x32_CSRB(1)(20 downto 16)) );		
 			NSEndGameCounter <= 0;  -- Default consignment
-			
 			NS                  <= initGameArena;
 
 
@@ -177,6 +173,7 @@ begin
 			
 			
 		when initBall => 
+			-- write ballVec
 			wr   	      <= '1';
 			add	          <= "010" & std_logic_vector( to_unsigned(CSBallYAdd,5) );  
 			datToMem      <= CSBallVec;
@@ -184,27 +181,30 @@ begin
 			
 			
 		when initPaddle =>
+			-- write paddleVec
 			wr   	      <= '1';
 			add	          <= "010" & "00010";               -- reg32x32 row 2 
 			datToMem      <= CSPaddleVec;
            	NS            <= initLives;
 			
 			
-		when initLives =>                          
+		when initLives =>      
+			-- write Lives
 			wr   	      <= '1';
 			add	          <= "010" & "00001";               -- reg32x32 row 1
 			datToMem      <= X"000000" & "000" & std_logic_vector( to_unsigned(CSLives, 5) );  
            	NS            <= initScore;  
 
 			
-		when initScore =>                          
+		when initScore => 
+			-- write Score
 			wr   	      <= '1';
 			add	          <= "010" & "00000";               -- reg32x32 row 0 
 			datToMem      <= X"000000" & "000" & std_logic_vector( to_unsigned(CSScore, 5) );  
-           	NS            <= writeToCSR0;                   -- finish. Return done state and return control to host
+           	NS            <= writeToCSR0;                   -- finished set up. Return done state and return control to host
 
 
-		when waitState =>                                   -- increment count and loop in state until value reaches delay value       
+		when waitState =>                                   -- increment count and loop in state until value reaches delay value  
 			if CSDlyCount = CSDlyCountMax then
 	     	    NSDlyCount <= 0;                            -- clear delay counter and process paddle and/or ball	     	         	    
    	   	        NS  <= processPaddle;
@@ -224,7 +224,7 @@ begin
 					    add	          <= "010" & "00010";   -- reg32x32 row 2, paddle row address 
 					    datToMem      <= reg32x32_dOut(30 downto 0) & '0'; 
 				    end if;
-			      elsif reg4x32_CSRB(0)(8) = '1' then       -- shift paddle right 
+			      elsif reg4x32_CSRB(0)(8) = '1' then       -- shift paddle right, if not at bit 0 boundary
 			        if reg32x32_dOut(0) = '0' then 
 					    wr   	      <= '1';
 					    add	          <= "010" & "00010";   -- reg32x32 row 2, paddle row address 
@@ -239,7 +239,7 @@ begin
         when checkBallZone => -- determine the zone of ball, given ball location 
             if CSBallNumDlyCount = CSBallNumDlyMax then
 				NSBallNumDlyCount   <= 0;
-              
+				-- NB: Please see Zone Map found in written report --
                 if (CSBallXAdd = 31 or CSBallXAdd = 0) and (CSBallYAdd = 14 or CSBallYAdd = 3) then 
                     NSZone <= 3;	-- top left/right corner
                 elsif CSBallYAdd = 3 then	
@@ -415,12 +415,12 @@ begin
 			 when 0  => wr <= '0';   -- Wish not to overwrite the score
 			 when others => null;
 			end case;
-			if CSEndGameCounter > 15 then
-		      NS <= writeToCSR0;
+			if CSEndGameCounter > 15 then	-- if end game counter is greater than 15, the whole screen has been iterated through
+		      NS <= writeToCSR0;			-- When completed, return done state and pass control back to host. 
 			else
-			  NS <= winGame;
+			  NS <= winGame;				-- Writing to screen is not complete, loop again
 			end if;
-			NSEndGameCounter <= CSEndGameCounter + 1;
+			NSEndGameCounter <= CSEndGameCounter + 1;	-- Increment counter (or "cursor" in memory)
 			
 		when endGame =>  -- display 'GAME OVER' on arena                         
 			wr <= '1';
@@ -445,12 +445,12 @@ begin
 			 when 0 => wr <= '0';
 			 when others => null;
 			end case;
-			if CSEndGameCounter > 15 then
-		      NS <= writeToCSR0;
+			if CSEndGameCounter > 15 then	-- if end game counter is greater than 15, the whole screen has been iterated through
+		      NS <= writeToCSR0;			-- Writing to screen is complete, return done state and pass control back to host. 
 			else
-			  NS <= endGame;
+			  NS <= endGame;				-- Writing to screen is not complete, loop again
 			end if;
-			NSEndGameCounter <= CSEndGameCounter + 1;
+			NSEndGameCounter <= CSEndGameCounter + 1;	-- Increment counter (or "cursor" in memory)
 
 		when others => 
 			null;
