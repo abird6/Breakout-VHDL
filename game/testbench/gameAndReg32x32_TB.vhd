@@ -225,6 +225,9 @@ begin
   -- Description:				This test will ensure that the ball bounces off the paddle
   --							and reflect in a purely north direction if the ball hits the
   -- 							centre of the paddle.
+  --                            This test will also show how ball deflects off wall, incrementing
+  --                            the score ONCE, and how the score will not increment on subsequent
+  --                            hits with the broken wall
   --
   -- Subtest 0:					Asserts Reset Signal
   -- Subtest 1:					Game initialisation
@@ -284,7 +287,7 @@ begin
   wait for 5*period;  
   reg4x32_CSRB       <= ( others => (others => '0') ); -- clear all CSRB array          
   reg4x32_CSRB(0)(9 downto 8) <= "00";       
-  wait for 300*period;
+  wait for 1000*period;
 -- =================================== End of Game =================================== --
 
 
