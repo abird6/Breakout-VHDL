@@ -96,8 +96,7 @@ begin
   rst    				<= '0';
   wait for 3*period;
 
-  -- =================================== Game(or Test) Set Up =================================== --
-  -- ffffffff100403000001000000001000             
+  -- =================================== Game(or Test) Set Up =================================== --          
   subTestNo 				<= 1; 
   reg4x32_CSRA                 <= ( others => (others => '0') ); -- clear all CSRA array         
   
@@ -112,7 +111,7 @@ begin
   
   reg4x32_CSRA(0)(15 downto 8) <= "00010" & "000"; -- Initialise game. At top DPSProc level, (0) would also be asserted 
   
-  -- 0003e000040000020204000000000000
+
   reg4x32_CSRB                 <= ( others => (others => '0') ); -- clear all CSRA array         
 
   reg4x32_CSRB(3)              <= X"0007c000";     -- paddleVec  
@@ -172,8 +171,7 @@ begin
   rst    				<= '0';
   wait for 3*period;
 
-  -- =================================== Game(or Test) Set Up =================================== --
--- ffffffff100403000001000000001000             
+  -- =================================== Game(or Test) Set Up =================================== --          
   subTestNo 				<= 1; 
   reg4x32_CSRA                 <= ( others => (others => '0') ); -- clear all CSRA array         
   
@@ -187,8 +185,7 @@ begin
   reg4x32_CSRA(1)              <= X"00010000";     -- ballVec 
   
   reg4x32_CSRA(0)(15 downto 8) <= "00010" & "000"; -- Initialise game. At top DPSProc level, (0) would also be asserted 
-  
--- 0003e000040000020204000000000000
+
   reg4x32_CSRB                 <= ( others => (others => '0') ); -- clear all CSRA array         
 
   reg4x32_CSRB(3)              <= X"0007c000";     -- paddleVec  
@@ -246,8 +243,7 @@ begin
   rst    				<= '0';
   wait for 3*period;
 
-  -- =================================== Game(or Test) Set Up =================================== --
--- ffffffff100403000001000000001000             
+  -- =================================== Game(or Test) Set Up =================================== --            
   subTestNo 				<= 1; 
   reg4x32_CSRA                 <= ( others => (others => '0') ); -- clear all CSRA array         
   
@@ -262,7 +258,7 @@ begin
   
   reg4x32_CSRA(0)(15 downto 8) <= "00010" & "000"; -- Initialise game. At top DPSProc level, (0) would also be asserted 
   
--- 0003e000040000020204000000000000
+
   reg4x32_CSRB                 <= ( others => (others => '0') ); -- clear all CSRA array         
 
   reg4x32_CSRB(3)              <= X"0007c000";     -- paddleVec  
@@ -321,8 +317,7 @@ begin
   rst    				<= '0';
   wait for 3*period;
 
-  -- =================================== Game(or Test) Set Up =================================== --
-  -- ffffffff100403000001000000001000             
+  -- =================================== Game(or Test) Set Up =================================== --            
   subTestNo 				<= 1; 
   reg4x32_CSRA                 <= ( others => (others => '0') ); -- clear all CSRA array         
   
@@ -337,7 +332,6 @@ begin
   
   reg4x32_CSRA(0)(15 downto 8) <= "00010" & "000"; -- Initialise game. At top DPSProc level, (0) would also be asserted 
   
--- 0003e000040000020204000000000000
   reg4x32_CSRB                 <= ( others => (others => '0') ); -- clear all CSRA array         
 
   reg4x32_CSRB(3)              <= X"0007c000";     -- paddleVec  
@@ -396,8 +390,7 @@ begin
   rst    				<= '0';
   wait for 3*period;
 
-  -- =================================== Game(or Test) Set Up =================================== --
--- ffffffff100403000001000000001000             
+  -- =================================== Game(or Test) Set Up =================================== --        
   subTestNo 				<= 1; 
   reg4x32_CSRA                 <= ( others => (others => '0') ); -- clear all CSRA array         
   
@@ -412,7 +405,7 @@ begin
   
   reg4x32_CSRA(0)(15 downto 8) <= "00010" & "000"; -- Initialise game. At top DPSProc level, (0) would also be asserted 
   
--- 0003e000040000020204000000000000
+
   reg4x32_CSRB                 <= ( others => (others => '0') ); -- clear all CSRA array         
 
   reg4x32_CSRB(3)              <= X"0007c000";     -- paddleVec  
@@ -471,7 +464,7 @@ begin
   wait for 3*period;
 
   -- =================================== Game(or Test) Set Up =================================== --
--- ffffffff100403000001000000001000             
+           
   subTestNo 				<= 1; 
   reg4x32_CSRA                 <= ( others => (others => '0') ); -- clear all CSRA array         
   
@@ -486,7 +479,7 @@ begin
   
   reg4x32_CSRA(0)(15 downto 8) <= "00010" & "000"; -- Initialise game. At top DPSProc level, (0) would also be asserted 
   
--- 0003e000040000020204000000000000
+
   reg4x32_CSRB                 <= ( others => (others => '0') ); -- clear all CSRA array         
 
   reg4x32_CSRB(3)              <= X"0007c000";     -- paddleVec  
@@ -549,7 +542,7 @@ begin
   wait for 3*period;
 
   -- =================================== Game(or Test) Set Up =================================== --
--- ffffffff100403000001000000001000             
+          
   subTestNo 				<= 1; 
   reg4x32_CSRA                 <= ( others => (others => '0') ); -- clear all CSRA array         
   
@@ -564,7 +557,6 @@ begin
   
   reg4x32_CSRA(0)(15 downto 8) <= "00010" & "000"; -- Initialise game. At top DPSProc level, (0) would also be asserted 
   
--- 0003e000040000020204000000000000
   reg4x32_CSRB                 <= ( others => (others => '0') ); -- clear all CSRA array         
 
   reg4x32_CSRB(3)              <= X"f8000000";     -- paddleVec  
@@ -628,7 +620,7 @@ begin
   wait for 3*period;
 
   -- =================================== Game(or Test) Set Up =================================== --
--- ffffffff100403000001000000001000             
+
   subTestNo 				<= 1; 
   reg4x32_CSRA                 <= ( others => (others => '0') ); -- clear all CSRA array         
   
@@ -643,7 +635,7 @@ begin
   
   reg4x32_CSRA(0)(15 downto 8) <= "00010" & "000"; -- Initialise game. At top DPSProc level, (0) would also be asserted 
   
--- 0003e000040000020204000000000000
+
   reg4x32_CSRB                 <= ( others => (others => '0') ); -- clear all CSRA array         
 
   reg4x32_CSRB(3)              <= X"0007c000";     -- paddleVec  
@@ -708,7 +700,7 @@ begin
   wait for 3*period;
 
   -- =================================== Game(or Test) Set Up =================================== --
--- ffffffff100403000001000000001000             
+         
   subTestNo 				<= 1; 
   reg4x32_CSRA                 <= ( others => (others => '0') ); -- clear all CSRA array         
   
@@ -723,7 +715,7 @@ begin
   
   reg4x32_CSRA(0)(15 downto 8) <= "00010" & "000"; -- Initialise game. At top DPSProc level, (0) would also be asserted 
   
--- 0003e000040000020204000000000000
+
   reg4x32_CSRB                 <= ( others => (others => '0') ); -- clear all CSRA array         
 
   reg4x32_CSRB(3)              <= X"0000001f";     -- paddleVec  
@@ -784,7 +776,7 @@ begin
   wait for 3*period;
 
   -- =================================== Game(or Test) Set Up =================================== --
--- ffffffff100403000001000000001000             
+           
   subTestNo 				<= 1; 
   reg4x32_CSRA                 <= ( others => (others => '0') ); -- clear all CSRA array         
   
@@ -799,7 +791,6 @@ begin
   
   reg4x32_CSRA(0)(15 downto 8) <= "00010" & "000"; -- Initialise game. At top DPSProc level, (0) would also be asserted 
   
--- 0003e000040000020204000000000000
   reg4x32_CSRB                 <= ( others => (others => '0') ); -- clear all CSRA array         
 
   reg4x32_CSRB(3)              <= X"0007c000";     -- paddleVec  
@@ -857,7 +848,6 @@ begin
   wait for 3*period;
 
   -- =================================== Game(or Test) Set Up =================================== --
--- ffffffff100403000001000000001000             
   subTestNo 				<= 1; 
   reg4x32_CSRA                 <= ( others => (others => '0') ); -- clear all CSRA array         
   
@@ -872,7 +862,6 @@ begin
   
   reg4x32_CSRA(0)(15 downto 8) <= "00010" & "000"; -- Initialise game. At top DPSProc level, (0) would also be asserted 
   
--- 0003e000040000020204000000000000
   reg4x32_CSRB                 <= ( others => (others => '0') ); -- clear all CSRA array         
 
   reg4x32_CSRB(3)              <= X"0007c000";     -- paddleVec  
@@ -932,7 +921,6 @@ begin
   wait for 3*period;
 
   -- =================================== Game(or Test) Set Up =================================== --
--- ffffffff100403000001000000001000             
   subTestNo 				<= 1; 
   reg4x32_CSRA                 <= ( others => (others => '0') ); -- clear all CSRA array         
   
@@ -947,7 +935,6 @@ begin
   
   reg4x32_CSRA(0)(15 downto 8) <= "00010" & "000"; -- Initialise game. At top DPSProc level, (0) would also be asserted 
   
--- 0003e000040000020204000000000000
   reg4x32_CSRB                 <= ( others => (others => '0') ); -- clear all CSRA array         
 
   reg4x32_CSRB(3)              <= X"0007c000";     -- paddleVec  
