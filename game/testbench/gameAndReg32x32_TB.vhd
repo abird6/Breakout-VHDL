@@ -1,11 +1,9 @@
 -- Description: gameAndReg32x32_TB testbench 
 -- Engineer: Fearghal Morgan
--- National University of Ireland, Galway / viciLogic 
--- Date: 8/2/2021
+-- Edited by: Anthony Bird, Luke Canny
+-- University of Galway / viciLogic 
+-- Date: 21/11/2022
 
--- The testbench does not write to CSRA, though controls signals wr, add and datToMem **** What does this mean
-
--- Reference: https://tinyurl.com/vicilogicVHDLTips   	A: VHDL IEEE library source code VHDL code
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use ieee.numeric_std.all;
@@ -73,6 +71,19 @@ begin
   report "%N : Simulation Start."; -- generate messages as the simulation executes 
   
   testNo <= 0;
+  -- =================================== Test 0 Description ============================= --
+  -- Test Number:				0
+  -- Number of Sub Tests:		3
+  -- Description:				This test will ensure that the ball bounces off the paddle
+  --							to the left as designed. (If ball hits paddle on the left
+  -- 							hand side, it will bounce into the NW direction)
+  --
+  -- Subtest 0:					Asserts Reset Signal
+  -- Subtest 1:					Game initialisation
+  -- Subtest 2:					Paddle shifted to right by 1 pixel
+  -- 							Ball bounces on LHS of paddle
+  -- =================================== End of Description ============================= --
+  
   -- =================================== Reset Assert =================================== --
   subTestNo <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
 							      -- apply rst signal pattern, to deassert 0.2*period after the active clk edge
@@ -136,6 +147,19 @@ begin
 
 
   testNo <= 1;
+  -- =================================== Test 1 Description ============================= --
+  -- Test Number:				1
+  -- Number of Sub Tests:		3
+  -- Description:				This test will ensure that the ball bounces off the paddle
+  --							to the right as designed. (If ball hits paddle on the right
+  -- 							hand side, it will bounce into the NE direction)
+  --
+  -- Subtest 0:					Asserts Reset Signal
+  -- Subtest 1:					Game initialisation
+  -- Subtest 2:					Paddle shifted to left by 1 pixel
+  -- 							Ball bounces on RHS of paddle
+  -- =================================== End of Description ============================= --
+  
   -- =================================== Reset Assert =================================== --
   subTestNo <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
 							      -- apply rst signal pattern, to deassert 0.2*period after the active clk edge
@@ -198,6 +222,18 @@ begin
 
 
   testNo <= 2;
+  -- =================================== Test 2 Description ============================= --
+  -- Test Number:				2
+  -- Number of Sub Tests:		3
+  -- Description:				This test will ensure that the ball bounces off the paddle
+  --							and reflect in a purely north direction if the ball hits the
+  -- 							centre of the paddle.
+  --
+  -- Subtest 0:					Asserts Reset Signal
+  -- Subtest 1:					Game initialisation
+  -- Subtest 2:					Paddle is not shifted, wait for ball bounce
+  -- =================================== End of Description ============================= --
+  
   -- =================================== Reset Assert =================================== --
   subTestNo <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
 							      -- apply rst signal pattern, to deassert 0.2*period after the active clk edge
@@ -257,6 +293,22 @@ begin
 
 
   testNo <= 3;
+    -- =================================== Test 3 Description ============================= --
+  -- Test Number:				3
+  -- Number of Sub Tests:		3
+  -- Description:				In this test, the paddle is moved to the left completely.
+  --							The objective of this test is to:
+  --								<> Show that the paddle will stop shifting left once in 
+  --										contact with the wall
+  --								<> Show that ball respawns when it misses the paddle
+  --								<> Show that Game Over screen will appear once all lives are used
+  -- Subtest 0:					Asserts Reset Signal
+  -- Subtest 1:					Game initialisation
+  -- Subtest 2:					Move left control is asserted for duration of test
+  --							Paddle moves to the left and never contacts the ball.
+  --							Ball will repeatedly bounce off the wall and miss paddle
+  -- =================================== End of Description ============================= --
+  
   -- =================================== Reset Assert =================================== --
   subTestNo <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
 							      -- apply rst signal pattern, to deassert 0.2*period after the active clk edge
@@ -316,6 +368,22 @@ begin
 
 
   testNo <= 4;
+  -- =================================== Test 4 Description ============================= --
+  -- Test Number:				4
+  -- Number of Sub Tests:		3
+  -- Description:				Test 4, 5, 6, 7, 8 and 9 all relate to Zone 3 of the Arena.
+  --							(Please see zone map in the report)
+  --
+  --							Test 4 will test Zone 3 in the NW of the arena.
+  --
+  -- Subtest 0:					Asserts Reset Signal
+  -- Subtest 1:					Game initialisation is modified from the default configuration
+  -- 								<> Game is initalised such that ball will be moving into 
+  --									the NW Zone 3 block immediately.
+  -- Subtest 2:					Game is started. No input required.
+  --							Ball will bounce in NW section of Zone 3.
+  -- =================================== End of Description ============================= --
+
   -- =================================== Reset Assert =================================== --
   subTestNo <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
 							      -- apply rst signal pattern, to deassert 0.2*period after the active clk edge
@@ -374,6 +442,22 @@ begin
 -- =================================== End of Game =================================== --
 
  testNo <= 5;
+  -- =================================== Test 5 Description ============================= --
+  -- Test Number:				5
+  -- Number of Sub Tests:		3
+  -- Description:				Test 4, 5, 6, 7, 8 and 9 all relate to Zone 3 of the Arena.
+  --							(Please see zone map in the report)
+  --
+  --							Test 5 will test Zone 3 in the NE of the arena.
+  --
+  -- Subtest 0:					Asserts Reset Signal
+  -- Subtest 1:					Game initialisation is modified from the default configuration
+  -- 								<> Game is initalised such that ball will be moving into 
+  --									the NE Zone 3 block immediately.
+  -- Subtest 2:					Game is started. No input required.
+  --							Ball will bounce in NE section of Zone 3.
+  -- =================================== End of Description ============================= --
+
   -- =================================== Reset Assert =================================== --
   subTestNo <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
 							      -- apply rst signal pattern, to deassert 0.2*period after the active clk edge
@@ -434,6 +518,24 @@ begin
 
 
  testNo <= 6;
+  -- =================================== Test 6 Description ============================= --
+  -- Test Number:				6
+  -- Number of Sub Tests:		3
+  -- Description:				Test 4, 5, 6, 7, 8 and 9 all relate to Zone 3 of the Arena.
+  --							(Please see zone map in the report)
+  --
+  --							Test 6 will test Zone 3 in the SW of the arena.
+  --							The paddle will be present.
+  --							Ball should deflect in a NE direction.
+  --
+  -- Subtest 0:					Asserts Reset Signal
+  -- Subtest 1:					Game initialisation is modified from the default configuration
+  -- 								<> Game is initalised such that ball will be moving into 
+  --									the SW Zone 3 block immediately and the paddle will be moved.
+  -- Subtest 2:					Game is started. No input required.
+  --							Ball will bounce in SW section of Zone 3 (deflecting off the paddle).
+  -- =================================== End of Description ============================= --
+
   -- =================================== Reset Assert =================================== --
   subTestNo <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
 							      -- apply rst signal pattern, to deassert 0.2*period after the active clk edge
@@ -495,6 +597,24 @@ begin
 
 
  testNo <= 7;
+  -- =================================== Test 7 Description ============================= --
+  -- Test Number:				7
+  -- Number of Sub Tests:		3
+  -- Description:				Test 4, 5, 6, 7, 8 and 9 all relate to Zone 3 of the Arena.
+  --							(Please see zone map in the report)
+  --
+  --							Test 7 will test Zone 3 in the SW of the arena.
+  --							The paddle will NOT be present.
+  --							Ball should respawn and a live should be lost.
+  --
+  -- Subtest 0:					Asserts Reset Signal
+  -- Subtest 1:					Game initialisation is modified from the default configuration
+  -- 								<> Game is initalised such that ball will be moving into 
+  --									the SW Zone 3 block immediately.
+  -- Subtest 2:					Game is started. No input required.
+  --							Ball will respawn, a live will be lost.
+  -- =================================== End of Description ============================= --
+  
   -- =================================== Reset Assert =================================== --
   subTestNo <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
 							      -- apply rst signal pattern, to deassert 0.2*period after the active clk edge
@@ -556,6 +676,25 @@ begin
 
 
  testNo <= 8;
+  -- =================================== Test 8 Description ============================= --
+  -- Test Number:				8
+  -- Number of Sub Tests:		3
+  -- Description:				Test 4, 5, 6, 7, 8 and 9 all relate to Zone 3 of the Arena.
+  --							(Please see zone map in the report)
+  --
+  --							Test 8 will test Zone 3 in the SE of the arena.
+  --							The paddle will be present.
+  --							Ball should deflect in a NW direction.
+  --
+  -- Subtest 0:					Asserts Reset Signal
+  -- Subtest 1:					Game initialisation is modified from the default configuration
+  -- 								<> Game is initalised such that ball will be moving into 
+  --									the SW Zone 3 block immediately, paddle will be located
+  --									in the right-most position.
+  -- Subtest 2:					Game is started. No input required.
+  --							Ball will deflect into the NW direction, no respawn or lives lost.
+  -- =================================== End of Description ============================= --
+  
   -- =================================== Reset Assert =================================== --
   subTestNo <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
 							      -- apply rst signal pattern, to deassert 0.2*period after the active clk edge
@@ -614,6 +753,24 @@ begin
 -- =================================== End of Game =================================== --
 
  testNo <= 9;
+  -- =================================== Test 9 Description ============================= --
+  -- Test Number:				9
+  -- Number of Sub Tests:		3
+  -- Description:				Test 4, 5, 6, 7, 8 and 9 all relate to Zone 3 of the Arena.
+  --							(Please see zone map in the report)
+  --
+  --							Test 9 will test Zone 3 in the SE of the arena.
+  --							The paddle will NOT be present.
+  --							Ball should respawn and a live should be lost.
+  --
+  -- Subtest 0:					Asserts Reset Signal
+  -- Subtest 1:					Game initialisation is modified from the default configuration
+  -- 								<> Game is initalised such that ball will be moving into 
+  --									the SE Zone 3 block immediately.
+  -- Subtest 2:					Game is started. No input required.
+  --							Ball will respawn, a live will be lost.
+  -- =================================== End of Description ============================= --
+  
   -- =================================== Reset Assert =================================== --
   subTestNo <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
 							      -- apply rst signal pattern, to deassert 0.2*period after the active clk edge
@@ -672,7 +829,21 @@ begin
 -- =================================== End of Game =================================== --
 
   testNo <= 10;
-
+  -- =================================== Test 10 Description ============================ --
+  -- Test Number:				10
+  -- Number of Sub Tests:		3
+  -- Description:				Test 10 will show behaviour when the maximum score of 32 is reached.
+  --							Game should end, and the player presented with a winner screen.
+  --
+  -- Subtest 0:					Asserts Reset Signal
+  -- Subtest 1:					Game initialisation is modified from the default configuration
+  -- 								<> Wall is depleted except for one remaining wall piece.
+  --								<> Score is set to 31.
+  -- 								<> Ball's inital trajectory is set to contact final wall piece.
+  -- Subtest 2:					Game is started. No input required.
+  --							Ball will contact wall and winner procedure is followed.
+  -- =================================== End of Description ============================= --
+  
   -- =================================== Reset Assert =================================== --
   subTestNo <= 0; 				  -- include a unique test number to help browsing of the simulation waveform     
 							      -- apply rst signal pattern, to deassert 0.2*period after the active clk edge
@@ -730,7 +901,24 @@ begin
   wait for 300*period;
 -- =================================== End of Game =================================== --
 
-testNo <= 11;
+  testNo <= 11;
+  -- =================================== Test 11 Description ============================ --
+  -- Test Number:				11
+  -- Number of Sub Tests:		3
+  -- Description:				Test 11 will show how the game becomes more challenging once
+  -- 							the player has reached 10 points.
+  --								<> The ball will double in velocity.
+  --
+  -- Subtest 0:					Asserts Reset Signal
+  -- Subtest 1:					Game initialisation is modified from the default configuration
+  -- 								<> Wall has 9 pieces removed.
+  --								<> Score is set to 9.
+  -- 								<> Ball's inital trajectory is set to contact a wall piece.
+  -- Subtest 2:					Game is started. No input required.
+  --							Ball will contact wall, ball speed will double, difference in 
+  -- 							velocity should be observable.
+  -- =================================== End of Description ============================= --
+  
   -- =================================== Reset Assert =================================== --
   subTestNo <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
 							      -- apply rst signal pattern, to deassert 0.2*period after the active clk edge
@@ -788,7 +976,24 @@ testNo <= 11;
   wait for 300*period;
 -- =================================== End of Game =================================== --
 
-testNo <= 12;
+  testNo <= 12;
+  -- =================================== Test 12 Description ============================ --
+  -- Test Number:				12
+  -- Number of Sub Tests:		3
+  -- Description:				Test 11 will show how the game becomes more challenging once
+  -- 							the player has reached 20 points.
+  --								<> The ball will double in velocity.
+  --
+  -- Subtest 0:					Asserts Reset Signal
+  -- Subtest 1:					Game initialisation is modified from the default configuration
+  -- 								<> Wall has 19 pieces removed.
+  --								<> Score is set to 19.
+  -- 								<> Ball's inital trajectory is set to contact a wall piece.
+  -- Subtest 2:					Game is started. No input required.
+  --							Ball will contact wall, ball speed will double, difference in 
+  -- 							velocity should be observable.
+  -- =================================== End of Description ============================= --
+  
   -- =================================== Reset Assert =================================== --
   subTestNo <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
 							      -- apply rst signal pattern, to deassert 0.2*period after the active clk edge
