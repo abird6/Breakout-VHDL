@@ -34,7 +34,7 @@ signal functBus       : std_logic_vector(95 downto 0);
 constant period       : time := 20 ns;    -- 50MHz clk
 signal   endOfSim     : boolean := false; -- Default FALSE. Assigned TRUE at end of process stim
 signal   testNo       : integer;          -- facilitates test numbers. Aids locating each simulation waveform test 
-signal   subTestNo    : integer;          -- facilitates sub-test numbers, this is to aid understanding in waveform as each test requires asserting reset, set up and go.
+signal   part    : integer;          -- facilitates sub-test numbers, this is to aid understanding in waveform as each test requires asserting reset, set up and go.
 
 begin
 
@@ -85,7 +85,7 @@ begin
   -- =================================== End of Description ============================= --
   
   -- =================================== Reset Assert =================================== --
-  subTestNo <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
+  part <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
 							      -- apply rst signal pattern, to deassert 0.2*period after the active clk edge
   go            		<= '0';   -- default assignments
   ce            		<= '1';
@@ -97,7 +97,7 @@ begin
   wait for 3*period;
 
   -- =================================== Game(or Test) Set Up =================================== --          
-  subTestNo 				<= 1; 
+  part 				<= 1; 
   reg4x32_CSRA                 <= ( others => (others => '0') ); -- clear all CSRA array         
   
   reg4x32_CSRA(3)              <= X"ffffffff";     -- wallVec 
@@ -129,7 +129,7 @@ begin
 
 
   -- =================================== Play Game =================================== --
-  subTestNo 				<= 2;      
+  part 				<= 2;      
   reg4x32_CSRA(0)       <= X"00001101"; -- DSPProc command (15:8) = 0b00010 001, (0) = 1. Play game 
   go     				<= '1'; 
   wait for period;  
@@ -160,7 +160,7 @@ begin
   -- =================================== End of Description ============================= --
   
   -- =================================== Reset Assert =================================== --
-  subTestNo <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
+  part <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
 							      -- apply rst signal pattern, to deassert 0.2*period after the active clk edge
   go            		<= '0';   -- default assignments
   ce            		<= '1';
@@ -172,7 +172,7 @@ begin
   wait for 3*period;
 
   -- =================================== Game(or Test) Set Up =================================== --          
-  subTestNo 				<= 1; 
+  part 				<= 1; 
   reg4x32_CSRA                 <= ( others => (others => '0') ); -- clear all CSRA array         
   
   reg4x32_CSRA(3)              <= X"ffffffff";     -- wallVec 
@@ -203,7 +203,7 @@ begin
 
 
 -- =================================== Play Game =================================== --
-  subTestNo 				<= 2;      
+  part 				<= 2;      
   reg4x32_CSRA(0)       <= X"00001101"; -- DSPProc command (15:8) = 0b00010 001, (0) = 1. Play game 
   go     				<= '1'; 
   wait for period;  
@@ -235,7 +235,7 @@ begin
   -- =================================== End of Description ============================= --
   
   -- =================================== Reset Assert =================================== --
-  subTestNo <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
+  part <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
 							      -- apply rst signal pattern, to deassert 0.2*period after the active clk edge
   go            		<= '0';   -- default assignments
   ce            		<= '1';
@@ -247,7 +247,7 @@ begin
   wait for 3*period;
 
   -- =================================== Game(or Test) Set Up =================================== --            
-  subTestNo 				<= 1; 
+  part 				<= 1; 
   reg4x32_CSRA                 <= ( others => (others => '0') ); -- clear all CSRA array         
   
   reg4x32_CSRA(3)              <= X"ffffffff";     -- wallVec 
@@ -279,7 +279,7 @@ begin
 
 
 -- =================================== Play Game =================================== --
-  subTestNo 				<= 2;      
+  part 				<= 2;      
   reg4x32_CSRA(0)       <= X"00001101"; -- DSPProc command (15:8) = 0b00010 001, (0) = 1. Play game 
   go     				<= '1'; 
   wait for period;  
@@ -309,7 +309,7 @@ begin
   -- =================================== End of Description ============================= --
   
   -- =================================== Reset Assert =================================== --
-  subTestNo <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
+  part <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
 							      -- apply rst signal pattern, to deassert 0.2*period after the active clk edge
   go            		<= '0';   -- default assignments
   ce            		<= '1';
@@ -321,7 +321,7 @@ begin
   wait for 3*period;
 
   -- =================================== Game(or Test) Set Up =================================== --            
-  subTestNo 				<= 1; 
+  part 				<= 1; 
   reg4x32_CSRA                 <= ( others => (others => '0') ); -- clear all CSRA array         
   
   reg4x32_CSRA(3)              <= X"ffffffff";     -- wallVec 
@@ -352,7 +352,7 @@ begin
 
 
   -- =================================== Play Game =================================== --
-  subTestNo 				<= 2;      
+  part 				<= 2;      
   reg4x32_CSRA(0)       <= X"00001101"; -- DSPProc command (15:8) = 0b00010 001, (0) = 1. Play game 
   go     				<= '1'; 
   wait for period;  
@@ -382,7 +382,7 @@ begin
   -- =================================== End of Description ============================= --
 
   -- =================================== Reset Assert =================================== --
-  subTestNo <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
+  part <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
 							      -- apply rst signal pattern, to deassert 0.2*period after the active clk edge
   go            		<= '0';   -- default assignments
   ce            		<= '1';
@@ -394,7 +394,7 @@ begin
   wait for 3*period;
 
   -- =================================== Game(or Test) Set Up =================================== --        
-  subTestNo 				<= 1; 
+  part 				<= 1; 
   reg4x32_CSRA                 <= ( others => (others => '0') ); -- clear all CSRA array         
   
   reg4x32_CSRA(3)              <= X"ffffffff";     -- wallVec 
@@ -426,7 +426,7 @@ begin
 
 
 -- =================================== Play Game =================================== --
-  subTestNo 				<= 2;      
+  part 				<= 2;      
   reg4x32_CSRA(0)       <= X"00001101"; -- DSPProc command (15:8) = 0b00010 001, (0) = 1. Play game 
   go     				<= '1'; 
   wait for period;  
@@ -455,7 +455,7 @@ begin
   -- =================================== End of Description ============================= --
 
   -- =================================== Reset Assert =================================== --
-  subTestNo <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
+  part <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
 							      -- apply rst signal pattern, to deassert 0.2*period after the active clk edge
   go            		<= '0';   -- default assignments
   ce            		<= '1';
@@ -468,7 +468,7 @@ begin
 
   -- =================================== Game(or Test) Set Up =================================== --
            
-  subTestNo 				<= 1; 
+  part 				<= 1; 
   reg4x32_CSRA                 <= ( others => (others => '0') ); -- clear all CSRA array         
   
   reg4x32_CSRA(3)              <= X"ffffffff";     -- wallVec 
@@ -500,7 +500,7 @@ begin
 
 
 -- =================================== Play Game =================================== --
-  subTestNo 				<= 2;      
+  part 				<= 2;      
   reg4x32_CSRA(0)       <= X"00001101"; -- DSPProc command (15:8) = 0b00010 001, (0) = 1. Play game 
   go     				<= '1'; 
   wait for period;  
@@ -533,7 +533,7 @@ begin
   -- =================================== End of Description ============================= --
 
   -- =================================== Reset Assert =================================== --
-  subTestNo <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
+  part <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
 							      -- apply rst signal pattern, to deassert 0.2*period after the active clk edge
   go            		<= '0';   -- default assignments
   ce            		<= '1';
@@ -546,7 +546,7 @@ begin
 
   -- =================================== Game(or Test) Set Up =================================== --
           
-  subTestNo 				<= 1; 
+  part 				<= 1; 
   reg4x32_CSRA                 <= ( others => (others => '0') ); -- clear all CSRA array         
   
   reg4x32_CSRA(3)              <= X"ffffffff";     -- wallVec 
@@ -577,7 +577,7 @@ begin
 
 
 -- =================================== Play Game =================================== --
-  subTestNo 				<= 2;      
+  part 				<= 2;      
   reg4x32_CSRA(0)       <= X"00001101"; -- DSPProc command (15:8) = 0b00010 001, (0) = 1. Play game 
   go     				<= '1'; 
   wait for period;  
@@ -611,7 +611,7 @@ begin
   -- =================================== End of Description ============================= --
   
   -- =================================== Reset Assert =================================== --
-  subTestNo <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
+  part <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
 							      -- apply rst signal pattern, to deassert 0.2*period after the active clk edge
   go            		<= '0';   -- default assignments
   ce            		<= '1';
@@ -624,7 +624,7 @@ begin
 
   -- =================================== Game(or Test) Set Up =================================== --
 
-  subTestNo 				<= 1; 
+  part 				<= 1; 
   reg4x32_CSRA                 <= ( others => (others => '0') ); -- clear all CSRA array         
   
   reg4x32_CSRA(3)              <= X"ffffffff";     -- wallVec 
@@ -656,7 +656,7 @@ begin
 
 
 -- =================================== Play Game =================================== --
-  subTestNo 				<= 2;      
+  part 				<= 2;      
   reg4x32_CSRA(0)       <= X"00001101"; -- DSPProc command (15:8) = 0b00010 001, (0) = 1. Play game 
   go     				<= '1'; 
   wait for period;  
@@ -691,7 +691,7 @@ begin
   -- =================================== End of Description ============================= --
   
   -- =================================== Reset Assert =================================== --
-  subTestNo <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
+  part <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
 							      -- apply rst signal pattern, to deassert 0.2*period after the active clk edge
   go            		<= '0';   -- default assignments
   ce            		<= '1';
@@ -704,7 +704,7 @@ begin
 
   -- =================================== Game(or Test) Set Up =================================== --
          
-  subTestNo 				<= 1; 
+  part 				<= 1; 
   reg4x32_CSRA                 <= ( others => (others => '0') ); -- clear all CSRA array         
   
   reg4x32_CSRA(3)              <= X"ffffffff";     -- wallVec 
@@ -736,7 +736,7 @@ begin
 
 
 -- =================================== Play Game =================================== --
-  subTestNo 				<= 2;      
+  part 				<= 2;      
   reg4x32_CSRA(0)       <= X"00001101"; -- DSPProc command (15:8) = 0b00010 001, (0) = 1. Play game 
   go     				<= '1'; 
   wait for period;  
@@ -767,7 +767,7 @@ begin
   -- =================================== End of Description ============================= --
   
   -- =================================== Reset Assert =================================== --
-  subTestNo <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
+  part <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
 							      -- apply rst signal pattern, to deassert 0.2*period after the active clk edge
   go            		<= '0';   -- default assignments
   ce            		<= '1';
@@ -780,7 +780,7 @@ begin
 
   -- =================================== Game(or Test) Set Up =================================== --
            
-  subTestNo 				<= 1; 
+  part 				<= 1; 
   reg4x32_CSRA                 <= ( others => (others => '0') ); -- clear all CSRA array         
   
   reg4x32_CSRA(3)              <= X"ffffffff";     -- wallVec 
@@ -811,7 +811,7 @@ begin
 
 
 -- =================================== Play Game =================================== --
-  subTestNo 				<= 2;      
+  part 				<= 2;      
   reg4x32_CSRA(0)       <= X"00001101"; -- DSPProc command (15:8) = 0b00010 001, (0) = 1. Play game 
   go     				<= '1'; 
   wait for period;  
@@ -839,7 +839,7 @@ begin
   -- =================================== End of Description ============================= --
   
   -- =================================== Reset Assert =================================== --
-  subTestNo <= 0; 				  -- include a unique test number to help browsing of the simulation waveform     
+  part <= 0; 				  -- include a unique test number to help browsing of the simulation waveform     
 							      -- apply rst signal pattern, to deassert 0.2*period after the active clk edge
   go            		<= '0';   -- default assignments
   ce            		<= '1';
@@ -851,7 +851,7 @@ begin
   wait for 3*period;
 
   -- =================================== Game(or Test) Set Up =================================== --
-  subTestNo 				<= 1; 
+  part 				<= 1; 
   reg4x32_CSRA                 <= ( others => (others => '0') ); -- clear all CSRA array         
   
   reg4x32_CSRA(3)              <= X"00010000";     -- wallVec 
@@ -882,7 +882,7 @@ begin
 
 
 -- =================================== Play Game =================================== --
-  subTestNo 				<= 2;      
+  part 				<= 2;      
   reg4x32_CSRA(0)       <= X"00001101"; -- DSPProc command (15:8) = 0b00010 001, (0) = 1. Play game 
   go     				<= '1'; 
   wait for period;  
@@ -912,7 +912,7 @@ begin
   -- =================================== End of Description ============================= --
   
   -- =================================== Reset Assert =================================== --
-  subTestNo <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
+  part <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
 							      -- apply rst signal pattern, to deassert 0.2*period after the active clk edge
   go            		<= '0';   -- default assignments
   ce            		<= '1';
@@ -924,7 +924,7 @@ begin
   wait for 3*period;
 
   -- =================================== Game(or Test) Set Up =================================== --
-  subTestNo 				<= 1; 
+  part 				<= 1; 
   reg4x32_CSRA                 <= ( others => (others => '0') ); -- clear all CSRA array         
   
   reg4x32_CSRA(3)              <= X"07ffffe1";     -- wallVec 
@@ -955,7 +955,7 @@ begin
 
 
 -- =================================== Play Game =================================== --
-  subTestNo 				<= 2;      
+  part 				<= 2;      
   reg4x32_CSRA(0)       <= X"00001101"; -- DSPProc command (15:8) = 0b00010 001, (0) = 1. Play game 
   go     				<= '1'; 
   wait for period;  
@@ -985,7 +985,7 @@ begin
   -- =================================== End of Description ============================= --
   
   -- =================================== Reset Assert =================================== --
-  subTestNo <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
+  part <= 0; 					  -- include a unique test number to help browsing of the simulation waveform     
 							      -- apply rst signal pattern, to deassert 0.2*period after the active clk edge
   go            		<= '0';   -- default assignments
   ce            		<= '1';
@@ -997,7 +997,7 @@ begin
   wait for 3*period;
 
   -- =================================== Game(or Test) Set Up =================================== --            
-  subTestNo 				<= 1; 
+  part 				<= 1; 
   reg4x32_CSRA                 <= ( others => (others => '0') ); -- clear all CSRA array         
   
   reg4x32_CSRA(3)              <= X"000fff01";     -- wallVec 
@@ -1028,7 +1028,7 @@ begin
 
 
 -- =================================== Play Game =================================== --
-  subTestNo 				<= 2;      
+  part 				<= 2;      
   reg4x32_CSRA(0)       <= X"00001101"; -- DSPProc command (15:8) = 0b00010 001, (0) = 1. Play game 
   go     				<= '1'; 
   wait for period;  
