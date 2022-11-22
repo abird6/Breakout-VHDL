@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="10485466667fs"></ZoomStartTime>
-      <ZoomEndTime time="10716666668fs"></ZoomEndTime>
-      <Cursor1Time time="10524000000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="270000001fs"></ZoomEndTime>
+      <Cursor1Time time="0fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="271"></NameColumnWidth>
-      <ValueColumnWidth column_width="244"></ValueColumnWidth>
+      <ValueColumnWidth column_width="255"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="3" />
    <wvobject fp_name="group53" type="group">
@@ -225,6 +225,10 @@
          <obj_property name="ElementShortName">testNo</obj_property>
          <obj_property name="ObjectShortName">testNo</obj_property>
       </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/part" type="other">
+         <obj_property name="ElementShortName">part</obj_property>
+         <obj_property name="ObjectShortName">part</obj_property>
+      </wvobject>
       <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/functBus" type="array">
          <obj_property name="ElementShortName">functBus[95:0]</obj_property>
          <obj_property name="ObjectShortName">functBus[95:0]</obj_property>
@@ -249,10 +253,6 @@
          <obj_property name="ElementShortName">active</obj_property>
          <obj_property name="ObjectShortName">active</obj_property>
       </wvobject>
-      <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/zone" type="other">
-         <obj_property name="ElementShortName">zone</obj_property>
-         <obj_property name="ObjectShortName">zone</obj_property>
-      </wvobject>
       <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/reg4x32_CSRA" type="array">
          <obj_property name="ElementShortName">reg4x32_CSRA[3:0][31:0]</obj_property>
          <obj_property name="ObjectShortName">reg4x32_CSRA[3:0][31:0]</obj_property>
@@ -260,23 +260,6 @@
       <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/reg4x32_CSRB" type="array">
          <obj_property name="ElementShortName">reg4x32_CSRB[3:0][31:0]</obj_property>
          <obj_property name="ObjectShortName">reg4x32_CSRB[3:0][31:0]</obj_property>
-         <obj_property name="isExpanded"></obj_property>
-         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/reg4x32_CSRB[3]" type="array">
-            <obj_property name="ElementShortName">[3][31:0]</obj_property>
-            <obj_property name="ObjectShortName">[3][31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/reg4x32_CSRB[2]" type="array">
-            <obj_property name="ElementShortName">[2][31:0]</obj_property>
-            <obj_property name="ObjectShortName">[2][31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/reg4x32_CSRB[1]" type="array">
-            <obj_property name="ElementShortName">[1][31:0]</obj_property>
-            <obj_property name="ObjectShortName">[1][31:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/reg4x32_CSRB[0]" type="array">
-            <obj_property name="ElementShortName">[0][31:0]</obj_property>
-            <obj_property name="ObjectShortName">[0][31:0]</obj_property>
-         </wvobject>
       </wvobject>
       <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/reg32x32_dOut" type="array">
          <obj_property name="ElementShortName">reg32x32_dOut[31:0]</obj_property>
@@ -387,9 +370,66 @@
             <obj_property name="Radix">BINARYRADIX</obj_property>
          </wvobject>
       </wvobject>
-      <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/zone" type="other">
-         <obj_property name="ElementShortName">zone</obj_property>
-         <obj_property name="ObjectShortName">zone</obj_property>
+      <wvobject fp_name="group724" type="group">
+         <obj_property name="label">delayCounters</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSDlyCountMax" type="other">
+            <obj_property name="ElementShortName">NSDlyCountMax</obj_property>
+            <obj_property name="ObjectShortName">NSDlyCountMax</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSDlyCountMax" type="other">
+            <obj_property name="ElementShortName">CSDlyCountMax</obj_property>
+            <obj_property name="ObjectShortName">CSDlyCountMax</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSDlyCount" type="other">
+            <obj_property name="ElementShortName">NSDlyCount</obj_property>
+            <obj_property name="ObjectShortName">NSDlyCount</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSDlyCount" type="other">
+            <obj_property name="ElementShortName">CSDlyCount</obj_property>
+            <obj_property name="ObjectShortName">CSDlyCount</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSPaddleNumDlyMax" type="other">
+            <obj_property name="ElementShortName">NSPaddleNumDlyMax</obj_property>
+            <obj_property name="ObjectShortName">NSPaddleNumDlyMax</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSPaddleNumDlyMax" type="other">
+            <obj_property name="ElementShortName">CSPaddleNumDlyMax</obj_property>
+            <obj_property name="ObjectShortName">CSPaddleNumDlyMax</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSPaddleNumDlyCount" type="other">
+            <obj_property name="ElementShortName">NSPaddleNumDlyCount</obj_property>
+            <obj_property name="ObjectShortName">NSPaddleNumDlyCount</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSPaddleNumDlyCount" type="other">
+            <obj_property name="ElementShortName">CSPaddleNumDlyCount</obj_property>
+            <obj_property name="ObjectShortName">CSPaddleNumDlyCount</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSBallNumDlyMax" type="other">
+            <obj_property name="ElementShortName">NSBallNumDlyMax</obj_property>
+            <obj_property name="ObjectShortName">NSBallNumDlyMax</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSBallNumDlyMax" type="other">
+            <obj_property name="ElementShortName">CSBallNumDlyMax</obj_property>
+            <obj_property name="ObjectShortName">CSBallNumDlyMax</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSBallNumDlyCount" type="other">
+            <obj_property name="ElementShortName">NSBallNumDlyCount</obj_property>
+            <obj_property name="ObjectShortName">NSBallNumDlyCount</obj_property>
+         </wvobject>
+         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSBallNumDlyCount" type="other">
+            <obj_property name="ElementShortName">CSBallNumDlyCount</obj_property>
+            <obj_property name="ObjectShortName">CSBallNumDlyCount</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSZone" type="other">
+         <obj_property name="ElementShortName">NSZone</obj_property>
+         <obj_property name="ObjectShortName">NSZone</obj_property>
+      </wvobject>
+      <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSZone" type="other">
+         <obj_property name="ElementShortName">CSZone</obj_property>
+         <obj_property name="ObjectShortName">CSZone</obj_property>
       </wvobject>
       <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSBallNumDlyCount" type="other">
          <obj_property name="ElementShortName">CSBallNumDlyCount</obj_property>
@@ -406,10 +446,12 @@
       <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSBallDir" type="array">
          <obj_property name="ElementShortName">NSBallDir[2:0]</obj_property>
          <obj_property name="ObjectShortName">NSBallDir[2:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSBallDir" type="array">
          <obj_property name="ElementShortName">CSBallDir[2:0]</obj_property>
          <obj_property name="ObjectShortName">CSBallDir[2:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSBallXAdd" type="other">
          <obj_property name="ElementShortName">NSBallXAdd</obj_property>
@@ -430,7 +472,6 @@
       <wvobject fp_name="group727" type="group">
          <obj_property name="label">wallAndPaddle</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <obj_property name="isExpanded"></obj_property>
          <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSWallVec" type="array">
             <obj_property name="ElementShortName">NSWallVec[31:0]</obj_property>
             <obj_property name="ObjectShortName">NSWallVec[31:0]</obj_property>
@@ -451,6 +492,7 @@
       <wvobject fp_name="group726" type="group">
          <obj_property name="label">ballData</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSBallVec" type="array">
             <obj_property name="ElementShortName">NSBallVec[31:0]</obj_property>
             <obj_property name="ObjectShortName">NSBallVec[31:0]</obj_property>
@@ -502,58 +544,6 @@
          <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSLives" type="other">
             <obj_property name="ElementShortName">CSLives</obj_property>
             <obj_property name="ObjectShortName">CSLives</obj_property>
-         </wvobject>
-      </wvobject>
-      <wvobject fp_name="group724" type="group">
-         <obj_property name="label">delayCounters</obj_property>
-         <obj_property name="DisplayName">label</obj_property>
-         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSDlyCountMax" type="other">
-            <obj_property name="ElementShortName">NSDlyCountMax</obj_property>
-            <obj_property name="ObjectShortName">NSDlyCountMax</obj_property>
-         </wvobject>
-         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSDlyCountMax" type="other">
-            <obj_property name="ElementShortName">CSDlyCountMax</obj_property>
-            <obj_property name="ObjectShortName">CSDlyCountMax</obj_property>
-         </wvobject>
-         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSDlyCount" type="other">
-            <obj_property name="ElementShortName">NSDlyCount</obj_property>
-            <obj_property name="ObjectShortName">NSDlyCount</obj_property>
-         </wvobject>
-         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSDlyCount" type="other">
-            <obj_property name="ElementShortName">CSDlyCount</obj_property>
-            <obj_property name="ObjectShortName">CSDlyCount</obj_property>
-         </wvobject>
-         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSPaddleNumDlyMax" type="other">
-            <obj_property name="ElementShortName">NSPaddleNumDlyMax</obj_property>
-            <obj_property name="ObjectShortName">NSPaddleNumDlyMax</obj_property>
-         </wvobject>
-         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSPaddleNumDlyMax" type="other">
-            <obj_property name="ElementShortName">CSPaddleNumDlyMax</obj_property>
-            <obj_property name="ObjectShortName">CSPaddleNumDlyMax</obj_property>
-         </wvobject>
-         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSPaddleNumDlyCount" type="other">
-            <obj_property name="ElementShortName">NSPaddleNumDlyCount</obj_property>
-            <obj_property name="ObjectShortName">NSPaddleNumDlyCount</obj_property>
-         </wvobject>
-         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSPaddleNumDlyCount" type="other">
-            <obj_property name="ElementShortName">CSPaddleNumDlyCount</obj_property>
-            <obj_property name="ObjectShortName">CSPaddleNumDlyCount</obj_property>
-         </wvobject>
-         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSBallNumDlyMax" type="other">
-            <obj_property name="ElementShortName">NSBallNumDlyMax</obj_property>
-            <obj_property name="ObjectShortName">NSBallNumDlyMax</obj_property>
-         </wvobject>
-         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSBallNumDlyMax" type="other">
-            <obj_property name="ElementShortName">CSBallNumDlyMax</obj_property>
-            <obj_property name="ObjectShortName">CSBallNumDlyMax</obj_property>
-         </wvobject>
-         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/NSBallNumDlyCount" type="other">
-            <obj_property name="ElementShortName">NSBallNumDlyCount</obj_property>
-            <obj_property name="ObjectShortName">NSBallNumDlyCount</obj_property>
-         </wvobject>
-         <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/CSBallNumDlyCount" type="other">
-            <obj_property name="ElementShortName">CSBallNumDlyCount</obj_property>
-            <obj_property name="ObjectShortName">CSBallNumDlyCount</obj_property>
          </wvobject>
       </wvobject>
       <wvobject fp_name="/gameAndReg32x32_TB/uut/game_i/wr" type="logic">

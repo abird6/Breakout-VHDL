@@ -2,11 +2,13 @@
 # Webtalk v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Mon Nov 21 13:13:17 2022
-# Process ID: 12956
+# Start of session at: Mon Nov 21 13:12:37 2022
+# Process ID: 16408
 # Current directory: C:/Users/lcann/Documents/4th Year ECE/System On Chip 2 DProc/Latest/Breakout-VHDL/game/xilinxprj/game.sim/sim_1/behav/xsim
 # Command line: wbtcv.exe -mode batch -source C:/Users/lcann/Documents/4th Year ECE/System On Chip 2 DProc/Latest/Breakout-VHDL/game/xilinxprj/game.sim/sim_1/behav/xsim/xsim.dir/gameAndReg32x32_TB_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: C:/Users/lcann/Documents/4th Year ECE/System On Chip 2 DProc/Latest/Breakout-VHDL/game/xilinxprj/game.sim/sim_1/behav/xsim/webtalk.log
 # Journal file: C:/Users/lcann/Documents/4th Year ECE/System On Chip 2 DProc/Latest/Breakout-VHDL/game/xilinxprj/game.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
 source C:/Users/lcann/Documents/4th -notrace
+couldn't read file "C:/Users/lcann/Documents/4th": no such file or directory
+INFO: [Common 17-206] Exiting Webtalk at Mon Nov 21 13:12:37 2022...
