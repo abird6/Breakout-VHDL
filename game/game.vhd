@@ -29,8 +29,29 @@
 --  			        Not used in this example
 
 -- Internal Signal dictionary
---  NS, CS                         finite state machine state signals 
---  NS*, CS* 				       next and current state signals 
+--	NS, CS                         				finite state machine state signals 
+--  NSWallVec, CSWallVec						wall featured in game - default 0xffffffff at game start
+-- 	NSBallVec, CSBallVec          				used to initialise ball at game start
+-- 	NSPaddleVec, CSPaddleVec       				used to initialise 5-bit paddle at game start
+								                
+-- 	NSBallXAdd, CSBallXAdd          			ball X position in arena - determines asserted bit in 32-bit data written to memory
+-- 	NSBallYAdd, CSBallYAdd     					ball Y position in arena -  represents memory address (arena row) to write 32-bit data to  
+-- 	NSBallDir, CSBallDir        				direction of the ball to move - 3-bit value: Bit 2 - N or S, Bit 1 = W, Bit 0 = E
+
+-- 	NSScore, CSScore              				Score of the game - increments when ball conacts wall
+-- 	NSLives, CSLives           					Remaining lives for player - 3 lives at game start, game ends when lives = 0
+
+-- 	NSDlyCountMax, CSDlyCountMax   				Delay induced to make game playable on FPGA - value set in reg4x32_CSRB(2)(19:0)
+-- 	NSDlyCount, CSDlyCount         				Delay count increments until equal to max delay, then zeroed
+
+-- 	NSPaddleNumDlyMax, CSPaddleNumDlyMax     	Paddle processing delay induced to make game playable on FPGA - value set in reg4x32_CSRB(1)(28:24)
+-- 	NSPaddleNumDlyCount, CSPaddleNumDlyCount 	Delay count increments unitl equal to max paddle delay, then zeroed 
+
+--	NSBallNumDlyMax, CSBallNumDlyMax        	Ball processing delay induced to make game playable on FPGA - value set in reg4x32_CSRB(1)(20:16)
+-- 	NSBallNumDlyCount, CSBallNumDlyCount    	Delay count increments until equal to max ball delay, then zeroed
+
+-- 	CSEndGameCounter, NSEndGameCounter       	Loop counter to display 'GAME OVER' on arena
+-- 	CSZone, NSZone                        		Zonen variable used to determine the current ball zone in arena
 
 --    Using integer types for INTERNAL address signals where possible, to make VHDL model more readable
 
@@ -89,7 +110,7 @@ signal NSPaddleNumDlyCount, CSPaddleNumDlyCount : integer range 0 to 31;
 signal NSBallNumDlyMax, CSBallNumDlyMax         : integer range 0 to 31;
 signal NSBallNumDlyCount, CSBallNumDlyCount     : integer range 0 to 31;
 
-signal CSEndGameCounter, NSEndGameCounter       : integer;
+signal CSEndGameCounter, NSEndGameCounter       : integer;			
 signal CSZone, NSZone                           : integer;
 begin
 
@@ -118,7 +139,7 @@ begin
    NSDlyCount          <= CSDlyCount;
    NSPaddleNumDlyMax   <= CSPaddleNumDlyMax;
    NSBallNumDlyMax     <= CSBallNumDlyMax;
-   NSZone              <= CSZone;
+   NSZone              <= CSZone;		
    active    	       <= '1';             -- default asserted. Deasserted only in idle state. 
    wr   	           <= '0';
    add	               <= "010" & "00000"; -- reg32x32 base address
@@ -239,19 +260,25 @@ begin
         when checkBallZone => -- determine the zone of ball, given ball location 
             if CSBallNumDlyCount = CSBallNumDlyMax then
 				NSBallNumDlyCount   <= 0;
+				
 				-- NB: Please see Zone Map found in written report --
                 if (CSBallXAdd = 31 or CSBallXAdd = 0) and (CSBallYAdd = 14 or CSBallYAdd = 3) then 
                     NSZone <= 3;	-- top left/right corner
+					
                 elsif CSBallYAdd = 3 then	
                     NSZone <= 4;	-- row above paddle 
+					
                 elsif (CSBallYAdd = 14) then                       
                     NSZone <= 2;	-- row below wall
+					
                 elsif (CSBallXAdd = 31 or CSBallXAdd = 0) then
                     NSZone <= 1;	-- left/right arena boundary
+					
                 else
                     NSZone <= 0;	-- free space
                 end if;
-                NS <= processBallZone;   
+                NS <= processBallZone; -- begin processing ball based on new assigned zone
+				
             else -- CSBallNumDlyCount != CSBallNumDlyMax 
 			   NSBallNumDlyCount <= CSBallNumDlyCount + 1; -- increment counter
 			   NS  <= waitState;
@@ -268,9 +295,9 @@ begin
                     NSBallDir(1 downto 0) <= not(CSBallDir(1 downto 0));
                 
                 when 2 =>      -- row below wall
-                   if CSBallDir(2) = '1' then
-                       NSBallDir(2) <= '0';
-                       if CSWallVec(to_integer(to_unsigned(CSBallXAdd, 5))) = '1' then
+                   if CSBallDir(2) = '1' then	-- check if ball is moving 'up' 
+                       NSBallDir(2) <= '0';		-- set NS direction to rebound off wall
+                       if CSWallVec(to_integer(to_unsigned(CSBallXAdd, 5))) = '1' then 	-- update wall and score a point
                            NSScore <= CSScore + 1;
                            NSWallVec(to_integer(to_unsigned(CSBallXAdd, 5))) <= '0';
                            NS <= updateWall;  
@@ -278,9 +305,11 @@ begin
                    end if;
                    
                 when 3 =>      -- top/bottom left/right corner
-                   NSBallDir <= not(CSBallDir);
-                   if CSBallDir(2) = '1' then
-                        if (CSBallXAdd = 31) and (CSWallVec(31) = '1') then
+                   NSBallDir <= not(CSBallDir);	-- invert ball direction
+                   if CSBallDir(2) = '1' then	
+				   
+				   -- if ball contacts top L/R corner -> update wall and score a point
+                        if (CSBallXAdd = 31) and (CSWallVec(31) = '1') then 
                             NSScore <= CSScore + 1;
 							NSWallVec(31) <= '0';
 							NS <=  updateWall;
@@ -292,8 +321,8 @@ begin
 							NS <= processBall;
                         end if;
                    elsif CSBallDir(2) = '0' then
-                        add <= "010" & "00010";   -- reg32x32 row 2, paddle row address 
-					    if reg32x32_dOut(CSBallXAdd) = '1' then
+                        add <= "010" & "00010";   					-- reg32x32 row 2, paddle row address 
+					    if reg32x32_dOut(CSBallXAdd) = '1' then 	-- check if the ball rebounds off paddle 
 					       NS <= processBall;
 					    else
 					       NS <= respawn;
@@ -304,10 +333,10 @@ begin
                     NS <= respawn;
                     if (reg32x32_dOut(CSBallXAdd) = '1') then         -- Paddle is hit
                         NSBallDir <= "100";
-                        if (reg32x32_dOut(CSBallXAdd-2) = '0') then -- If the bit two less than hit is 0, then paddle is hit at LSB or LSB + 1.
-                            NSBallDir <= "101";                 -- Move NE
-                        elsif (reg32x32_dOut(CSBallXAdd+2) = '0') then
-                            NSBallDir <= "110";
+                        if (reg32x32_dOut(CSBallXAdd-2) = '0') then 		-- check if ball has hit right side of paddle 
+                            NSBallDir <= "101";                 			-- Move ball NE
+                        elsif (reg32x32_dOut(CSBallXAdd+2) = '0') then		-- check if ball has hit left side of paddle 
+                            NSBallDir <= "110";								-- Move ball NW
                         end if;
                         NS <= processBall;
                     end if;
@@ -349,12 +378,12 @@ begin
 		when updateWall =>	-- writing wall to memory after a score
             -- write wallVec
 			wr   	      <= '1';
-			add           <= "010" & "01111";               -- reg32x32 row 15
+			add           <= "010" & "01111";               		-- reg32x32 row 15
 			datToMem      <= CSWallVec;
 			if CSScore = 31 then
 			     NS       <= winGame;
-			elsif CSScore = 10 or CSScore = 20 then                          
-			     NSBallNumDlyMax     <=      CSBallNumDlyMax / 2;    -- Could this need to be rounded too?
+			elsif CSScore = 10 or CSScore = 20 then  				-- BONUSl: increasing ball speed after 10 and 20 points scored                        
+			     NSBallNumDlyMax     <=      CSBallNumDlyMax / 2; 	
 			     NS       <= updateScore;
 			else 
            	    NS        <= updateScore;
